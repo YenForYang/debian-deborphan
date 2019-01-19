@@ -1,0 +1,957 @@
+ dpkg-buildpackage -D -us -uc -ui -b -J5 -Pnobiarch,nocheck,nodoc -Zxz -z1
+dpkg-buildpackage: info: source package deborphan
+dpkg-buildpackage: info: source version 1.7.31
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Helge Kreutzmann <debian@helgefjell.de>
+ dpkg-source -Zxz -z1 --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules clean
+dh clean
+   dh_auto_clean
+	make -j5 distclean
+make[1]: Entering directory '/dev/shm/deborphan/deborphan'
+Making distclean in src
+make[2]: Entering directory '/dev/shm/deborphan/deborphan/src'
+test -z "deborphan" || rm -f deborphan
+rm -f *.o
+rm -f *.tab.c
+test -z "" || rm -f 
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+test . = "." || test -z "" || rm -f 
+rm -f ./.deps/deborphan.Po
+rm -f ./.deps/exit.Po
+rm -f ./.deps/file.Po
+rm -f ./.deps/keep.Po
+rm -f ./.deps/libdeps.Po
+rm -f ./.deps/pkginfo.Po
+rm -f ./.deps/set.Po
+rm -f ./.deps/string.Po
+rm -f Makefile
+make[2]: Leaving directory '/dev/shm/deborphan/deborphan/src'
+Making distclean in po
+make[2]: Entering directory '/dev/shm/deborphan/deborphan/po'
+rm -f *.insert-header
+rm -f remove-potcdate.sed
+rm -f stamp-poT
+rm -f core core.* deborphan.po deborphan.1po deborphan.2po *.new.po
+rm -fr *.o
+rm -f Makefile Makefile.in POTFILES *.mo
+make[2]: Leaving directory '/dev/shm/deborphan/deborphan/po'
+Making distclean in doc
+make[2]: Entering directory '/dev/shm/deborphan/deborphan/doc'
+Making distclean in po
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/doc/po'
+test -z "" || rm -f 
+po4a-updatepo --master-charset UTF-8 -f man -m ../orphaner.8 -m ../editkeep.8 -m ../deborphan.1 -p ./deborphan.pot
+test . = "." || test -z "" || rm -f 
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+...................... done.
+rm -f Makefile
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/doc/po'
+Making distclean in fr
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/doc/fr'
+test -z "" || rm -f 
+po4a-updatepo -f man --master-charset UTF-8 -m ../../doc/orphaner.8 -m ../../doc/editkeep.8 -m ../../doc/deborphan.1 -p ../po/fr.po
+test . = "." || test -z "" || rm -f 
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+.................... done.
+rm -f deborphan.1 orphaner.8 editkeep.8
+rm -f Makefile
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/doc/fr'
+Making distclean in pl
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/doc/pl'
+test -z "" || rm -f 
+po4a-updatepo -f man --master-charset UTF-8 -m ../../doc/orphaner.8 -m ../../doc/editkeep.8 -m ../../doc/deborphan.1 -p ../po/pl.po
+test . = "." || test -z "" || rm -f 
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+........................ done.
+rm -f deborphan.1 orphaner.8 editkeep.8
+rm -f Makefile
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/doc/pl'
+Making distclean in es
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/doc/es'
+test -z "" || rm -f 
+po4a-updatepo -f man --master-charset UTF-8 -m ../../doc/orphaner.8 -m ../../doc/editkeep.8 -m ../../doc/deborphan.1 -p ../po/es.po
+test . = "." || test -z "" || rm -f 
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+....................... done.
+rm -f deborphan.1 orphaner.8 editkeep.8
+rm -f Makefile
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/doc/es'
+Making distclean in de
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/doc/de'
+test -z "" || rm -f 
+po4a-updatepo -f man --master-charset UTF-8 -m ../../doc/orphaner.8 -m ../../doc/editkeep.8 -m ../../doc/deborphan.1 -p ../po/de.po
+test . = "." || test -z "" || rm -f 
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+........................... done.
+rm -f deborphan.1 orphaner.8 editkeep.8
+rm -f Makefile
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/doc/de'
+Making distclean in pt
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/doc/pt'
+test -z "" || rm -f 
+po4a-updatepo -f man --master-charset UTF-8 -m ../../doc/orphaner.8 -m ../../doc/editkeep.8 -m ../../doc/deborphan.1 -p ../po/pt.po
+test . = "." || test -z "" || rm -f 
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+.......................... done.
+rm -f deborphan.1 orphaner.8 editkeep.8
+rm -f Makefile
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/doc/pt'
+Making distclean in nl
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/doc/nl'
+test -z "" || rm -f 
+po4a-updatepo -f man --master-charset UTF-8 -m ../../doc/orphaner.8 -m ../../doc/editkeep.8 -m ../../doc/deborphan.1 -p ../po/nl.po
+test . = "." || test -z "" || rm -f 
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+....................... done.
+rm -f deborphan.1 orphaner.8 editkeep.8
+rm -f Makefile
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/doc/nl'
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/doc'
+test -z "" || rm -f 
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+test . = "." || test -z "" || rm -f 
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/doc'
+rm -f Makefile
+make[2]: Leaving directory '/dev/shm/deborphan/deborphan/doc'
+Making distclean in include
+make[2]: Entering directory '/dev/shm/deborphan/deborphan/include'
+test -z "" || rm -f 
+rm -f config.h stamp-h1
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+test . = "." || test -z "" || rm -f 
+rm -f Makefile
+make[2]: Leaving directory '/dev/shm/deborphan/deborphan/include'
+Making distclean in util
+make[2]: Entering directory '/dev/shm/deborphan/deborphan/util'
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f Makefile
+make[2]: Leaving directory '/dev/shm/deborphan/deborphan/util'
+make[2]: Entering directory '/dev/shm/deborphan/deborphan'
+test -z "" || rm -f 
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+test . = "." || test -z "" || rm -f 
+rm -f cscope.out cscope.in.out cscope.po.out cscope.files
+make[2]: Leaving directory '/dev/shm/deborphan/deborphan'
+rm -f config.status config.cache config.log configure.lineno config.status.lineno
+rm -f Makefile
+make[1]: Leaving directory '/dev/shm/deborphan/deborphan'
+   dh_autoreconf_clean
+	rm -f -- ./depcomp ./Makefile.in ./missing ./install-sh ./config.sub ./config.guess ./compile ./configure ./aclocal.m4 ./autom4te.cache/output.1 ./autom4te.cache/traces.1 ./autom4te.cache/output.0 ./autom4te.cache/traces.0 ./autom4te.cache/requests ./m4/xsize.m4 ./m4/wint_t.m4 ./m4/wchar_t.m4 ./m4/visibility.m4 ./m4/uintmax_t.m4 ./m4/threadlib.m4 ./m4/stdint_h.m4 ./m4/size_max.m4 ./m4/progtest.m4 ./m4/printf-posix.m4 ./m4/po.m4 ./m4/nls.m4 ./m4/longlong.m4 ./m4/lock.m4 ./m4/lib-prefix.m4 ./m4/lib-link.m4 ./m4/lib-ld.m4 ./m4/lcmessage.m4 ./m4/inttypes_h.m4 ./m4/inttypes-pri.m4 ./m4/intmax.m4 ./m4/intlmacosx.m4 ./m4/intldir.m4 ./m4/intl.m4 ./m4/intdiv0.m4 ./m4/iconv.m4 ./m4/glibc21.m4 ./m4/glibc2.m4 ./m4/gettext.m4 ./m4/fcntl-o.m4 ./m4/extern-inline.m4 ./m4/codeset.m4 ./config.rpath ./ABOUT-NLS ./util/Makefile.in ./src/Makefile.in ./po/remove-potcdate.sin ./po/quot.sed ./po/insert-header.sin ./po/en\@quot.header ./po/en\@boldquot.header ./po/boldquot.sed ./po/Rules-quot ./po/Makevars.template ./po/Makefile.in.in ./include/Makefile.in ./include/config.h.in ./doc/Makefile.in ./doc/pt/Makefile.in ./doc/po/Makefile.in ./doc/pl/Makefile.in ./doc/nl/Makefile.in ./doc/fr/Makefile.in ./doc/es/Makefile.in ./doc/de/Makefile.in
+	rm -f debian/autoreconf.before debian/autoreconf.after
+   dh_clean
+	rm -f debian/debhelper-build-stamp
+	rm -rf debian/.debhelper/
+	rm -f -- debian/deborphan.substvars debian/files
+	rm -fr -- debian/deborphan/ debian/tmp/
+	find .  \( \( \
+		\( -path .\*/.git -o -path .\*/.svn -o -path .\*/.bzr -o -path .\*/.hg -o -path .\*/CVS -o -path .\*/.pc -o -path .\*/_darcs \) -prune -o -type f -a \
+	        \( -name '#*#' -o -name '.*~' -o -name '*~' -o -name DEADJOE \
+		 -o -name '*.orig' -o -name '*.rej' -o -name '*.bak' \
+		 -o -name '.*.orig' -o -name .*.rej -o -name '.SUMS' \
+		 -o -name TAGS -o \( -path '*/.deps/*' -a -name '*.P' \) \
+		\) -exec rm -f {} + \) -o \
+		\( -type d -a -name autom4te.cache -prune -exec rm -rf {} + \) \)
+ debian/rules binary
+dh binary
+   dh_update_autotools_config
+   dh_autoreconf
+	find ! -ipath "./debian/*" -a ! \( -path '*/.git/*' -o -path '*/.hg/*' -o -path '*/.bzr/*' -o -path '*/.svn/*' -o -path '*/CVS/*' \) -a  -type f -exec md5sum {} + -o -type l -printf "symlink  %p
+" > debian/autoreconf.before
+	grep -q ^XDT_ configure.ac
+	autoreconf -f -i
+(stdin): 388.6 KiB / 29.6 MiB = 0.013
+Copying file ABOUT-NLS
+Copying file config.rpath
+Copying file m4/codeset.m4
+Copying file m4/extern-inline.m4
+Copying file m4/fcntl-o.m4
+Copying file m4/gettext.m4
+Copying file m4/glibc2.m4
+Copying file m4/glibc21.m4
+Copying file m4/iconv.m4
+Copying file m4/intdiv0.m4
+Copying file m4/intl.m4
+Copying file m4/intldir.m4
+Copying file m4/intlmacosx.m4
+Copying file m4/intmax.m4
+Copying file m4/inttypes-pri.m4
+Copying file m4/inttypes_h.m4
+Copying file m4/lcmessage.m4
+Copying file m4/lib-ld.m4
+Copying file m4/lib-link.m4
+Copying file m4/lib-prefix.m4
+Copying file m4/lock.m4
+Copying file m4/longlong.m4
+Copying file m4/nls.m4
+Copying file m4/po.m4
+Copying file m4/printf-posix.m4
+Copying file m4/progtest.m4
+Copying file m4/size_max.m4
+Copying file m4/stdint_h.m4
+Copying file m4/threadlib.m4
+Copying file m4/uintmax_t.m4
+Copying file m4/visibility.m4
+Copying file m4/wchar_t.m4
+Copying file m4/wint_t.m4
+Copying file m4/xsize.m4
+Copying file po/Makefile.in.in
+Copying file po/Makevars.template
+Copying file po/Rules-quot
+Copying file po/boldquot.sed
+Copying file po/en@boldquot.header
+Copying file po/en@quot.header
+Copying file po/insert-header.sin
+Copying file po/quot.sed
+Copying file po/remove-potcdate.sin
+configure.ac:15: installing './compile'
+configure.ac:18: installing './config.guess'
+configure.ac:18: installing './config.sub'
+configure.ac:7: installing './install-sh'
+configure.ac:7: installing './missing'
+src/Makefile.am: installing './depcomp'
+	find ! -ipath "./debian/*" -a ! \( -path '*/.git/*' -o -path '*/.hg/*' -o -path '*/.bzr/*' -o -path '*/.svn/*' -o -path '*/CVS/*' \) -a  -type f -exec md5sum {} + -o -type l -printf "symlink  %p
+" > debian/autoreconf.after
+   dh_auto_configure
+	./configure --build=x86_64-linux-gnu --prefix=/usr --includedir=\${prefix}/include --mandir=\${prefix}/share/man --infodir=\${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-silent-rules --libdir=\${prefix}/lib/x86_64-linux-gnu --libexecdir=\${prefix}/lib/x86_64-linux-gnu --runstatedir=/run --disable-maintainer-mode --disable-dependency-tracking
+configure: WARNING: unrecognized options: --disable-maintainer-mode
+configure: loading site script /usr/share/config.site
+checking for a BSD-compatible install... /usr/bin/install
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... /usr/bin/gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for gcc... (cached) icc.pl
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... (cached) o
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether icc.pl accepts -g... yes
+checking for icc.pl option to accept ISO C89... (cached) -std=gnu89
+checking whether icc.pl -std=gnu89 understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of icc.pl -std=gnu89... none
+checking for a sed that does not truncate output... /bin/sed
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+checking for xgettext... /usr/bin/xgettext
+/usr/bin/xgettext: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/xgettext: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+checking for msgmerge... /usr/bin/msgmerge
+checking build system type... (cached) x86_64-pc-linux-gnu
+checking host system type... (cached) x86_64-pc-linux-gnu
+checking for ld used by icc.pl -std=gnu89... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking how to run the C preprocessor... icc.pl -E
+checking for grep that handles long lines and -e... (cached) /bin/grep
+checking for egrep... (cached) /bin/grep -E
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking for getopt_long... (cached) yes
+checking debfoster's keepers file... "not found."
+checking whether to ignore debfoster... yes
+checking whether to imply -s... yes
+checking default priority... 2
+checking ignore essential... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating doc/Makefile
+config.status: creating doc/po/Makefile
+config.status: creating doc/fr/Makefile
+config.status: creating doc/pl/Makefile
+config.status: creating doc/es/Makefile
+config.status: creating doc/de/Makefile
+config.status: creating doc/pt/Makefile
+config.status: creating doc/nl/Makefile
+config.status: creating include/Makefile
+config.status: creating po/Makefile.in
+config.status: creating util/Makefile
+config.status: creating include/config.h
+config.status: executing depfiles commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+configure: WARNING: unrecognized options: --disable-maintainer-mode
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/dev/shm/deborphan/deborphan'
+dh_auto_build -- pkgdatadir=/var/lib/deborphan
+	make -j5 pkgdatadir=/var/lib/deborphan
+make[2]: Entering directory '/dev/shm/deborphan/deborphan'
+Making all in src
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/src'
+icc.pl -std=gnu89 -DHAVE_CONFIG_H -I. -I../include  -I../include -DLOCALSTATEDIR=\"/var\" -DLOCALEDIR=\"/usr/share/locale\" -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -W -g -O2 -fdebug-prefix-map=/dev/shm/deborphan/deborphan=. -Wformat -march=native -pipe -Wformat-security -c -o deborphan.o deborphan.c
+icc.pl -std=gnu89 -DHAVE_CONFIG_H -I. -I../include  -I../include -DLOCALSTATEDIR=\"/var\" -DLOCALEDIR=\"/usr/share/locale\" -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -W -g -O2 -fdebug-prefix-map=/dev/shm/deborphan/deborphan=. -Wformat -march=native -pipe -Wformat-security -c -o exit.o exit.c
+icc.pl -std=gnu89 -DHAVE_CONFIG_H -I. -I../include  -I../include -DLOCALSTATEDIR=\"/var\" -DLOCALEDIR=\"/usr/share/locale\" -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -W -g -O2 -fdebug-prefix-map=/dev/shm/deborphan/deborphan=. -Wformat -march=native -pipe -Wformat-security -c -o libdeps.o libdeps.c
+icc.pl -std=gnu89 -DHAVE_CONFIG_H -I. -I../include  -I../include -DLOCALSTATEDIR=\"/var\" -DLOCALEDIR=\"/usr/share/locale\" -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -W -g -O2 -fdebug-prefix-map=/dev/shm/deborphan/deborphan=. -Wformat -march=native -pipe -Wformat-security -c -o pkginfo.o pkginfo.c
+icc.pl -std=gnu89 -DHAVE_CONFIG_H -I. -I../include  -I../include -DLOCALSTATEDIR=\"/var\" -DLOCALEDIR=\"/usr/share/locale\" -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -W -g -O2 -fdebug-prefix-map=/dev/shm/deborphan/deborphan=. -Wformat -march=native -pipe -Wformat-security -c -o string.o string.c
+icc.pl -std=gnu89 -DHAVE_CONFIG_H -I. -I../include  -I../include -DLOCALSTATEDIR=\"/var\" -DLOCALEDIR=\"/usr/share/locale\" -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -W -g -O2 -fdebug-prefix-map=/dev/shm/deborphan/deborphan=. -Wformat -march=native -pipe -Wformat-security -c -o keep.o keep.c
+icc.pl -std=gnu89 -DHAVE_CONFIG_H -I. -I../include  -I../include -DLOCALSTATEDIR=\"/var\" -DLOCALEDIR=\"/usr/share/locale\" -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -W -g -O2 -fdebug-prefix-map=/dev/shm/deborphan/deborphan=. -Wformat -march=native -pipe -Wformat-security -c -o file.o file.c
+icc.pl -std=gnu89 -DHAVE_CONFIG_H -I. -I../include  -I../include -DLOCALSTATEDIR=\"/var\" -DLOCALEDIR=\"/usr/share/locale\" -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -W -g -O2 -fdebug-prefix-map=/dev/shm/deborphan/deborphan=. -Wformat -march=native -pipe -Wformat-security -c -o set.o set.c
+icc.pl -std=gnu89  -Wall -W -g -O2 -fdebug-prefix-map=/dev/shm/deborphan/deborphan=. -Wformat -march=native -pipe -Wformat-security  -Wl,-z,now -o deborphan deborphan.o exit.o libdeps.o pkginfo.o string.o keep.o file.o set.o  
+ipo: warning #11021: unresolved __open_missing_mode
+        Referenced in /tmp/intel/ipo_icc9H65ST.o
+ipo: warning #11021: unresolved __open_too_many_args
+        Referenced in /tmp/intel/ipo_icc9H65ST.o
+ipo: remark #11000: performing multi-file optimizations
+ipo: remark #11006: generating object file /tmp/intel/ipo_icc9H65ST.o
+x86_64-linux-gnu-ld: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.31.1-system.so)
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/src'
+Making all in po
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/po'
+make deborphan.pot-update
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/po'
+sed -e '/^#/d' remove-potcdate.sin > t-remove-potcdate.sed
+mv t-remove-potcdate.sed remove-potcdate.sed
+package_gnu="no"; \
+test -n "$package_gnu" || { \
+  if { if (LC_ALL=C find --version) 2>/dev/null | grep GNU >/dev/null; then \
+	 LC_ALL=C find -L .. -maxdepth 1 -type f \
+		       -size -10000000c -exec grep 'GNU deborphan' \
+		       /dev/null '{}' ';' 2>/dev/null; \
+       else \
+	 LC_ALL=C grep 'GNU deborphan' ../* 2>/dev/null; \
+       fi; \
+     } | grep -v 'libtool:' >/dev/null; then \
+     package_gnu=yes; \
+   else \
+     package_gnu=no; \
+   fi; \
+}; \
+if test "$package_gnu" = "yes"; then \
+  package_prefix='GNU '; \
+else \
+  package_prefix=''; \
+fi; \
+if test -n '' || test '' = '@'PACKAGE_BUGREPORT'@'; then \
+  msgid_bugs_address=''; \
+else \
+  msgid_bugs_address=''; \
+fi; \
+case `/usr/bin/xgettext --version | sed 1q | sed -e 's,^[^0-9]*,,'` in \
+  '' | 0.[0-9] | 0.[0-9].* | 0.1[0-5] | 0.1[0-5].* | 0.16 | 0.16.[0-1]*) \
+    /usr/bin/xgettext --default-domain=deborphan --directory=.. \
+      --add-comments=TRANSLATORS: --keyword=_ --keyword=N_  \
+      --files-from=./POTFILES.in \
+      --copyright-holder='' \
+      --msgid-bugs-address="$msgid_bugs_address" \
+    ;; \
+  *) \
+    /usr/bin/xgettext --default-domain=deborphan --directory=.. \
+      --add-comments=TRANSLATORS: --keyword=_ --keyword=N_  \
+      --files-from=./POTFILES.in \
+      --copyright-holder='' \
+      --package-name="${package_prefix}deborphan" \
+      --package-version='1.7.30' \
+      --msgid-bugs-address="$msgid_bugs_address" \
+    ;; \
+esac
+/usr/bin/xgettext: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/xgettext: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/xgettext: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/xgettext: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/xgettext: warning: The option --msgid-bugs-address was not specified.
+                            If you are using a 'Makevars' file, please specify
+                            the MSGID_BUGS_ADDRESS variable there; otherwise please
+                            specify an --msgid-bugs-address command line option.
+test ! -f deborphan.po || { \
+  if test -f ./deborphan.pot-header; then \
+    sed -e '1,/^#$/d' < deborphan.po > deborphan.1po && \
+    cat ./deborphan.pot-header deborphan.1po > deborphan.po; \
+    rm -f deborphan.1po; \
+  fi; \
+  if test -f ./deborphan.pot; then \
+    sed -f remove-potcdate.sed < ./deborphan.pot > deborphan.1po && \
+    sed -f remove-potcdate.sed < deborphan.po > deborphan.2po && \
+    if cmp deborphan.1po deborphan.2po >/dev/null 2>&1; then \
+      rm -f deborphan.1po deborphan.2po deborphan.po; \
+    else \
+      rm -f deborphan.1po deborphan.2po ./deborphan.pot && \
+      mv deborphan.po ./deborphan.pot; \
+    fi; \
+  else \
+    mv deborphan.po ./deborphan.pot; \
+  fi; \
+}
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/po'
+test ! -f ./deborphan.pot || \
+  test -z "ca.gmo cs.gmo da.gmo de.gmo es.gmo eu.gmo fr.gmo ja.gmo nl.gmo pl.gmo ru.gmo pt.gmo it.gmo vi.gmo" || make ca.gmo cs.gmo da.gmo de.gmo es.gmo eu.gmo fr.gmo ja.gmo nl.gmo pl.gmo ru.gmo pt.gmo it.gmo vi.gmo
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/po'
+/usr/bin/msgmerge --update  --lang=ca ca.po deborphan.pot
+/usr/bin/msgmerge --update  --lang=cs cs.po deborphan.pot
+/usr/bin/msgmerge --update  --lang=da da.po deborphan.pot
+/usr/bin/msgmerge --update  --lang=de de.po deborphan.pot
+/usr/bin/msgmerge --update  --lang=es es.po deborphan.pot
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+...................... done.
+...... done.
+............./usr/bin/msgmerge --update  --lang=eu eu.po deborphan.pot
+......... done.
+........msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+ done.
+ done.
+/usr/bin/msgmerge --update  --lang=fr fr.po deborphan.pot
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge --update  --lang=ja ja.po deborphan.pot
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge --update  --lang=nl nl.po deborphan.pot
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge --update  --lang=pl pl.po deborphan.pot
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+............... done.
+............................ done.
+................ done.
+........... done.
+/usr/bin/msgmerge --update  --lang=ru ru.po deborphan.pot
+ done.
+/usr/bin/msgmerge --update  --lang=pt pt.po deborphan.pot
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge --update  --lang=it it.po deborphan.pot
+/usr/bin/msgmerge --update  --lang=vi vi.po deborphan.pot
+rm -f ca.gmo && /usr/bin/msgfmt -c --statistics --verbose -o ca.gmo ca.po
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgmerge: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+ca.po: 64 translated messages, 3 fuzzy translations, 3 untranslated messages.
+rm -f cs.gmo && /usr/bin/msgfmt -c --statistics --verbose -o cs.gmo cs.po
+......................../usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+cs.po: 64 translated messages, 3 fuzzy translations, 3 untranslated messages.
+rm -f da.gmo && /usr/bin/msgfmt -c --statistics --verbose -o da.gmo da.po
+ done.
+......../usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+ done.
+........ done.
+da.po: 64 translated messages, 3 fuzzy translations, 3 untranslated messages.
+ done.
+rm -f de.gmo && /usr/bin/msgfmt -c --statistics --verbose -o de.gmo de.po
+rm -f es.gmo && /usr/bin/msgfmt -c --statistics --verbose -o es.gmo es.po
+rm -f eu.gmo && /usr/bin/msgfmt -c --statistics --verbose -o eu.gmo eu.po
+rm -f fr.gmo && /usr/bin/msgfmt -c --statistics --verbose -o fr.gmo fr.po
+rm -f ja.gmo && /usr/bin/msgfmt -c --statistics --verbose -o ja.gmo ja.po
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+eu.po: 64 translated messages, 3 fuzzy translations, 3 untranslated messages.
+es.po: 67 translated messages, 3 untranslated messages.
+de.po: 69 translated messages, 1 untranslated message.
+/usr/bin/msgfmt: ja.po: warning: PO file header fuzzy
+ fr.po:  70 translated messages.
+                      warning: older versions of msgfmt will give an error on this
+ja.po: 30 translated messages, 10 fuzzy translations, 30 untranslated messages.
+rm -f nl.gmo && /usr/bin/msgfmt -c --statistics --verbose -o nl.gmo nl.po
+rm -f pl.gmo && /usr/bin/msgfmt -c --statistics --verbose -o pl.gmo pl.po
+rm -f ru.gmo && /usr/bin/msgfmt -c --statistics --verbose -o ru.gmo ru.po
+rm -f pt.gmo && /usr/bin/msgfmt -c --statistics --verbose -o pt.gmo pt.po
+rm -f it.gmo && /usr/bin/msgfmt -c --statistics --verbose -o it.gmo it.po
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+pl.po: 64 translated messages, 3 fuzzy translations, 3 untranslated messages.
+nl.po: 70 translated messages.
+it.po: 67 translated messages, 3 untranslated messages.
+pt.po: 70 translated messages.
+ru.po: 70 translated messages.
+rm -f vi.gmo && /usr/bin/msgfmt -c --statistics --verbose -o vi.gmo vi.po
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+/usr/bin/msgfmt: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libxml2.so.2)
+vi.po: 64 translated messages, 3 fuzzy translations, 3 untranslated messages.
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/po'
+touch stamp-po
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/po'
+Making all in doc
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/doc'
+Making all in po
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/doc/po'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/doc/po'
+Making all in fr
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/doc/fr'
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/deborphan.1 -p ../po/fr.po -a fr2.add -l deborphan.1
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/orphaner.8 -p ../po/fr.po -a fr.add -l orphaner.8
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/editkeep.8 -p ../po/fr.po -a fr.add -l editkeep.8
+Your input po file ../po/fr.po seems outdated (The amount of entries differ between files: 128 is not 13
+). Please consider running po4a-updatepo to refresh it.
+Your input po file ../po/fr.po seems outdated (The amount of entries differ between files: 128 is not 21
+). Please consider running po4a-updatepo to refresh it.
+Your input po file ../po/fr.po seems outdated (The amount of entries differ between files: 128 is not 105
+). Please consider running po4a-updatepo to refresh it.
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/doc/fr'
+Making all in pl
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/doc/pl'
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/deborphan.1 -p ../po/pl.po -l deborphan.1
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/orphaner.8 -p ../po/pl.po -l orphaner.8
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/editkeep.8 -p ../po/pl.po -l editkeep.8
+Your input po file ../po/pl.po seems outdated (The amount of entries differ between files: 128 is not 13
+). Please consider running po4a-updatepo to refresh it.
+Your input po file ../po/pl.po seems outdated (The amount of entries differ between files: 128 is not 21
+). Please consider running po4a-updatepo to refresh it.
+Your input po file ../po/pl.po seems outdated (The amount of entries differ between files: 128 is not 105
+). Please consider running po4a-updatepo to refresh it.
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/doc/pl'
+Making all in es
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/doc/es'
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/deborphan.1 -p ../po/es.po -a es2.add -l deborphan.1
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/orphaner.8 -p ../po/es.po -a es.add -l orphaner.8
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/editkeep.8 -p ../po/es.po -a es.add -l editkeep.8
+Your input po file ../po/es.po seems outdated (The amount of entries differ between files: 128 is not 13
+). Please consider running po4a-updatepo to refresh it.
+Your input po file ../po/es.po seems outdated (The amount of entries differ between files: 128 is not 21
+). Please consider running po4a-updatepo to refresh it.
+Your input po file ../po/es.po seems outdated (The amount of entries differ between files: 128 is not 105
+). Please consider running po4a-updatepo to refresh it.
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/doc/es'
+Making all in de
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/doc/de'
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/deborphan.1 -p ../po/de.po -a de2.add -l deborphan.1
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/orphaner.8 -p ../po/de.po -a de.add -l orphaner.8
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/editkeep.8 -p ../po/de.po -a de.add -l editkeep.8
+Your input po file ../po/de.po seems outdated (The amount of entries differ between files: 128 is not 13
+). Please consider running po4a-updatepo to refresh it.
+Your input po file ../po/de.po seems outdated (The amount of entries differ between files: 128 is not 21
+). Please consider running po4a-updatepo to refresh it.
+Your input po file ../po/de.po seems outdated (The amount of entries differ between files: 128 is not 105
+). Please consider running po4a-updatepo to refresh it.
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/doc/de'
+Making all in pt
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/doc/pt'
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/deborphan.1 -p ../po/pt.po -l deborphan.1
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/orphaner.8 -p ../po/pt.po -l orphaner.8
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/editkeep.8 -p ../po/pt.po -l editkeep.8
+Your input po file ../po/pt.po seems outdated (The amount of entries differ between files: 128 is not 13
+). Please consider running po4a-updatepo to refresh it.
+Your input po file ../po/pt.po seems outdated (The amount of entries differ between files: 128 is not 21
+). Please consider running po4a-updatepo to refresh it.
+Your input po file ../po/pt.po seems outdated (The amount of entries differ between files: 128 is not 105
+). Please consider running po4a-updatepo to refresh it.
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/doc/pt'
+Making all in nl
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/doc/nl'
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/deborphan.1 -p ../po/nl.po -l deborphan.1
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/orphaner.8 -p ../po/nl.po -l orphaner.8
+po4a-translate -f man --master-charset UTF-8 -m ../../doc/editkeep.8 -p ../po/nl.po -l editkeep.8
+Your input po file ../po/nl.po seems outdated (The amount of entries differ between files: 128 is not 13
+). Please consider running po4a-updatepo to refresh it.
+Your input po file ../po/nl.po seems outdated (The amount of entries differ between files: 128 is not 21
+). Please consider running po4a-updatepo to refresh it.
+Your input po file ../po/nl.po seems outdated (The amount of entries differ between files: 128 is not 105
+). Please consider running po4a-updatepo to refresh it.
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/doc/nl'
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/doc'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/doc'
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/doc'
+Making all in include
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/include'
+make  all-am
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/include'
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/include'
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/include'
+Making all in util
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/util'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/util'
+make[3]: Entering directory '/dev/shm/deborphan/deborphan'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan'
+make[2]: Leaving directory '/dev/shm/deborphan/deborphan'
+make[1]: Leaving directory '/dev/shm/deborphan/deborphan'
+   dh_auto_test
+   create-stamp debian/debhelper-build-stamp
+   dh_testroot
+   dh_prep
+	rm -f -- debian/deborphan.substvars
+	rm -fr -- debian/.debhelper/generated/deborphan/ debian/deborphan/ debian/tmp/
+   dh_installdirs
+	install -d debian/deborphan/usr/bin/ debian/deborphan/usr/sbin/ debian/deborphan/usr/share/doc/deborphan/ debian/deborphan/var/lib/deborphan/
+	rm -f debian/deborphan.debhelper.log
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/dev/shm/deborphan/deborphan'
+dh_auto_install
+	make -j5 install DESTDIR=/dev/shm/deborphan/deborphan/debian/deborphan AM_UPDATE_INFO_DIR=no
+make[2]: Entering directory '/dev/shm/deborphan/deborphan'
+Making install in src
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/src'
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/src'
+make[4]: Nothing to be done for 'install-data-am'.
+ /bin/mkdir -p '/dev/shm/deborphan/deborphan/debian/deborphan/usr/bin'
+  /usr/bin/install deborphan '/dev/shm/deborphan/deborphan/debian/deborphan/usr/bin'
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/src'
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/src'
+Making install in po
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/po'
+installing ca.gmo as /dev/shm/deborphan/deborphan/debian/deborphan/usr/share/locale/ca/LC_MESSAGES/deborphan.mo
+installing cs.gmo as /dev/shm/deborphan/deborphan/debian/deborphan/usr/share/locale/cs/LC_MESSAGES/deborphan.mo
+installing da.gmo as /dev/shm/deborphan/deborphan/debian/deborphan/usr/share/locale/da/LC_MESSAGES/deborphan.mo
+installing de.gmo as /dev/shm/deborphan/deborphan/debian/deborphan/usr/share/locale/de/LC_MESSAGES/deborphan.mo
+installing es.gmo as /dev/shm/deborphan/deborphan/debian/deborphan/usr/share/locale/es/LC_MESSAGES/deborphan.mo
+installing eu.gmo as /dev/shm/deborphan/deborphan/debian/deborphan/usr/share/locale/eu/LC_MESSAGES/deborphan.mo
+installing fr.gmo as /dev/shm/deborphan/deborphan/debian/deborphan/usr/share/locale/fr/LC_MESSAGES/deborphan.mo
+installing ja.gmo as /dev/shm/deborphan/deborphan/debian/deborphan/usr/share/locale/ja/LC_MESSAGES/deborphan.mo
+installing nl.gmo as /dev/shm/deborphan/deborphan/debian/deborphan/usr/share/locale/nl/LC_MESSAGES/deborphan.mo
+installing pl.gmo as /dev/shm/deborphan/deborphan/debian/deborphan/usr/share/locale/pl/LC_MESSAGES/deborphan.mo
+installing ru.gmo as /dev/shm/deborphan/deborphan/debian/deborphan/usr/share/locale/ru/LC_MESSAGES/deborphan.mo
+installing pt.gmo as /dev/shm/deborphan/deborphan/debian/deborphan/usr/share/locale/pt/LC_MESSAGES/deborphan.mo
+installing it.gmo as /dev/shm/deborphan/deborphan/debian/deborphan/usr/share/locale/it/LC_MESSAGES/deborphan.mo
+installing vi.gmo as /dev/shm/deborphan/deborphan/debian/deborphan/usr/share/locale/vi/LC_MESSAGES/deborphan.mo
+if test "deborphan" = "gettext-tools"; then \
+  /bin/mkdir -p /dev/shm/deborphan/deborphan/debian/deborphan/usr/share/gettext/po; \
+  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+    /usr/bin/install -m 644 ./$file \
+		    /dev/shm/deborphan/deborphan/debian/deborphan/usr/share/gettext/po/$file; \
+  done; \
+  for file in Makevars; do \
+    rm -f /dev/shm/deborphan/deborphan/debian/deborphan/usr/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/po'
+Making install in doc
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/doc'
+Making install in po
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/doc/po'
+make[5]: Entering directory '/dev/shm/deborphan/deborphan/doc/po'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/dev/shm/deborphan/deborphan/doc/po'
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/doc/po'
+Making install in fr
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/doc/fr'
+make[5]: Entering directory '/dev/shm/deborphan/deborphan/doc/fr'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/fr/man1'
+ /bin/mkdir -p '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/fr/man8'
+ /usr/bin/install -m 644 deborphan.1 '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/fr/man1'
+ /usr/bin/install -m 644 orphaner.8 editkeep.8 '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/fr/man8'
+make[5]: Leaving directory '/dev/shm/deborphan/deborphan/doc/fr'
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/doc/fr'
+Making install in pl
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/doc/pl'
+make[5]: Entering directory '/dev/shm/deborphan/deborphan/doc/pl'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/pl/man1'
+ /bin/mkdir -p '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/pl/man8'
+ /usr/bin/install -m 644 deborphan.1 '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/pl/man1'
+ /usr/bin/install -m 644 orphaner.8 editkeep.8 '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/pl/man8'
+make[5]: Leaving directory '/dev/shm/deborphan/deborphan/doc/pl'
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/doc/pl'
+Making install in es
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/doc/es'
+make[5]: Entering directory '/dev/shm/deborphan/deborphan/doc/es'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/es/man1'
+ /bin/mkdir -p '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/es/man8'
+ /usr/bin/install -m 644 orphaner.8 editkeep.8 '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/es/man8'
+ /usr/bin/install -m 644 deborphan.1 '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/es/man1'
+make[5]: Leaving directory '/dev/shm/deborphan/deborphan/doc/es'
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/doc/es'
+Making install in de
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/doc/de'
+make[5]: Entering directory '/dev/shm/deborphan/deborphan/doc/de'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/de/man1'
+ /bin/mkdir -p '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/de/man8'
+ /usr/bin/install -m 644 deborphan.1 '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/de/man1'
+ /usr/bin/install -m 644 orphaner.8 editkeep.8 '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/de/man8'
+make[5]: Leaving directory '/dev/shm/deborphan/deborphan/doc/de'
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/doc/de'
+Making install in pt
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/doc/pt'
+make[5]: Entering directory '/dev/shm/deborphan/deborphan/doc/pt'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/pt/man1'
+ /bin/mkdir -p '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/pt/man8'
+ /usr/bin/install -m 644 deborphan.1 '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/pt/man1'
+ /usr/bin/install -m 644 orphaner.8 editkeep.8 '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/pt/man8'
+make[5]: Leaving directory '/dev/shm/deborphan/deborphan/doc/pt'
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/doc/pt'
+Making install in nl
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/doc/nl'
+make[5]: Entering directory '/dev/shm/deborphan/deborphan/doc/nl'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/nl/man1'
+ /bin/mkdir -p '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/nl/man8'
+ /usr/bin/install -m 644 deborphan.1 '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/nl/man1'
+ /usr/bin/install -m 644 orphaner.8 editkeep.8 '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/nl/man8'
+make[5]: Leaving directory '/dev/shm/deborphan/deborphan/doc/nl'
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/doc/nl'
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/doc'
+make[5]: Entering directory '/dev/shm/deborphan/deborphan/doc'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/man1'
+ /bin/mkdir -p '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/man8'
+ /usr/bin/install -m 644 deborphan.1 '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/man1'
+ /usr/bin/install -m 644 orphaner.8 editkeep.8 '/dev/shm/deborphan/deborphan/debian/deborphan/usr/share/man/man8'
+make[5]: Leaving directory '/dev/shm/deborphan/deborphan/doc'
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/doc'
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/doc'
+Making install in include
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/include'
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/include'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/include'
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/include'
+Making install in util
+make[3]: Entering directory '/dev/shm/deborphan/deborphan/util'
+make[4]: Entering directory '/dev/shm/deborphan/deborphan/util'
+make[4]: Nothing to be done for 'install-data-am'.
+ /bin/mkdir -p '/dev/shm/deborphan/deborphan/debian/deborphan/usr/sbin'
+ /usr/bin/install orphaner.sh '/dev/shm/deborphan/deborphan/debian/deborphan/usr/sbin'
+make  install-exec-hook
+make[5]: Entering directory '/dev/shm/deborphan/deborphan/util'
+mv /dev/shm/deborphan/deborphan/debian/deborphan/usr/sbin/orphaner.sh /dev/shm/deborphan/deborphan/debian/deborphan/usr/sbin/orphaner
+ln -s orphaner /dev/shm/deborphan/deborphan/debian/deborphan/usr/sbin/editkeep
+make[5]: Leaving directory '/dev/shm/deborphan/deborphan/util'
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan/util'
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan/util'
+make[3]: Entering directory '/dev/shm/deborphan/deborphan'
+make[4]: Entering directory '/dev/shm/deborphan/deborphan'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/dev/shm/deborphan/deborphan'
+make[3]: Leaving directory '/dev/shm/deborphan/deborphan'
+make[2]: Leaving directory '/dev/shm/deborphan/deborphan'
+# bash complete file
+install -d debian/deborphan/usr/share/bash-completion/completions/
+install -m 644 debian/bash-complete debian/deborphan/usr/share/bash-completion/completions/deborphan
+make[1]: Leaving directory '/dev/shm/deborphan/deborphan'
+   dh_installdocs
+	install -d debian/.debhelper/generated/deborphan
+	install -p -m0644 debian/copyright debian/deborphan/usr/share/doc/deborphan/copyright
+   dh_installchangelogs
+	install -p -m0644 debian/changelog debian/deborphan/usr/share/doc/deborphan/changelog
+   dh_installman
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/man8/editkeep.8 > debian/deborphan/usr/share/man/man8/editkeep.8.dh-new
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/nl/man1/deborphan.1 > debian/deborphan/usr/share/man/nl/man1/deborphan.1.dh-new
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/de/man8/orphaner.8 > debian/deborphan/usr/share/man/de/man8/orphaner.8.dh-new
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/pl/man8/editkeep.8 > debian/deborphan/usr/share/man/pl/man8/editkeep.8.dh-new
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/fr/man1/deborphan.1 > debian/deborphan/usr/share/man/fr/man1/deborphan.1.dh-new
+	mv debian/deborphan/usr/share/man/man8/editkeep.8.dh-new debian/deborphan/usr/share/man/man8/editkeep.8
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/man8/orphaner.8 > debian/deborphan/usr/share/man/man8/orphaner.8.dh-new
+	mv debian/deborphan/usr/share/man/de/man8/orphaner.8.dh-new debian/deborphan/usr/share/man/de/man8/orphaner.8
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/de/man1/deborphan.1 > debian/deborphan/usr/share/man/de/man1/deborphan.1.dh-new
+	mv debian/deborphan/usr/share/man/nl/man1/deborphan.1.dh-new debian/deborphan/usr/share/man/nl/man1/deborphan.1
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/pt/man8/editkeep.8 > debian/deborphan/usr/share/man/pt/man8/editkeep.8.dh-new
+	mv debian/deborphan/usr/share/man/pl/man8/editkeep.8.dh-new debian/deborphan/usr/share/man/pl/man8/editkeep.8
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/pl/man8/orphaner.8 > debian/deborphan/usr/share/man/pl/man8/orphaner.8.dh-new
+	mv debian/deborphan/usr/share/man/fr/man1/deborphan.1.dh-new debian/deborphan/usr/share/man/fr/man1/deborphan.1
+	chmod 0644 -- debian/deborphan/usr/share/man/fr/man1/deborphan.1
+	mv debian/deborphan/usr/share/man/man8/orphaner.8.dh-new debian/deborphan/usr/share/man/man8/orphaner.8
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/man1/deborphan.1 > debian/deborphan/usr/share/man/man1/deborphan.1.dh-new
+	mv debian/deborphan/usr/share/man/pt/man8/editkeep.8.dh-new debian/deborphan/usr/share/man/pt/man8/editkeep.8
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/pt/man8/orphaner.8 > debian/deborphan/usr/share/man/pt/man8/orphaner.8.dh-new
+	mv debian/deborphan/usr/share/man/pl/man8/orphaner.8.dh-new debian/deborphan/usr/share/man/pl/man8/orphaner.8
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/pl/man1/deborphan.1 > debian/deborphan/usr/share/man/pl/man1/deborphan.1.dh-new
+	mv debian/deborphan/usr/share/man/de/man1/deborphan.1.dh-new debian/deborphan/usr/share/man/de/man1/deborphan.1
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/es/man8/editkeep.8 > debian/deborphan/usr/share/man/es/man8/editkeep.8.dh-new
+	mv debian/deborphan/usr/share/man/man1/deborphan.1.dh-new debian/deborphan/usr/share/man/man1/deborphan.1
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/nl/man8/editkeep.8 > debian/deborphan/usr/share/man/nl/man8/editkeep.8.dh-new
+	mv debian/deborphan/usr/share/man/pt/man8/orphaner.8.dh-new debian/deborphan/usr/share/man/pt/man8/orphaner.8
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/pt/man1/deborphan.1 > debian/deborphan/usr/share/man/pt/man1/deborphan.1.dh-new
+	mv debian/deborphan/usr/share/man/pl/man1/deborphan.1.dh-new debian/deborphan/usr/share/man/pl/man1/deborphan.1
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/fr/man8/editkeep.8 > debian/deborphan/usr/share/man/fr/man8/editkeep.8.dh-new
+	mv debian/deborphan/usr/share/man/es/man8/editkeep.8.dh-new debian/deborphan/usr/share/man/es/man8/editkeep.8
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/es/man8/orphaner.8 > debian/deborphan/usr/share/man/es/man8/orphaner.8.dh-new
+	mv debian/deborphan/usr/share/man/nl/man8/editkeep.8.dh-new debian/deborphan/usr/share/man/nl/man8/editkeep.8
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/nl/man8/orphaner.8 > debian/deborphan/usr/share/man/nl/man8/orphaner.8.dh-new
+	mv debian/deborphan/usr/share/man/pt/man1/deborphan.1.dh-new debian/deborphan/usr/share/man/pt/man1/deborphan.1
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/de/man8/editkeep.8 > debian/deborphan/usr/share/man/de/man8/editkeep.8.dh-new
+	mv debian/deborphan/usr/share/man/fr/man8/editkeep.8.dh-new debian/deborphan/usr/share/man/fr/man8/editkeep.8
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/fr/man8/orphaner.8 > debian/deborphan/usr/share/man/fr/man8/orphaner.8.dh-new
+	mv debian/deborphan/usr/share/man/es/man8/orphaner.8.dh-new debian/deborphan/usr/share/man/es/man8/orphaner.8
+	man -l --recode UTF-8 ./debian/deborphan/usr/share/man/es/man1/deborphan.1 > debian/deborphan/usr/share/man/es/man1/deborphan.1.dh-new
+	mv debian/deborphan/usr/share/man/nl/man8/orphaner.8.dh-new debian/deborphan/usr/share/man/nl/man8/orphaner.8
+	chmod 0644 -- debian/deborphan/usr/share/man/man8/editkeep.8 debian/deborphan/usr/share/man/man8/orphaner.8 debian/deborphan/usr/share/man/man1/deborphan.1 debian/deborphan/usr/share/man/nl/man8/editkeep.8 debian/deborphan/usr/share/man/nl/man8/orphaner.8
+	mv debian/deborphan/usr/share/man/de/man8/editkeep.8.dh-new debian/deborphan/usr/share/man/de/man8/editkeep.8
+	chmod 0644 -- debian/deborphan/usr/share/man/nl/man1/deborphan.1 debian/deborphan/usr/share/man/pt/man8/editkeep.8 debian/deborphan/usr/share/man/pt/man8/orphaner.8 debian/deborphan/usr/share/man/pt/man1/deborphan.1 debian/deborphan/usr/share/man/de/man8/editkeep.8
+	mv debian/deborphan/usr/share/man/fr/man8/orphaner.8.dh-new debian/deborphan/usr/share/man/fr/man8/orphaner.8
+	chmod 0644 -- debian/deborphan/usr/share/man/pl/man8/editkeep.8 debian/deborphan/usr/share/man/pl/man8/orphaner.8 debian/deborphan/usr/share/man/pl/man1/deborphan.1 debian/deborphan/usr/share/man/fr/man8/editkeep.8 debian/deborphan/usr/share/man/fr/man8/orphaner.8
+	mv debian/deborphan/usr/share/man/es/man1/deborphan.1.dh-new debian/deborphan/usr/share/man/es/man1/deborphan.1
+	chmod 0644 -- debian/deborphan/usr/share/man/de/man8/orphaner.8 debian/deborphan/usr/share/man/de/man1/deborphan.1 debian/deborphan/usr/share/man/es/man8/editkeep.8 debian/deborphan/usr/share/man/es/man8/orphaner.8 debian/deborphan/usr/share/man/es/man1/deborphan.1
+   dh_installmenu
+	install -d debian/deborphan/usr/share/menu
+	install -p -m0644 debian/menu debian/deborphan/usr/share/menu/deborphan
+	[META] Append autosnippet "postinst-menu" to postinst [debian/deborphan.postinst.debhelper]
+	[META] Append autosnippet "postrm-menu" to postrm [debian/deborphan.postrm.debhelper]
+   dh_perl
+   dh_link
+	rm -f debian/deborphan/usr/sbin/editkeep
+	ln -s orphaner debian/deborphan/usr/sbin/editkeep
+   dh_strip_nondeterminism
+	Using 1544362295 as canonical time
+	Normalizing debian/deborphan/usr/share/locale/vi/LC_MESSAGES/deborphan.mo using File::StripNondeterminism::handlers::gettext
+	Normalizing debian/deborphan/usr/share/locale/it/LC_MESSAGES/deborphan.mo using File::StripNondeterminism::handlers::gettext
+	Normalizing debian/deborphan/usr/share/locale/pt/LC_MESSAGES/deborphan.mo using File::StripNondeterminism::handlers::gettext
+	Normalizing debian/deborphan/usr/share/locale/ru/LC_MESSAGES/deborphan.mo using File::StripNondeterminism::handlers::gettext
+	Normalizing debian/deborphan/usr/share/locale/pl/LC_MESSAGES/deborphan.mo using File::StripNondeterminism::handlers::gettext
+	Normalizing debian/deborphan/usr/share/locale/nl/LC_MESSAGES/deborphan.mo using File::StripNondeterminism::handlers::gettext
+	Normalizing debian/deborphan/usr/share/locale/ja/LC_MESSAGES/deborphan.mo using File::StripNondeterminism::handlers::gettext
+	Normalizing debian/deborphan/usr/share/locale/fr/LC_MESSAGES/deborphan.mo using File::StripNondeterminism::handlers::gettext
+	Normalizing debian/deborphan/usr/share/locale/eu/LC_MESSAGES/deborphan.mo using File::StripNondeterminism::handlers::gettext
+	Normalizing debian/deborphan/usr/share/locale/es/LC_MESSAGES/deborphan.mo using File::StripNondeterminism::handlers::gettext
+	Normalizing debian/deborphan/usr/share/locale/de/LC_MESSAGES/deborphan.mo using File::StripNondeterminism::handlers::gettext
+	Normalizing debian/deborphan/usr/share/locale/da/LC_MESSAGES/deborphan.mo using File::StripNondeterminism::handlers::gettext
+	Normalizing debian/deborphan/usr/share/locale/cs/LC_MESSAGES/deborphan.mo using File::StripNondeterminism::handlers::gettext
+	Normalizing debian/deborphan/usr/share/locale/ca/LC_MESSAGES/deborphan.mo using File::StripNondeterminism::handlers::gettext
+   dh_compress
+	cd debian/deborphan
+	chmod a-x usr/share/doc/deborphan/changelog usr/share/man/de/man1/deborphan.1 usr/share/man/de/man8/editkeep.8 usr/share/man/de/man8/orphaner.8 usr/share/man/es/man1/deborphan.1 usr/share/man/es/man8/editkeep.8 usr/share/man/es/man8/orphaner.8 usr/share/man/fr/man1/deborphan.1 usr/share/man/fr/man8/editkeep.8 usr/share/man/fr/man8/orphaner.8 usr/share/man/man1/deborphan.1 usr/share/man/man8/editkeep.8 usr/share/man/man8/orphaner.8 usr/share/man/nl/man1/deborphan.1 usr/share/man/nl/man8/editkeep.8 usr/share/man/nl/man8/orphaner.8 usr/share/man/pl/man1/deborphan.1 usr/share/man/pl/man8/editkeep.8 usr/share/man/pl/man8/orphaner.8 usr/share/man/pt/man1/deborphan.1 usr/share/man/pt/man8/editkeep.8 usr/share/man/pt/man8/orphaner.8
+	gzip -9nf usr/share/doc/deborphan/changelog usr/share/man/de/man1/deborphan.1 usr/share/man/de/man8/editkeep.8 usr/share/man/de/man8/orphaner.8 usr/share/man/es/man1/deborphan.1 usr/share/man/es/man8/editkeep.8 usr/share/man/es/man8/orphaner.8 usr/share/man/fr/man1/deborphan.1 usr/share/man/fr/man8/editkeep.8 usr/share/man/fr/man8/orphaner.8 usr/share/man/man1/deborphan.1 usr/share/man/man8/editkeep.8 usr/share/man/man8/orphaner.8 usr/share/man/nl/man1/deborphan.1 usr/share/man/nl/man8/editkeep.8 usr/share/man/nl/man8/orphaner.8 usr/share/man/pl/man1/deborphan.1 usr/share/man/pl/man8/editkeep.8 usr/share/man/pl/man8/orphaner.8 usr/share/man/pt/man1/deborphan.1 usr/share/man/pt/man8/editkeep.8 usr/share/man/pt/man8/orphaner.8
+	cd '/dev/shm/deborphan/deborphan'
+   dh_fixperms
+	find debian/deborphan ! -type l -a -true -a -true -print0 2>/dev/null | xargs -0r chmod go=rX,u+rw,a-s
+	find debian/deborphan/usr/share/doc -type f -a -true -a ! -regex 'debian/deborphan/usr/share/doc/[^/]*/examples/.*' -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/deborphan/usr/share/doc -type d -a -true -a -true -print0 2>/dev/null | xargs -0r chmod 0755
+	find debian/deborphan/usr/share/man -type f -a -true -a -true -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/deborphan -type f \( -name '*.so.*' -o -name '*.so' -o -name '*.la' -o -name '*.a' -o -name '*.js' -o -name '*.css' -o -name '*.scss' -o -name '*.sass' -o -name '*.jpeg' -o -name '*.jpg' -o -name '*.png' -o -name '*.gif' -o -name '*.cmxs' \) -a -true -a -true -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/deborphan/usr/bin debian/deborphan/usr/sbin -type f -a -true -a -true -print0 2>/dev/null | xargs -0r chmod a+x
+   dh_missing
+   dh_strip
+	install -d debian/.debhelper/deborphan/dbgsym-root/usr/lib/debug/.build-id/07
+	objcopy --only-keep-debug --compress-debug-sections debian/deborphan/usr/bin/deborphan debian/.debhelper/deborphan/dbgsym-root/usr/lib/debug/.build-id/07/f15179b644407478a9ea6bab4fc4bae6f08b32.debug
+objcopy: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.31.1-system.so)
+	chmod 0644 -- debian/.debhelper/deborphan/dbgsym-root/usr/lib/debug/.build-id/07/f15179b644407478a9ea6bab4fc4bae6f08b32.debug
+	strip --remove-section=.comment --remove-section=.note debian/deborphan/usr/bin/deborphan
+strip: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.31.1-system.so)
+	objcopy --add-gnu-debuglink debian/.debhelper/deborphan/dbgsym-root/usr/lib/debug/.build-id/07/f15179b644407478a9ea6bab4fc4bae6f08b32.debug debian/deborphan/usr/bin/deborphan
+objcopy: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.31.1-system.so)
+	install -d debian/.debhelper/deborphan/dbgsym-root/usr/share/doc
+	ln -s deborphan debian/.debhelper/deborphan/dbgsym-root/usr/share/doc/deborphan-dbgsym
+   dh_makeshlibs
+	rm -f debian/deborphan/DEBIAN/shlibs
+   dh_shlibdeps
+	install -d debian/deborphan/DEBIAN
+	dpkg-shlibdeps -Tdebian/deborphan.substvars debian/deborphan/usr/bin/deborphan
+objdump: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.31.1-system.so)
+objdump: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.31.1-system.so)
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+objdump: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.31.1-system.so)
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+   dh_installdeb
+	cp -f debian/postinst debian/deborphan/DEBIAN/postinst
+	perl -p -i -e "s~#DEBHELPER#~qx{cat debian/deborphan.postinst.debhelper}~eg" debian/deborphan/DEBIAN/postinst
+	chmod 0755 -- debian/deborphan/DEBIAN/postinst
+	cp -f debian/postrm debian/deborphan/DEBIAN/postrm
+	perl -p -i -e "s~#DEBHELPER#~qx{cat debian/deborphan.postrm.debhelper}~eg" debian/deborphan/DEBIAN/postrm
+	chmod 0755 -- debian/deborphan/DEBIAN/postrm
+   dh_gencontrol
+	echo misc:Depends= >> debian/deborphan.substvars
+	echo misc:Pre-Depends= >> debian/deborphan.substvars
+	install -d debian/.debhelper/deborphan/dbgsym-root/DEBIAN
+	dpkg-gencontrol -pdeborphan -ldebian/changelog -Tdebian/deborphan.substvars -Pdebian/.debhelper/deborphan/dbgsym-root -UPre-Depends -URecommends -USuggests -UEnhances -UProvides -UEssential -UConflicts -DPriority=optional -UHomepage -UImportant -DAuto-Built-Package=debug-symbols -DPackage=deborphan-dbgsym "-DDepends=deborphan (= \${binary:Version})" "-DDescription=debug symbols for deborphan" -DBuild-Ids=07f15179b644407478a9ea6bab4fc4bae6f08b32 -DSection=debug -UMulti-Arch -UReplaces -UBreaks
+	chmod 0644 -- debian/.debhelper/deborphan/dbgsym-root/DEBIAN/control
+	dpkg-gencontrol -pdeborphan -ldebian/changelog -Tdebian/deborphan.substvars -Pdebian/deborphan -UMulti-Arch
+	chmod 0644 -- debian/deborphan/DEBIAN/control
+   dh_md5sums
+	cd debian/deborphan >/dev/null && xargs -r0 md5sum | perl -pe 'if (s@^\\@@) { s/\\\\/\\/g; }' > DEBIAN/md5sums
+	chmod 0644 -- debian/deborphan/DEBIAN/md5sums
+	cd debian/.debhelper/deborphan/dbgsym-root >/dev/null && xargs -r0 md5sum | perl -pe 'if (s@^\\@@) { s/\\\\/\\/g; }' > DEBIAN/md5sums
+	chmod 0644 -- debian/.debhelper/deborphan/dbgsym-root/DEBIAN/md5sums
+   dh_builddeb
+	dpkg-deb --root-owner-group --build debian/deborphan ..
+	dpkg-deb --root-owner-group --build debian/.debhelper/deborphan/dbgsym-root ..
+dpkg-deb: building package 'deborphan' in '../deborphan_1.7.31_amd64.deb'.
+dpkg-deb: building package 'deborphan-dbgsym' in '../deborphan-dbgsym_1.7.31_amd64.deb'.
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../deborphan_1.7.31_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source -Zxz -z1 --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian deborphan_1.7.31_amd64.changes ...
+strings: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.31.1-system.so)
+/usr/bin/ar: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.31.1-system.so)
+/usr/bin/ar: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.31.1-system.so)
+W: deborphan: hardening-no-pie usr/bin/deborphan
+/usr/bin/ar: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.31.1-system.so)
+/usr/bin/ar: /lib/x86_64-linux-gnu/libz.so.1: no version information available (required by /usr/lib/x86_64-linux-gnu/libbfd-2.31.1-system.so)
+W: deborphan: uses-dpkg-database-directly usr/bin/deborphan
+Finished running lintian.

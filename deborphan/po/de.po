@@ -1,0 +1,450 @@
+# German translations for deborphan package.
+# Copyright (C) 2004 THE deborphan'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the deborphan package.
+# Florian Ernst <florian_ernst@gmx.net>, 2004.
+# Helge Kreutzmann <debian@helgefjell.de>, 2008, 2010, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: deborphan 1.7.30\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-19 03:17+0100\n"
+"PO-Revision-Date: 2018-12-09 08:21+0100\n"
+"Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
+"Language-Team: de <debian-l10n-german@lists.debian.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/exit.c:53
+#, c-format
+msgid ""
+"\n"
+"The following options are available:\n"
+msgstr ""
+"\n"
+"Die folgenden Optionen sind verfügbar:\n"
+
+#: src/exit.c:56
+#, c-format
+msgid "-h        This help.\n"
+msgstr "-h        Diese Hilfe.\n"
+
+#: src/exit.c:59
+#, c-format
+msgid "-f FILE   Use FILE as statusfile.\n"
+msgstr "-f DATEI  Benutzt DATEI als Statusdatei.\n"
+
+#: src/exit.c:62
+#, c-format
+msgid "-v        Version information.\n"
+msgstr "-v        Versions-Informationen.\n"
+
+#: src/exit.c:66
+#, c-format
+msgid "-d        Show dependencies for packages that have them.\n"
+msgstr "-d        Zeigt Abhängigkeiten für Pakete, die welche haben.\n"
+
+#: src/exit.c:69
+#, c-format
+msgid "-P        Show priority of packages found.\n"
+msgstr "-P        Zeigt die Prioritäten der gefundenen Pakete.\n"
+
+#: src/exit.c:72
+#, c-format
+msgid "-s        Show the sections the packages are in.\n"
+msgstr "-s        Zeigt die Bereiche, in welchen die Pakete sind.\n"
+
+#: src/exit.c:74
+#, c-format
+msgid "--no-show-section           Do not show sections.\n"
+msgstr "--no-show-section           Zeigt die Bereiche nicht an.\n"
+
+#: src/exit.c:77
+#, c-format
+msgid "-z        Show installed size of packages found.\n"
+msgstr "-z        Zeigt den Platzverbrauch der gefundenen Pakete.\n"
+
+#: src/exit.c:81
+#, c-format
+msgid "-a        Compare all packages, not just libs.\n"
+msgstr "-a        Vergleicht alle Pakete, nicht nur Bibliotheken.\n"
+
+#: src/exit.c:84
+#, c-format
+msgid "-e LIST   Work as if packages in LIST were not installed.\n"
+msgstr ""
+"-e LISTE  Funktioniert, als ob Pakete in LISTE nicht\n"
+"                            installiert wären.\n"
+
+#: src/exit.c:87
+#, c-format
+msgid "-H        Ignore hold flags.\n"
+msgstr "-H        Ignoriert »hold«-Markierungen.\n"
+
+#: src/exit.c:90
+#, c-format
+msgid "Disable checks for `recommends'.\n"
+msgstr "Prüfungen auf »Recommends« abschalten.\n"
+
+#: src/exit.c:92
+#, c-format
+msgid "Disable checks for `suggests'.\n"
+msgstr "Prüfungen auf »Suggests« abschalten.\n"
+
+#: src/exit.c:95
+#, c-format
+msgid "-n        Disable checks for `recommends' and `suggests'.\n"
+msgstr "-n        Prüft nicht auf »Recommends« und »Suggests«.\n"
+
+#: src/exit.c:98
+#, c-format
+msgid "-p PRIOR  Select only packages with priority >= PRIOR.\n"
+msgstr "-p PRIO   Wählt nur Pakete mit einer Priorität >= PRIO aus.\n"
+
+#: src/exit.c:101
+#, c-format
+msgid "--find-config               Find \"orphaned\" configuration files.\n"
+msgstr ""
+"--find-config               Findet »verwaiste« Konfigurationsdateien.\n"
+
+#: src/exit.c:105
+#, c-format
+msgid "--libdevel                  Also search in section \"libdevel\".\n"
+msgstr "--libdevel                  Sucht zusätzlich im Bereich »libdevel«.\n"
+
+#: src/exit.c:109
+#, c-format
+msgid "-A PKGS.. Never report PKGS.\n"
+msgstr "-A PKT..  Niemals PKT melden.\n"
+
+#: src/exit.c:112
+#, c-format
+msgid "-k FILE   Use FILE to get/store info about kept packages.\n"
+msgstr ""
+"-k DATEI  Benutzt DATEI als Informationsspeicher für zu\n"
+"                            behaltende Pakete.\n"
+
+#: src/exit.c:115
+#, c-format
+msgid "-L        List the packages that are never reported.\n"
+msgstr "-L        Listet die Pakete auf, die nie gemeldet werden.\n"
+
+#: src/exit.c:118
+#, c-format
+msgid "-R PKGS.. Remove PKGS from the \"keep\" file.\n"
+msgstr "-R PKGS.. Entfernt PKGS aus der »keep«-Datei.\n"
+
+#: src/exit.c:121
+#, c-format
+msgid "-Z        Remove all packages from the \"keep\" file.\n"
+msgstr "-Z        Entfernt alle Pakete aus der »keep«-Datei.\n"
+
+#: src/exit.c:125
+#, c-format
+msgid "--df-keep                   Read debfoster's \"keepers\" file.\n"
+msgstr "--df-keep                   Liest die »keepers«-Datei von debfoster.\n"
+
+#: src/exit.c:127
+#, c-format
+msgid "--no-df-keep                Do not read debfoster's \"keepers\" file.\n"
+msgstr ""
+"--no-df-keep                Liest nicht die »keepers«-Datei von debfoster.\n"
+
+#: src/exit.c:133
+#, c-format
+msgid "--guess-common              Try to report common packages.\n"
+msgstr "--guess-common              Versucht, allgemeine Pakete zu melden.\n"
+
+#: src/exit.c:134
+#, c-format
+msgid "--guess-data                Try to report data packages.\n"
+msgstr "--guess-data                Versucht, Datenpakete zu melden.\n"
+
+#: src/exit.c:136
+#, c-format
+msgid "--guess-debug               Try to report debugging libraries.\n"
+msgstr ""
+"--guess-debug               Versucht, Debugging-Bibliotheken zu melden.\n"
+
+#: src/exit.c:138
+#, c-format
+msgid "--guess-dev                 Try to report development packages.\n"
+msgstr "--guess-dev                 Versucht, Entwicklerpakete zu melden.\n"
+
+#: src/exit.c:140
+#, c-format
+msgid "--guess-doc                 Try to report documentation packages.\n"
+msgstr ""
+"--guess-doc                 Versucht, Dokumentationspakete zu melden.\n"
+
+#: src/exit.c:141
+#, c-format
+msgid "--guess-dummy               Try to report dummy packages.\n"
+msgstr "--guess-dummy               Versucht, Pseudopakete zu melden.\n"
+
+#: src/exit.c:142
+#, c-format
+msgid "--guess-java                Try to report java libraries.\n"
+msgstr "--guess-mono                Versucht, Java-Bibliotheken zu melden.\n"
+
+#: src/exit.c:143
+#, c-format
+msgid "--guess-kernel              Try to report kernel modules.\n"
+msgstr "--guess-kernel              Versucht, Kernelmodule zu melden.\n"
+
+#: src/exit.c:145
+#, c-format
+msgid "--guess-interpreters        Try to report interpreter libraries.\n"
+msgstr ""
+"--guess-interpreters        Versucht, Interpreter-Bibliotheken zu melden.\n"
+
+#: src/exit.c:146
+#, c-format
+msgid "--guess-mono                Try to report mono libraries.\n"
+msgstr "--guess-mono                Versucht, Mono-Bibliotheken zu melden.\n"
+
+#: src/exit.c:147
+#, c-format
+msgid "--guess-perl                Try to report perl libraries.\n"
+msgstr "--guess-perl                Versucht, Perl-Bibliotheken zu melden.\n"
+
+#: src/exit.c:148
+#, c-format
+msgid "--guess-pike                Try to report pike libraries.\n"
+msgstr "--guess-pike                Versucht, Pike-Bibliotheken zu melden.\n"
+
+#: src/exit.c:149
+#, c-format
+msgid "--guess-python              Try to report python libraries.\n"
+msgstr "--guess-python              Versucht, Python-Bibliotheken zu melden.\n"
+
+#: src/exit.c:150
+#, c-format
+msgid "--guess-ruby                Try to report ruby libraries.\n"
+msgstr "--guess-ruby                Versucht, Ruby-Bibliotheken zu melden.\n"
+
+#: src/exit.c:152
+#, c-format
+msgid ""
+"--guess-section             Try to report libraries in wrong sections.\n"
+msgstr ""
+"--guess-section             Versucht, Bibliotheken in falschen Bereichen zu\n"
+"                            melden.\n"
+
+#: src/exit.c:155
+#, c-format
+msgid "--guess-all                 Try all of the above.\n"
+msgstr "--guess-all                 Versucht alles oben genannte.\n"
+
+#: src/exit.c:156
+#, c-format
+msgid "--guess-only                Use --guess options only.\n"
+msgstr "--guess-only                Verwendet nur Optionen --guess.\n"
+
+#: src/exit.c:158
+#, c-format
+msgid ""
+"\n"
+"See also: deborphan(1), orphaner(8)"
+msgstr ""
+"\n"
+"Siehe auch: deborphan(1), orphaner(8)"
+
+#: src/exit.c:163
+#, c-format
+msgid "%s %s - Find packages without other packages depending on them\n"
+msgstr "%s %s - Findet Pakete, von denen keine anderen Pakete abhängen\n"
+
+#: src/exit.c:169
+#, c-format
+msgid ""
+"Distributed under the terms of the MIT License, see the file COPYING\n"
+"provided in this package, or /usr/share/doc/deborphan/copyright on a\n"
+"Debian system for details.\n"
+msgstr ""
+"Vertrieben under den Bedingungen der MIT-Liznez, siehe die in diesem Paket\n"
+"bereitgestellte Datei COPYING oder /usr/share/doc/deborphan/copyright auf\n"
+"Debian-Systemen für Details.\n"
+
+#: src/exit.c:176
+#, c-format
+msgid ""
+"THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS "
+"OR\n"
+"IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n"
+"FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n"
+"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n"
+"LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING "
+"FROM,\n"
+"OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN "
+"THE\n"
+"SOFTWARE.\n"
+msgstr ""
+
+#: src/exit.c:198
+#, c-format
+msgid "Usage: %s [OPTIONS] [PACKAGE]...\n"
+msgstr "Aufruf: %s [OPTIONEN] [PAKET]…\n"
+
+#: src/exit.c:202
+msgid ""
+"The status file is in an improper state.\n"
+"One or more packages are marked as half-installed, half-configured,\n"
+"unpacked, triggers-awaited or triggers-pending. Exiting.\n"
+"\n"
+"Note: dpkg --audit may be used to find such packages.\n"
+msgstr ""
+"Die Statusdatei ist in einem ungültigen Zustand.\n"
+"Ein oder mehrere Pakete sind als halb-installiert, halb-konfiguriert,\n"
+"entpackt, Trigger-erwartend oder Trigger-anhängig markiert. Ende.\n"
+"\n"
+"Hinweis: Zum Finden solcher Pakete kann »--audit« verwandt werden.\n"
+
+#: src/exit.c:210
+msgid "Status file is probably invalid. Exiting.\n"
+msgstr "Statusdatei ist wahrscheinlich ungültig. Ende.\n"
+
+#: util/orphaner.sh:50
+#, sh-format
+msgid "Usage: %s [--help|--purge|--skip-apt] [deborphan options]"
+msgstr "Aufruf: %s [--help|--purge|--skip-apt] [deborphan-Optionen]"
+
+#: util/orphaner.sh:52
+#, no-sh-format
+msgid "See orphaner(8) and deborphan(1) for a list of valid options."
+msgstr "Siehe orphaner(8) und deborphan(1) für eine Liste gültiger Optionen."
+
+#: util/orphaner.sh:54
+#, sh-format
+msgid "Invalid basename: %s."
+msgstr "Ungültiger Programmname: %s."
+
+#: util/orphaner.sh:56
+#, sh-format
+msgid "%s: Invalid option: %s."
+msgstr "%s: Ungültige Option: %s."
+
+#: util/orphaner.sh:58
+#, sh-format
+msgid "%s: You need \"dialog\" in $PATH to run this frontend."
+msgstr "%s: Für diese Oberfläche muss sich »dialog« im $PATH befinden."
+
+#: util/orphaner.sh:60
+#, no-sh-format
+msgid "Screen too small or set $LINES and $COLUMNS."
+msgstr "Bildschirm zu klein oder setzen Sie $LINES und $COLUMNS."
+
+#: util/orphaner.sh:63
+#, no-sh-format
+msgid ""
+"Select packages that should never be recommended for removal in deborphan:"
+msgstr ""
+"Wählen Sie die Pakete, die Deborphan niemals zum Entfernen vorschlagen soll:"
+
+#: util/orphaner.sh:65
+#, no-sh-format
+msgid "Select packages for removal or cancel to quit:"
+msgstr "Wählen Sie die Pakete zum Entfernen oder »Abbrechen« zum Beenden:"
+
+#: util/orphaner.sh:68
+#, no-sh-format
+msgid "No orphaned packages found."
+msgstr "Keine verwaisten Pakete gefunden."
+
+#: util/orphaner.sh:70
+#, no-sh-format
+msgid "\"deborphan\" got removed.  Exiting."
+msgstr "»deborphan« wurde entfernt. Ende."
+
+#: util/orphaner.sh:72
+#, no-sh-format
+msgid "\"apt\" got removed.  Exiting."
+msgstr "»apt« wurde entfernt. Ende."
+
+#: util/orphaner.sh:74
+#, no-sh-format
+msgid ""
+"\"apt\" is not installed, broken dependencies found or could not open lock "
+"file, are you root?  Printing \"apt-get\" commandline and exiting:"
+msgstr ""
+"»apt« ist nicht installiert, defekte Abhängigkeiten wurden gefunden oder die "
+"Lock-Datei konnte nicht geöffnet werden. Sind Sie root? Befehlszeile von "
+"»apt-get« wird ausgegeben. Ende:"
+
+#: util/orphaner.sh:75
+msgid ""
+"Explicitly specified status file or requested calling \"apt-get\" to be "
+"skipped.  Printing \"apt-get\" commandline and exiting:"
+msgstr ""
+"Explizit angegebene Statusdatei oder Anweisung, den Aufruf von »apt-get« zu "
+"überspringen. Befehlszeile für »apt-get« wird ausgegeben. Ende:"
+
+#: util/orphaner.sh:77
+#, no-sh-format
+msgid "Removing %s"
+msgstr "%s wird entfernt"
+
+#: util/orphaner.sh:80
+#, no-sh-format
+msgid "\"deborphan\" returned with error."
+msgstr "»deborphan« gab einen Fehler zurück."
+
+#: util/orphaner.sh:82
+#, sh-format
+msgid "\"apt-get\" returned with exitcode %s."
+msgstr "»apt-get« gab den Exit-Code %s zurück."
+
+#: util/orphaner.sh:84
+#, sh-format
+msgid "\"dialog\" returned with exitcode %s."
+msgstr "»dialog« gab den Beendigungscode %s zurück."
+
+#: util/orphaner.sh:86
+#, no-sh-format
+msgid ""
+"\"apt-get\" tries to remove more packages than requested by \"orphaner\".  "
+"Exiting."
+msgstr ""
+"»apt-get« versucht mehr Pakete zu entfernen, als von »orphaner« erbeten "
+"wurde. Ende."
+
+#: util/orphaner.sh:89
+#, no-sh-format
+msgid "Simulate"
+msgstr "Simulieren"
+
+#: util/orphaner.sh:92
+#, no-sh-format
+msgid "Press enter to continue."
+msgstr "Drücken Sie die Eingabetaste, um fortzufahren."
+
+#: util/orphaner.sh:95
+#, no-sh-format
+msgid "\"find-circular\" is currently not supported by \"orphaner\".  Exiting."
+msgstr "»find-circular« wird derzeit vom »orphaner« nicht unterstützt. Ende."
+
+#~ msgid "-n        Enable checks for `recommends' and `suggests'.\n"
+#~ msgstr "-n        Prüft auf »Recommends« und »Suggests«.\n"
+
+#~ msgid ""
+#~ "%s %s - Find packages without other packages depending on them\n"
+#~ "Distributed under the terms of the Artistic License.\n"
+#~ "\n"
+#~ "THIS PACKAGE IS PROVIDED \"AS IS\" AND WITHOUT ANY EXPRESS OR\n"
+#~ "IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED\n"
+#~ "WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.\n"
+#~ msgstr ""
+#~ "%s %s - Findet Pakete, von denen keine anderen Pakete abhängen FIXME\n"
+#~ "Vertrieben unter den Bedingungen der »Artistic License«.\n"
+#~ "\n"
+#~ "DIE SOFTWARE WIRD »WIE VORLIEGEND« GELIEFERT, OHNE JEGLICHE "
+#~ "GEWÄHRLEISTUNG,\n"
+#~ "WEDER AUSDRÜCKLICH NOCH STILLSCHWEIGEND, EINSCHLIESSLICH, ABER NICHT\n"
+#~ "BESCHRÄNKT AUF, MÄNGELGEWÄHRLEISTUNGEN UND EIGNUNG FÜR EINEN BESTIMMTEN "
+#~ "ZWECK.\n"
+
+#~ msgid "-R PKGS.. Report PKGS if there are no dependencies.\n"
+#~ msgstr "-R PKT..  PKT melden, falls keine Abhängigkeiten bestehen.\n"

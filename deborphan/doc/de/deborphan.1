@@ -1,0 +1,284 @@
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH DEBORPHAN 1 "Februar 2009" deborphan 
+
+.\" Copyright (C) 2000, 2001, 2002, 2003 Cris van Pelt
+.\" Copyright (C) 2003, 2004, 2005, 2006 Peter Palfrader
+.\" Copyright (C) 2005 Daniel Déchelotte
+.\" Copyright (C) 2008 Andrej Tatarenkow
+.\" Copyright (C) 2008, 2009 Carsten Hey
+.SH NAME
+deborphan \- Finden verwaister Pakete
+.SH ÜBERSICHT
+\fBdeborphan\fP [\fIOPTION\fP] … [\fIPAKET\fP] …
+.SH BESCHREIBUNG
+\fIdeborphan\fP findet Pakete, von denen keine Pakete abhängen. Die
+Standardfunktion besteht im Suchen innerhalb der Abschnitte »libs«,
+»oldlibs« und »introspection«, um unbenutzte Bibliotheken zu ermitteln.
+.PP
+Falls er mit einer optionalen Paketliste aufgerufen wird, werden nur die
+Abhängigkeiten von diesen Paketen überprüft. Das Ergebnis wird auf der
+Standardausgabe ausgegeben, als ob die Option \fI\-\-show\-deps\fP angegeben
+worden wäre. Suche nach speziellen Paketen wird das Paket zeigen, unabhängig
+von einer Priorität. Es ist möglich, \fI\-\fP anzugeben, um eine Paketliste von
+der Standardeingabe einzulesen.
+
+.SH OPTIONEN
+.TP 
+\fB\-f, \-\-status\-file=\fP\fIDATEI\fP
+DATEI als Statusdatei verwenden.
+.TP 
+\fB\-h, \-\-help\fP
+Eine kurze Hilfemeldung anzeigen und beenden
+.TP 
+\fB\-v, \-\-version\fP
+Versionsinformationen anzeigen und beenden
+
+.\" show stuff
+.SS AUSGABEMODIFIKATOREN
+.TP 
+\fB\-d, \-\-show\-deps\fP
+Eine Liste aller installierter Pakete und die Namen der Pakte, die davon
+abhängen, anzeigen
+.TP 
+\fB\-P, \-\-show\-priority\fP
+Die Priorität der gefundenen Pakete anzeigen
+.TP 
+\fB\-s, \-\-show\-section\fP
+Den Abschnitt, in dem sich die Pakete befinden, anzeigen
+.TP 
+\fB\-\-no\-show\-section\fP
+Anzeige der Bereiche ausschalten, wenn sie standardmäßig angezeigt würden
+(siehe \fB\-\-all\-packages\fP)
+.TP 
+\fB\-z, \-\-show\-size\fP
+Die installierte Größe der gefundenen Pakete anzeigen
+
+.\" search stuff
+.SS SUCHMODIFIKATOREN
+.TP 
+\fB\-a, \-\-all\-packages\fP
+.\" , when compiled with ALL_PACKAGES_IMPLY_SECTION defined (default)
+Prüft alle Pakete, nicht nur die des Abschnitts »libs«. Am besten (falls
+überhaupt) zusammen mit \fB\-\-priority\fP verwandt. Diese Option impliziert
+\fB\-\-show\-section\fP.
+.TP 
+\fB\-e, \-\-exclude=\fP\fILISTE\fP
+Schließt die in \fILISTE\fP (eine durch Kommata getrennte Liste) aufgeführten
+Pakete aus der Prüfung aus, als ob sie in der Statusdatei nicht existierten.
+.TP 
+\fB\-H, \-\-force\-hold\fP
+Dpkg\-Schalter »halten« bei Paketen ignorieren und daher diese Pakete
+anzeigen. Ohne diese Optionen werden Pakete, bei denen der »halten«\-Schalter
+gesetzt ist, nicht angezeigt. Bitte lesen Sie \fBdpkg\fP(1) für weitere
+Informationen über Paketschalter. Aufgrund eines Fehlers in Aptitude
+(Debian\-Fehler #137771) werden »halten«\-Schalter, die von Aptitude gesetzt
+werden, von Deborphan ignoriert.
+.TP 
+\fB\-\-ignore\-suggests\fP
+.PD 0
+.TP 
+\fB\-\-ignore\-recommends\fP
+.PD
+Nicht prüfen, ob es ein Paket gibt, das das Paket »vorschlägt«
+(\fB\-\-ignore\-suggests\fP) oder »empfiehlt« (\fB\-\-ignore\-recommends\fP). Wenn beide
+Optionen zusammen gesetzt sind, verhält sich Deborphan, als ob der unten
+beschriebene »nice\-mode« abgeschaltet worden wäre.
+.TP 
+\fB\-n, \-\-nice\-mode\fP
+»nice\-mode« (netter Modus) abschalten. Nice\-mode prüft, ob es ein Paket
+gibt, das dieses Paket »vorschlägt« oder »empfiehlt«. Falls eines gefunden
+wird, wird es als »in Benutzung« markiert, oder wenn \fB\-\-show\-deps\fP verwandt
+wird, wird das Paket, dass dieses Paket vorschlägt ausgegeben, als ob es
+davon abhinge.
+.TP 
+\fB\-p, \-\-priority=\fP\fIPRIORITÄT\fP
+Zeigt nur Pakete, deren Priorität gleich oder höher als \fIPRIORITÄT\fP
+ist. \fIPRIORITÄT\fP kommt entweder aus dem Bereich 1\(en5 oder ist eines von
+\fIrequired\fP, \fIimportant\fP, \fIstandard\fP, \fIoptional\fP oder \fIextra\fP. Der
+Standardwert für \fIPRIORITÄT\fP ist 2 (\fIimportant\fP).
+.TP 
+\fB\-\-find\-config\fP
+Diese Option sucht nach nicht installierten Paketen, die noch
+Konfigurationsdateien auf dem System haben. Dies impliziert die Option
+\fB\-a\fP.
+.TP 
+\fB\-\-libdevel\fP
+Sucht auch im Abschnit »libdevel«.
+
+.\" keep file stuff
+.SS "VERWALTUNG DER HALTEDATEI"
+.TP 
+\fB\-A, \-\-add\-keep \fP\fIPK1\fP … \fIPKn\fP
+Pakete zu der Liste von Paketen hinzufügen, die unabhängig von ihrem Zustand
+nie gemeldet werden. Sie können »\fB\-\fP« für die Standardeingabe
+angeben. Beachten Sie, dass bei Paketnamen die Groß\- und Kleinschreibung
+relevant ist.
+.TP 
+\fB\-k, \-\-keep\-file=\fP\fIDATEI\fP
+\fIDATEI\fP zum Speichern der zurückgehaltenen Pakete verwenden.
+.TP 
+\fB\-L, \-\-list\-keep\fP
+Die Liste der zurückgehaltenen Pakete anzeigen.
+.TP 
+\fB\-R, \-\-del\-keep \fP\fIPK1\fP … \fIPKn\fP
+Pakete aus der Paketliste entfernen, die nie berichtet werden. Sie können
+»\fB\-\fP« zur Verwendung der Standardeingabe angeben. Falls es für dieses Paket
+keine Abhängigkeiten gibt, wird es beim nächsten Aufruf von \fIdeborphan\fP
+wieder berichtet.
+.TP 
+\fB\-Z, \-\-zero\-keep\fP
+Bereinigt die gesamte Liste der zurückgehaltenen Pakete. Die einzige Option,
+die in Kombination mit dieser Option möglich ist, ist \fB\-A\fP.
+
+
+.\" debfoster stuff - not compiled in debian
+.\" \fB\-\-df\-keep\fP
+.\" Use debfoster's keepfile, regardless of the default setting.
+.\" Can not be used if deborphan was compiled without support for debfoster.
+.\" .TP
+.\" \fB\-\-no\-df\-keep\fP
+.\" Do not use debfoster's keepfile.
+.\" .TP
+.SS RATEN
+
+.\" guessing
+.TP 
+\fB\-\-guess\-*\fP
+.PD 0
+.TP 
+\fB\-\-no\-guess\-*\fP
+.PD
+.\" See \fBGUESSING\fP below.
+.\" .SH GUESSING
+.\" .PP
+Deborphan kann versuchen, die Pakete zu erraten, die für Sie nicht mehr
+nützlich sein könnten, indem es den Paketnamen und/oder die Beschreibung
+untersucht. Es wird vorgeben, das Paket sei im Abschnitt \fImain/libs\fP und es
+so berichten, als ob es eine Bibliothek wäre. Diese Methode ist in keinster
+Weise perfekt oder sogar zuverlässig, daher passen Sie bei der Verwendung
+auf! Es ist auch möglich, Deborphan mitzuteilen, dass es z.B. alle
+Interpreter  aber nicht Perl erraten soll, indem \fB\-\-guess\-interpreters\fP
+\fB\-\-no\-guess\-perl\fP verwandt wird oder alle außer Mono durch \fB\-\-guess\-all\fP
+\fB\-\-no\-guess\-mono\fP. Bitte beachten Sie, dass die Option \fB\-\-no\-guess\-\fP nach
+der Option \fB\-\-guess\-\fP kommen muss, die es verändert. Damit wird es möglich,
+komplexere Kombinationen zu formulieren, wie alles zu raten, außer den
+Interpretern aber zusätzlich auch Perl.
+
+.PP
+Den folgenden Optionen kann \fI\-\-guess\-\fP oder (abgesehen von \fBonly\fP)
+\fI\-\-no\-guess\-\fP vorangestellt werden:
+
+.TP 
+\fBcommon\fP
+Diese Option versucht, Pakete zu finden, deren Namen auf \fI\-common\fP endet.
+
+.TP 
+\fBdata\fP
+Diese Option versucht, Pakete zu finden, deren Namen auf \fI\-data\fP endet,
+d.h. Datenpakete.
+
+.TP 
+\fBdebug\fP
+Diese Option versucht, Pakete zu finden, deren Namen auf \fI\-dbg\fP oder
+\fI\-dbgsym\fP endet, d.h. Fehlersuchbibliotheken.
+
+.TP 
+\fBdev\fP
+Diese Option versucht, Pakete zu finden, deren Namen auf \fI\-dev\fP endet,
+d.h. Entwicklungsbibliotheken. Siehe auch die Option \fB\-\-libdevel\fP.
+
+.TP 
+\fBdoc\fP
+Diese Option versucht, Pakete zu finden, deren Namen auf \fI\-doc\fP endet,
+d.h. Dokumentationspakete.
+
+.TP 
+\fBdummy\fP
+Diese Option versucht, Pakete zu finden, in deren Kurzbeschreibung \fIdummy\fP
+oder \fItransitional\fP vorkommt.
+
+.TP 
+\fBkernel\fP
+.\" Don't hyphenate the next line
+Diese Option versucht, Kernel\-Module zu finden. Es prüft auf Übereinstimmung
+mit \%\fI(\-modules|^nvidia\-kernel)\-.*[0\(en9]+\e.[0\(en9]+\e.[0\(en9]+\fP.
+
+.TP 
+\fBinterpreters\fP
+Versucht alle Interpretermodule zu finden (d.h. impliziert \fBruby\fP, \fBpike\fP,
+\fBpython\fP, \fBperl\fP und \fBmono\fP).
+
+.TP 
+\fBmono\fP
+Diese Option versucht, Mono\-Bibliotheken zu finden. Es prüft auf
+Übereinstimmung mit \fI^libmono\fP.
+
+.TP 
+\fBperl\fP
+Diese Option versucht, Perl\-Module zu finden. Es prüft auf Übereinstimmung
+mit \fI^lib.*\-perl$\fP.
+
+.TP 
+\fBpike\fP
+Diese Option versucht, Pike\-Module zu finden. Es prüft auf Übereinstimmung
+mit \fI^pike[[:digit:]]*\-\fP.
+
+.TP 
+\fBpython\fP
+Diese Option versucht, Python\-Module zu finden. Es prüft auf Übereinstimmung
+mit \fI^python[[:digit:]]*\-\fP.
+
+.TP 
+\fBruby\fP
+Diese Option versucht, Ruby\-Module zu finden. Es prüft auf Übereinstimmung
+mit \fI^lib.*\-ruby[[:digit:].]*$\fP.
+
+.TP 
+\fBsection\fP
+Diese Option versucht, Bibliotheken zu finden, die versehentlich in dem
+falschen Abschnitt abgelegt wurden. Es versucht, auf Übereinstimmung mit
+\fI^lib\fP, aber nicht falls die Endung eine der folgenden ist: \fI\-dbg\fP,
+\fI\-dbgsym\fP, \fI\-doc\fP, \fI\-perl\fP oder \fI\-dev\fP.
+
+.TP 
+\fBall\fP
+Versucht alles oben angegebene.
+
+.TP 
+\fBonly\fP
+Ignoriert den Abschnitt des Pakets komplett und prüft nur auf den Namen
+und/oder die Beschreibung. Diese Option muss zusammen mit einer oder
+mehrerer der oben aufgeführten \fB\-\-guess\fP\-Optionen verwandt werden oder
+Deborphan wird nichts anzeigen.
+
+.SH DATEIEN
+.TP 
+\fI/var/lib/dpkg/status\fP
+Status der verfügbaren Pakete. Lesen Sie den Abschnitt \fBINFORMATION ÜBER
+PAKETE\fP in der Handbuchseite von \fIdpkg\fP für weitere Informationen.
+.TP 
+\fI/var/lib/deborphan/keep\fP
+Eine durch Zeilenumbrüche getrennte Liste von zu behaltenden Paketen. Die
+Paketnamen tauchen in keiner bestimmten Reihenfolge auf.
+.SH "SIEHE AUCH"
+\fBdpkg\fP(8), \fBdselect\fP(8), \fBorphaner\fP(8), \fBeditkeep\fP(8), \fBcruft\fP(8),
+\fBxargs\fP(1)
+.SH FEHLER
+Falls Sie einen Fehler berichten, fügen Sie bitte die Datei
+\fI/var/lib/dpkg/status\fP bei. Diese würde beim Reproduzieren der Fehler
+helfen.
+.SH AUTOREN
+
+Deborphan wurde von Cris van Pelt <"Cris van Pelt"@tribe.eu.org>
+geschrieben, dann von Peter Palfrader <weasel@debian.org> betreut,
+wird aber heute von Carsten Hey <c.hey@web.de> betreut.
+
+.SH ÜBERSETZUNG
+Die deutsche Übersetzung wurde 2010,2018 von Helge Kreutzmann <debian@helgefjell.de>
+angefertigt. Diese Übersetzung ist Freie Dokumentation; lesen Sie die
+MIT License für die Kopierbedingungen.
+Es gibt KEINE HAFTUNG.

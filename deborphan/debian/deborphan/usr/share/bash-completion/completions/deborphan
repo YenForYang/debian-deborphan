@@ -1,0 +1,74 @@
+_have deborphan &&
+_deborphan()
+{
+
+  local last_item_in_list
+  local cur=$2 prev=$3
+  local options='
+    --version --help --show-deps --nice-mode --ignore-recommends
+    --ignore-suggests --print-guess-list --all-packages-pristine
+    --all-packages --show-section --no-show-section --show-arch
+    --no-show-arch --show-priority --show-size --force-hold --add-keep
+    --del-keep --list-keep --zero-keep --guess-dev --no-guess-dev
+    --guess-perl --no-guess-perl --guess-section --no-guess-section
+    --guess-all --no-guess-all --guess-debug --no-guess-debug
+    --guess-only --guess-pike --no-guess-pike --guess-python
+    --no-guess-python --guess-ruby --no-guess-ruby --guess-interpreters
+    --no-guess-interpreters --guess-dummy --no-guess-dummy
+    --guess-common --no-guess-common --guess-data --no-guess-data
+    --guess-doc --no-guess-doc --find-config --libdevel --guess-mono
+    --no-guess-mono --guess-kernel --no-guess-kernel --guess-java
+    --no-guess-java --status-file --priority --keep-file --exclude -a -d
+    -v -h -n -s -P -z -H -A -R -L -Z -p -e -f -k
+    '
+
+  COMPREPLY=()
+
+  case "$prev" in
+    # previous option asks for a file
+    -@(-status-file|f|-keep-file|k))
+      _filedir
+      return 0
+      ;;
+    # previous option asks for a package or "-"
+    # if there's more than 1 package listed, use the default below
+    # for package completion
+    # could maybe use /var/lib/deborphan/keep for -R|--del-keep
+    # but tricky if -f|--status-file is given
+    -@(-add-keep|A|-del-keep|R))
+      COMPREPLY=( $( compgen -W "$( _xfunc dpkg _comp_dpkg_installed_packages $cur ) -" -- $cur ) )
+      return 0
+      ;;
+    # previous option asks for a priority
+    -@(-priority|p))
+      COMPREPLY=( $( compgen -W '1 2 3 4 5 required important standard optional extra' -- $cur) )
+      return 0
+      ;;
+    # previous option asks for a commaseparated list of packages
+    -@(-exclude|e))
+      last_item_in_list="${cur##*,}"
+      list_before_item="${cur%$last_item_in_list}"
+      #add "," to the list and take care of already existing listed packages
+      COMPREPLY=(
+                  $(
+                   compgen -S "," -P "$list_before_item" -W "$( _xfunc dpkg _comp_dpkg_installed_packages $last_item_in_list )"
+                  )
+                )
+
+      return 0
+      ;;
+  esac
+
+  if [[ "$cur" == -* ]]; then
+    # return one of the possible options
+    COMPREPLY=( $( compgen -W "$options" -- $cur ) )
+  else
+    # return matching installed packages
+    # (default and for -A or -R package lis
+    COMPREPLY=( $( _xfunc dpkg _comp_dpkg_installed_packages $cur ) )
+  fi
+
+  return 0
+}
+[ -n "${_have:-}" ] && complete -F _deborphan $filenames deborphan
+

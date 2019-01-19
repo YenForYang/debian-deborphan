@@ -1,0 +1,289 @@
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH DEBORPHAN 1 "Februari 2009" deborphan 
+
+.\" Copyright (C) 2000, 2001, 2002, 2003 Cris van Pelt
+.\" Copyright (C) 2003, 2004, 2005, 2006 Peter Palfrader
+.\" Copyright (C) 2005 Daniel Déchelotte
+.\" Copyright (C) 2008 Andrej Tatarenkow
+.\" Copyright (C) 2008, 2009 Carsten Hey
+.SH NAAM
+deborphan \- Programma dat verweesde pakketten zoekt
+.SH OVERZICHT
+\fBdeborphan\fP [\fIOPTIE\fP] \&.\|.\|.\& [\fIPAKKET\fP] \&.\|.\|.
+.SH BESCHRIJVING
+\fIdeborphan\fP zoekt pakketten die door geen enkel pakket vereist worden,
+d.w.z. waarvan geen enkel pakket afhankelijk is. Het standaardgedrag is te
+zoeken in de secties libs, oldlibs en introspection om op het spoor te komen
+van niet\-gebruikte bibliotheken.
+.PP
+Indien het aanroepen wordt met een facultatieve lijst van pakketten,
+controleert het enkel of deze pakketten vereist worden door andere
+pakketten. Het resultaat wordt weergegeven op de standaarduitvoer, alsof de
+optie \fI\-\-show\-deps\fP opgegeven werd. Zoeken op specifieke pakketten zal het
+pakket weergeven, ongeacht de prioriteit/belangrijkheid ervan. Het is
+mogelijk om de optie \fI\-\fP op te geven, waardoor een lijst van pakketten
+gelezen wordt van standaardinvoer.
+
+.SH OPTIES
+.TP 
+\fB\-f, \-\-status\-file=\fP\fIBESTAND\fP
+Het bestand BESTAND gebruiken als statusbestand.
+.TP 
+\fB\-h, \-\-help\fP
+Een korte hulptekst weergeven en afsluiten.
+.TP 
+\fB\-v, \-\-version\fP
+Versie\-informatie weergeven en afsluiten.
+
+.\" show stuff
+.SS "DE UITVOER BEÏNVLOEDEN"
+.TP 
+\fB\-d, \-\-show\-deps\fP
+Een lijst van alle geïnstalleerde pakketten weergeven en de pakketten
+vernoemen die erop steunen (deze vereisen).
+.TP 
+\fB\-P, \-\-show\-priority\fP
+De prioriteit van de gevonden pakketten tonen.
+.TP 
+\fB\-s, \-\-show\-section\fP
+De secties waarin de pakketten zich bevinden, tonen.
+.TP 
+\fB\-\-no\-show\-section\fP
+Het tonen van de secties overschrijven als het standaardgedrag is deze weer
+te geven (zie \fB\-\-all\-packages\fP).
+.TP 
+\fB\-z, \-\-show\-size\fP
+De geïnstalleerde grootte van de gevonden pakketten weergeven.
+
+.\" search stuff
+.SS "HET ZOEKEN BEÏNVLOEDEN"
+.TP 
+\fB\-a, \-\-all\-packages\fP
+.\" , when compiled with ALL_PACKAGES_IMPLY_SECTION defined (default)
+Alle pakketten controleren in plaats van enkel die in de sectie libs. (Als
+er al gebruik gemaakt wordt van deze optie), wordt ze best gebruikt in
+combinatie met \fB\-\-priority\fP. Deze optie impliceert \fB\-\-show\-section\fP.
+.TP 
+\fB\-e, \-\-exclude=\fP\fILIJST\fP
+De pakketten die vernoemd worden in \fILIJST\fP (een lijst met komma als
+scheidingsteken) buiten de evaluatie houden, alsof ze niet bestonden in het
+statusbestand.
+.TP 
+\fB\-H, \-\-force\-hold\fP
+De dpkg\-vlag "hold" (vasthouden) op pakketten negeren en deze pakketten dus
+weergeven. Zonder deze optie worden de pakketten waarvoor de "hold"\-vlag
+gezet is, niet weergegeven. Raadpleeg \fBdpkg\fP(1) voor bijkomende informatie
+over pakketvlaggen. Ten gevolge van een bug in aptitude (Debian bug
+#137771), worden hold\-vlaggen die door aptitude gecreëerd werden, genegeerd
+door deborphan.
+.TP 
+\fB\-\-ignore\-suggests\fP
+.PD 0
+.TP 
+\fB\-\-ignore\-recommends\fP
+.PD
+Niet nagaan of er een pakket is dat het pakket `suggereert'
+(\fB\-\-ignore\-suggests\fP) of `aanbeveelt' (\fB\-\-ignore\-recommends\fP). Als beide
+opties tegelijk gebruikt worden, gedraagt deborphan zich alsof de hieronder
+behandelde `nice\-modus' uitgezet werd.
+.TP 
+\fB\-n, \-\-nice\-mode\fP
+De nice\-modus uitzetten. De nice\-modus gaat na of er een pakket is dat het
+pakket `suggereert' of `aanbeveelt'. Wanneer er een gevonden wordt, zal het
+pakket als in gebruik gemarkeerd worden, of, als \fB\-\-show\-deps\fP gebruikt
+werd, het pakket dat het pakket suggereert, weergegeven worden alsof het
+ervan afhankelijk is (het vereist).
+.TP 
+\fB\-p, \-\-priority=\fP\fIPRIORITEIT\fP
+Enkel die pakketten tonen die een prioriteit hebben die gelijk is aan of
+groter dan \fIPRIORITEIT\fP. \fIPRIORITEIT\fP moet zich bevinden binnen het bereik
+van 1\(en5, of moet één van de volgende zijn: \fIrequired\fP (vereist),
+\fIimportant\fP (belangrijk), \fIstandard\fP (standaard), \fIoptional\fP
+(facultatief), \fIextra\fP. De standaardwaarde voor \fIPRIORITEIT\fP is 2
+(\fIimportant\fP).
+.TP 
+\fB\-\-find\-config\fP
+Deze optie zoekt naar gede\-installeerde pakketten waarvan nog
+configuratiebestanden op het systeem staan. Het impliceert de optie \fB\-a\fP.
+.TP 
+\fB\-\-libdevel\fP
+Ook in de sectie "libdevel" zoeken.
+
+.\" keep file stuff
+.SS "BEHEER VAN HET KEEP\-BESTAND"
+.TP 
+\fB\-A, \-\-add\-keep \fP\fIPKT1\fP \&.\|.\|.\& \fIPKTn\fP
+Pakketten toevoegen aan de lijst met pakketten waarover nooit gerapporteerd
+wordt, wat ook hun toestand moge zijn. U kunt '\fB\-\fP' opgeven om
+standaardinvoer te gebruiken. Merk op dat namen van pakketten
+hoofdlettergevoelig zijn.
+.TP 
+\fB\-k, \-\-keep\-file=\fP\fIBESTAND\fP
+Het bestand \fIBESTAND\fP gebruiken om de lijst vastgehouden pakketten op te
+slaan.
+.TP 
+\fB\-L, \-\-list\-keep\fP
+De lijst vastgehouden pakketten tonen.
+.TP 
+\fB\-R, \-\-del\-keep \fP\fIPKT1\fP \&.\|.\|.\& \fIPKTn\fP
+Pakketten verwijderen uit de lijst van pakketten waarover nooit
+gerapporteerd wordt. U kunt '\fB\-\fP' opgeven om standaardinvoer te
+gebruiken. Wanneer de volgende keer \fIdeborphan\fP aangeroepen wordt, zal het
+pakket opnieuw gerapporteerd worden indien geen enkel pakket het vereist.
+.TP 
+\fB\-Z, \-\-zero\-keep\fP
+De volledige lijst van vastgehouden pakketten wissen. In combinatie met deze
+optie is enkel de optie \fB\-A\fP mogelijk.
+
+
+.\" debfoster stuff - not compiled in debian
+.\" \fB\-\-df\-keep\fP
+.\" Use debfoster's keepfile, regardless of the default setting.
+.\" Can not be used if deborphan was compiled without support for debfoster.
+.\" .TP
+.\" \fB\-\-no\-df\-keep\fP
+.\" Do not use debfoster's keepfile.
+.\" .TP
+.SS GISSEN
+
+.\" guessing
+.TP 
+\fB\-\-guess\-*\fP
+.PD 0
+.TP 
+\fB\-\-no\-guess\-*\fP
+.PD
+.\" See \fBGUESSING\fP below.
+.\" .SH GUESSING
+.\" .PP
+Op basis van de pakketnaam en/of de pakketbeschrijving kan deborphan
+trachten te gissen welke pakketten voor u mogelijk van weinig nut zijn. Het
+zal doen alsof het pakket zich in de sectie \fImain/libs\fP bevindt en het
+rapporteren alsof het een bibliotheek was. Deze methode is zeker niet
+perfect of zelfs maar betrouwbaar. Pas dus op als u ze gebruikt! Het is ook
+mogelijk om deborphan op te dragen een gissing te doen over alle
+interpreters, behalve over die van Perl door \fB\-\-guess\-interpreters\fP
+\fB\-\-no\-guess\-perl\fP te gebruiken. Of u kunt deborphan over alles laten gissen
+behalve over Mono door \fB\-\-guess\-all\fP \fB\-\-no\-guess\-mono\fP te gebruiken. Merk
+op dat de optie \fB\-\-no\-guess\-\fP moet volgen op de optie \fB\-\-guess\-\fP welke
+deze aanpast. Dit maakt het mogelijk om meer complexe zaken aan te geven,
+zoals gissen over alles behalve over interpreters, maar op de koop toe
+trachten te gissen over perl.
+
+.PP
+De volgende opties moeten voorafgegaan worden door \fI\-\-guess\-\fP of (behalve
+\fBonly\fP) door \fI\-\-no\-guess\-\fP:
+
+.TP 
+\fBcommon\fP
+Deze optie tracht common\-pakketten te vinden, d.w.z.\& pakketten met een
+naam die eindigt op \fI\-common\fP.
+
+.TP 
+\fBdata\fP
+Deze optie tracht data\-pakketten te vinden, d.w.z.\& pakketten met een naam
+die eindigt op \fI\-data\fP.
+
+.TP 
+\fBdebug\fP
+Deze optie tracht debuggende bibliotheken te vinden, d.w.z.\& pakketten met
+een naam die eindigt op \fI\-dbg\fP of \fI\-dbgsym\fP.
+
+.TP 
+\fBdev\fP
+Deze optie tracht ontwikkelpakketten te vinden, d.w.z.\& pakketten met een
+naam die eindigt op \fI\-dev\fP. Zie ook de optie \fB\-\-libdevel\fP.
+
+.TP 
+\fBdoc\fP
+Deze optie tracht documentatiepakketten te vinden, d.w.z.\& pakketten met
+een naam die eindigt op \fI\-doc\fP.
+
+.TP 
+\fBdummy\fP
+Deze optie tracht dummy\-pakketten te vinden, d.w.z.\& pakketten met \fIdummy\fP
+of \fItransitional\fP in de beknopte beschrijving ervan.
+
+.TP 
+\fBkernel\fP
+.\" Don't hyphenate the next line
+Deze optie tracht kernel\-modules te vinden. Ze tracht een overeenkomst te
+vinden met
+\%\fI(\-modules|^nvidia\-kernel)\-.*[0\(en9]+\e.[0\(en9]+\e.[0\(en9]+\fP.
+
+.TP 
+\fBinterpreters\fP
+Alle interpreter\-modules trachten te vinden (d.w.z.\& met insluiting van
+\fBruby\fP, \fBpike\fP, \fBpython\fP, \fBperl\fP en \fBmono\fP).
+
+.TP 
+\fBmono\fP
+Deze optie tracht mono\-bibliotheken te vinden. Ze tracht een overeenkomst te
+vinden met \fI^libmono\fP.
+
+.TP 
+\fBperl\fP
+Deze optie tracht perl\-modules te vinden. Ze tracht een overeenkomst te
+vinden met \fI^lib.*\-perl$\fP.
+
+.TP 
+\fBpike\fP
+Deze optie tracht pike\-modules te vinden. Ze tracht een overeenkomst te
+vinden met \fI^pike[[:digit:]]*\-\fP.
+
+.TP 
+\fBpython\fP
+Deze optie tracht python\-modules te vinden. Ze tracht een overeenkomst te
+vinden met \fI^python[[:digit:]]*\-\fP.
+
+.TP 
+\fBruby\fP
+Deze optie tracht ruby\-modules te vinden. Ze tracht een overeenkomst te
+vinden met \fI^lib.*\-ruby[[:digit:].]*$\fP.
+
+.TP 
+\fBsection\fP
+Deze optie tracht bibliotheken te vinden die per ongeluk in de verkeerde
+sectie geplaatst werden. Ze tracht een overeenkomst te vinden met \fI^lib\fP,
+maar niet als dit eindigt op iets van het volgende: \fI\-dbg\fP, \fI\-dbgsym\fP,
+\fI\-doc\fP, \fI\-perl\fP of \fI\-dev\fP.
+
+.TP 
+\fBall\fP
+Al het bovenstaande proberen.
+
+.TP 
+\fBonly\fP
+De sectie van het pakket volledig negeren en enkel voor de naam en/of de
+beschrijving gaan. Deze optie moet gebruikt worden in combinatie met een of
+meer van de hierboven vermelde \fB\-\-guess\fP\-opties, anders zal deborphan niets
+weergeven.
+
+.SH BESTANDEN
+.TP 
+\fI/var/lib/dpkg/status\fP
+Status van de beschikbare pakketten. Zie voor meer informatie de sectie
+\fBINFORMATIE OVER PAKKETTEN\fP (INFORMATION ABOUT PACKAGES) in de man\-pagina
+van \fIdpkg\fP.
+.TP 
+\fI/var/lib/deborphan/keep\fP
+Een lijst met vast te houden pakketten, met een regeleinde als
+scheidingsteken. De volgorde van de pakketnamen speelt geen rol.
+.SH "ZIE OOK"
+\fBdpkg\fP(8), \fBdselect\fP(8), \fBorphaner\fP(8), \fBeditkeep\fP(8), \fBcruft\fP(8),
+\fBxargs\fP(1)
+.SH BUGS
+Indien u een bug rapporteert, voeg dan ook uw
+\fI/var/lib/dpkg/status\fP\-bestand toe. Dit helpt bij het reproduceren van de
+bugs.
+.SH AUTEURS
+
+deborphan werd geschreven door Cris van Pelt <"Cris van
+Pelt"@tribe.eu.org>, nadien onderhouden door Peter Palfrader
+<weasel@debian.org> maar wordt nu onderhouden door Carsten Hey
+<c.hey@web.de>
+

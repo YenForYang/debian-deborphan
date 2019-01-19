@@ -1,0 +1,12 @@
+Package: deborphan-dbgsym
+Source: deborphan
+Version: 1.7.31
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: deborphan Maintainers <deborphan@packages.debian.org>
+Installed-Size: 43
+Depends: deborphan (= 1.7.31)
+Section: debug
+Priority: optional
+Description: debug symbols for deborphan
+Build-Ids: 07f15179b644407478a9ea6bab4fc4bae6f08b32

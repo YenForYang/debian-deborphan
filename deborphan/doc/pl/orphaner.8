@@ -1,0 +1,62 @@
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH orphaner 8 "" "kwiecień 2004" ""
+
+.\" Copyright (C) 2000 Peter Palfrader
+.SH NAZWA
+.LP
+orhaner \- interfejs programu deborphan
+
+.SH SKŁADNIA
+.LP
+\fBorphaner\fP [\fB\-\-help\fP|\fB\-\-purge\fP] [\,\fIdeborphan options\fP\/]
+
+.SH OPIS
+.LP
+\fBorphaner\fP jest przyjemnym interfejsem programu \fBdeborphan\fP wyświetlającym
+listę osieroconych pakietów używając okienek dialog lub whiptail. Pakiety
+mogą zostać wybrane do usunięcia przez \fBapt\-get\fP, który będzie wywołany,
+aby usunąć pakiety. Po usunięciu pobierana jest nowa lista osieroconych
+pakietów. Program kończy się albo po naciśnięciu przycisku "Anuluj", albo
+gdy nie wybrano żadnego pakietu do usunięcia.
+
+Po usunięciu pakietu, wszystkie nowo znalezione pakiety osierocone zostaną
+pokazane na górze listy i zostaną oddzielone od starej listy pakietów za
+pomocą linii +++++.
+
+Orphaner ma także dwa dodatkowe przyciski "Symulacja" i
+"Pomoc". "Symulacja", zgodnie ze swą nazwą, tylko symuluje usuwanie pakietów
+ipokazuje wyniki, które by się pojawiły po rzeczywistym usunięciu. Tak więc,
+pozwala to zobaczyć pakiety, które będą osierocone, zaznaczyć je i usunąć
+wszystkie pakiety za pomocą tylko jednego wywołania \fBapt\-get\fP.
+
+"Pomoc" pokazuje stan pakietu podany przez \fBdpkg \-s\fP. \fBUwaga:\fP Twój wybór
+będzie utracony.
+
+.SH OPCJE
+.IP \fB\-\-help\fP
+Wyświetla krótki komunikat pomocy i kończy działanie.
+
+.IP \fB\-\-skip\-apt\fP
+Zamiast uruchamiać \fBapt\-get\fP wyświetla jego linię poleceń.
+
+.IP \fB\-\-purge\fP
+Uruchamia \fBapt\-get\fP remove z opcją \fB\-\-purge\fP.
+
+.LP
+\fBorphaner\fP accepts most, but not all, options that \fBdeborphan\fP accepts.
+These options are passed to \fBdeborphan\fP unchanged, and described in
+\fBdeborphan\fP's manpage. Options which are not accepted include switches to
+manage the keep file, and switches to change the output format. Note that
+switches which take an argument need to passed as one argument to
+\fBorphaner\fP. For instance to only show packages of priority \fIoptional\fP and
+less important, you need to use \fB\-\-priority=optional\fP (i.e., with the \fB=\fP
+sign, not with a space).
+
+.SH "ZOBACZ TAKŻE"
+
+\fBdeborphan\fP(1), \fBorphaner\fP(8), \fBapt\-get\fP(8), \fBeditkeep\fP(8)
+

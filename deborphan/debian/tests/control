@@ -1,0 +1,3 @@
+# iptraf is in oldlibs
+Tests: remove-iptraf
+Depends: @, iptraf

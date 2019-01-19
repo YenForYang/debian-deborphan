@@ -1,0 +1,66 @@
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH orphaner 8 "" "April 2004" ""
+
+.\" Copyright (C) 2000 Peter Palfrader
+.SH NAAM
+.LP
+orphaner \- frontend voor deborphan
+
+.SH OVERZICHT
+.LP
+\fBorphaner\fP [\fB\-\-help\fP|\fB\-\-purge\fP] [\,\fIdeborphan\-opties\fP\/]
+
+.SH BESCHRIJVING
+.LP
+\fBorphaner\fP is een handige frontend voor \fBdeborphan\fP. Met behulp van dialog
+of whiptail geeft het een lijst weer van verweesde pakketten. Pakketten
+kunnen voor verwijdering geselecteerd worden met \fBapt\-get\fP, dat dan
+aangeroepen wordt om de taak te verrichten. Na de verwijdering wordt met
+deborphan een nieuwe lijst van verweesde pakketten opgemaakt. Het programma
+wordt beëindigd wanneer ofwel op `Afbreken' (`Cancel') gedrukt wordt, ofwel
+geen pakket voor verwijdering gemarkeerd werd.
+
+Nadat u een pakket verwijderde, worden alle nieuwe verweesde pakketten
+bovenaan de lijst weergegeven, met +++++ gescheiden van de oude lijst.
+
+Orphaner heeft ook nog twee andere knoppen: `Simuleer' (`Simulate') en
+`Help'. `Simuleer' maakt, zoals zijn naam suggereert, enkel een simulatie
+van de verwijdering en toont welke het resultaat zou zijn van een echte
+verwijdering. Zo kunt u zien welke pakketten daardoor verweesd zouden worden
+en kunt u deze selecteren en alle pakketten verwijderen met één aanroep van
+\fBapt\-get\fP.
+
+`Help' toont u de status van het pakket, zoals \fBdpkg \-s\fP dit aangeeft.
+\fBLet op:\fP uw selectie zal verloren gaan.
+
+.SH OPTIES
+.IP \fB\-\-help\fP
+Een korte hulptekst weergeven en afsluiten.
+
+.IP \fB\-\-skip\-apt\fP
+Geen aanroep van \fBapt\-get\fP uitvoeren, maar in plaats daarvan de apt\-get
+commandoregel tonen.
+
+.IP \fB\-\-purge\fP
+\fBapt\-get\fP remove aanroepen met de optie \fB\-\-purge\fP.
+
+.LP
+\fBorphaner\fP accepteert de meeste, maar niet alle opties die door
+\fBdeborphan\fP geaccepteerd worden. Deze opties worden onveranderd doorgegeven
+aan \fBdeborphan\fP en worden beschreven in de man\-pagina van \fBdeborphan\fP. De
+opties die niet geaccepteerd worden, betreffen de schakelopties voor het
+beheer van het keep\-bestand en de schakelopties om de opmaak van de uitvoer
+aan te passen. Merk op dat een schakeloptie waarvoor een argument nodig is,
+als één argument moet opgegeven worden aan \fBorphaner\fP. Om bijvoorbeeld
+enkel de pakketten met de prioriteit \fIoptional\fP en minder weer te geven,
+moet u \fB\-\-priority=optional\fP opgeven (d.w.z. met het \fB=\fP\-teken en niet met
+een spatie).
+
+.SH "ZIE OOK"
+
+\fBdeborphan\fP(1), \fBorphaner\fP(8), \fBapt\-get\fP(8), \fBeditkeep\fP(8)
+

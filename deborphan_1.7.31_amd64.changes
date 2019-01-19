@@ -1,0 +1,46 @@
+Format: 1.8
+Date: Sun, 09 Dec 2018 14:31:35 +0100
+Source: deborphan
+Binary: deborphan
+Built-For-Profiles: nobiarch nocheck nodoc
+Architecture: amd64
+Version: 1.7.31
+Distribution: unstable
+Urgency: medium
+Maintainer: deborphan Maintainers <deborphan@packages.debian.org>
+Changed-By: Helge Kreutzmann <debian@helgefjell.de>
+Description:
+ deborphan  - program that can find unused packages, e.g. libraries
+Closes: 640509 905042 905154 906442 912640 915983 915984 916100 916141 916698 918233 918237
+Changes:
+ deborphan (1.7.31) unstable; urgency=medium
+ .
+   * Team upload.
+ .
+   [ Helge Kreutzmann ]
+   * Fix bash completion syntax. (Closes: #912640)
+   * Fix formatting of man pages. (Closes: #905042, #905154)
+   * Updated German man page translation. (Closes: #906442)
+   * Add additional reference to editkeep. (Closes: #640509)
+   * Fix README.source. (Closes: #915983)
+   * Update German program translation. (Closes: #915984)
+   * Update Spanish program translation.
+   * Update Spanish man page translation.
+   * Update Portuguese program translation. (Closes: 918233)
+   * Update Italian program translation. (Closes: 916100)
+   * Update Russian program translation. (Closes: 916141)
+   * Update French program translation. (Closes: 916698)
+   * Add Dutch man page translation. (Closes: 918237)
+   * Add missing translation copyright statements in debian/copyright.
+Checksums-Sha1:
+ 5842bfdd9f20df42a3eec471fcbcf8ff0eed2880 23540 deborphan-dbgsym_1.7.31_amd64.deb
+ a8398c9800750694344f774e23d55d7f77880b60 5548 deborphan_1.7.31_amd64.buildinfo
+ aa382d35e7642f02b9363b2ee67163c26db42149 119988 deborphan_1.7.31_amd64.deb
+Checksums-Sha256:
+ df832985aca97a65be24edab874260b0f95f2d712c3e7f6ca60bdbbd2166184c 23540 deborphan-dbgsym_1.7.31_amd64.deb
+ ad06a2cde60eee64171aa56954d4789372f17781ae75dd28cc008ec2790a3b5b 5548 deborphan_1.7.31_amd64.buildinfo
+ 3fe3b9f6de0f5c0b894bb2c048cfbd8ce78327342899b786d39a9df51c3bc925 119988 deborphan_1.7.31_amd64.deb
+Files:
+ e08e7eb10c2a256cedf7ea1b184d911b 23540 debug optional deborphan-dbgsym_1.7.31_amd64.deb
+ 689d16b6a4370aa1f19d39e21c74a026 5548 admin optional deborphan_1.7.31_amd64.buildinfo
+ b391c52dfffb6de7e8182f3d2f3b92a7 119988 admin optional deborphan_1.7.31_amd64.deb

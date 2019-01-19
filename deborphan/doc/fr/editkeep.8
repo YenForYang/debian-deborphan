@@ -1,0 +1,55 @@
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH editkeep 8 "" "Avril 2004" ""
+
+.\" Copyright (C) 2000 Peter Palfrader
+.SH NOM
+.LP
+editkeep \- interface de deborphan pour la gestion des paquets à conserver
+
+.SH SYNOPSIS
+.LP
+\fBeditkeep\fP [options]
+
+.SH DESCRIPTION
+.LP
+\fBeditkeep\fP est une interface de \fBdeborphan\fP utilisant \fBwhiptail\fP ou
+\fBdialog\fP qui affiche la liste des paquets orphelins (avec l'option \-a qui
+affiche l'ensemble des sections) et des paquets marqués comme à conserver
+(qui ne seront jamais considérés comme orphelins quel que soit leur état).
+
+.LP
+
+Les paquets peuvent être sélectionnés pour être ajoutés ou supprimés de la
+liste des paquets à conserver.
+
+.SH OPTIONS
+.LP
+\fB\-n\fP Désactive le «\ nice\-mode\ ». Voir la page de manuel de deborphan pour
+obtenir plus de précisions.
+
+.SH "VOIR AUSSI"
+
+\fBdeborphan\fP(1), \fBorphaner\fP(8), \fBapt\-get\fP(8)
+
+
+.SH "TRADUCTION"
+Cette traduction est maintenue à l'aide de l'outil
+po4a <URL:http://po4a.alioth.debian.org/> par l'équipe de
+traduction francophone du projet Debian.
+.PP
+Guilhelm Panaget <guilhelm.panaget@free.fr> (2005, 2006),
+Jean-Luc Coulon (f5ibh) <jean-luc.coulon@wanadoo.fr> (2006),
+Christian Perrier <bubulle@debian.org> (2008) et
+David Prévot <david@tilapin.org> (2010).
+.PP
+Veuillez signaler toute erreur de traduction en écrivant à
+<debian\-l10n\-french@lists.debian.org> ou par un rapport de bogue sur
+le paquet deborphan.
+.PP
+Vous pouvez toujours avoir accès à la version anglaise de ce document en
+utilisant la commande
+«\ \fBman\ \-L C\fR \fI<section>\fR\ \fI<page_de_man>\fR\ ».

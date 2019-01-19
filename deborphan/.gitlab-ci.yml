@@ -1,0 +1,47 @@
+checkformat:
+  image: registry.gitlab.com/eighthave/ci-image-git-buildpackage:latest
+  script:
+    - gitlab-ci-enable-sid
+    - apt-get -qy update
+    - apt-get install -qy clang-format make curl wget build-essential autoconf automake autopoint gettext
+    - autoreconf -vi
+    - ./configure
+    - make reformat
+    - if [ ! -z "$(git diff)" ]; then echo "make reformat has modified the sources:"; git diff ; exit 1; fi
+
+buildpackage:
+  image: registry.gitlab.com/eighthave/ci-image-git-buildpackage:latest
+  script:
+    # gitlab-ci-git-buildpackage assumes that pristine-tar is being used.
+    - find $CI_PROJECT_DIR/../ -maxdepth 1
+    - find $CI_PROJECT_DIR/../ -maxdepth 1 -type f -name '*_[0-9]*.*' -print -delete
+    - git clean -fdx
+    - gitlab-ci-enable-sid
+    - apt-get -qy update
+    - (cd $CI_PROJECT_DIR && apt-get -qy -o APT::Get::Build-Dep-Automatic=yes build-dep .)
+    - (cd $CI_PROJECT_DIR && gbp buildpackage -uc -us --git-ignore-branch)
+    - cp ../*.deb $CI_PROJECT_DIR/
+    - gitlab-ci-lintian
+    - gitlab-ci-autopkgtest
+
+coverity:
+  image: registry.gitlab.com/eighthave/ci-image-git-buildpackage:latest
+  cache:
+    key: coverity
+    paths:
+      - TOOLS/linux64
+  script:
+    - gitlab-ci-enable-sid
+    - apt-get -qy update
+    - apt-get install -qy curl wget build-essential autoconf automake autopoint gettext
+    - mkdir -p TOOLS
+    - ls -la TOOLS
+    - (cd TOOLS && wget -N -nv https://scan.coverity.com/download/linux64 --post-data "token=$COVERITY_TOKEN&project=deborphan")
+    - (cd TOOLS && ln -sf linux64 coverity_tool_linux64.tgz)
+    - ls -la TOOLS
+    - tar xf TOOLS/coverity_tool_linux64.tgz
+    - autoreconf -vi
+    - ./configure
+    - ./cov-analysis-*/bin/cov-build --dir cov-int make -C src deborphan
+    - tar cfvz cov-int.tgz cov-int
+    - curl --form token=$COVERITY_TOKEN --form email=ch@zeha.at --form file=@cov-int.tgz --form version="$(git describe --always)" --form description="Autobuild $(git describe --always)" https://scan.coverity.com/builds?project=deborphan

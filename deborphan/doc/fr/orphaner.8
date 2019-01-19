@@ -1,0 +1,81 @@
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH orphaner 8 "" "Avril 2004" ""
+
+.\" Copyright (C) 2000 Peter Palfrader
+.SH NOM
+.LP
+orphaner \- interface pour deborphan
+
+.SH SYNOPSIS
+.LP
+\fBorphaner\fP [\fB\-\-help\fP|\fB\-\-purge\fP] [\,\fIdeborphan options\fP\/]
+
+.SH DESCRIPTION
+.LP
+\fBorphaner\fP est une interface pour \fBdeborphan\fP utilisant \fBdialog\fP ou
+\fBwhiptail\fP qui affiche la liste des paquets orphelins. Les paquets peuvent
+être sélectionnés pour être supprimés avec \fBapt\-get\fP qui sera alors appelé
+pour effectuer la suppression. Après suppression, la liste des paquets
+orphelins est réactualisée. Le programme rend la main lorsque «\ Annuler\ »
+est choisi ou bien lorsqu'aucun paquet n'est choisi pour suppression.
+
+Après suppression d'un paquet, les paquets nouvellement orphelins sont
+listés, séparés des anciens par une ligne «\ +++++\ ».
+
+Orphaner propose deux autres boutons\ : «\ Simuler\ » et «\ Aide\ ». Comme
+son nom l'indique, «\ Simuler\ » permet de simuler la suppression en
+montrant la liste qui apparaîtrait s'il s'agissait d'une véritable
+suppression. Il est ainsi possible de voir les paquets qui seraient rendus
+orphelins suite à cette suppression et de les sélectionner aussi pour faire
+une suppression globale avec un seul appel de \fBapt\-get\fP.
+
+«\ Aide\ » affiche l'état du paquet tel qu'il serait donné par \fBdpkg \-s\fP.
+\fBAttention\ :\fP la sélection en cours ne sera pas conservée.
+
+.SH OPTIONS
+.IP \fB\-\-help\fP
+Affiche une aide sommaire et rend la main.
+
+.IP \fB\-\-skip\-apt\fP
+Ne lance pas \fBapt\-get\fP, mais montre la ligne de commande d'apt\-get à la
+place.
+
+.IP \fB\-\-purge\fP
+Appelle \fBapt\-get remove\fP avec l'option \fB\-\-purge\fP.
+
+.LP
+\fBorphaner\fP accepts most, but not all, options that \fBdeborphan\fP accepts.
+These options are passed to \fBdeborphan\fP unchanged, and described in
+\fBdeborphan\fP's manpage. Options which are not accepted include switches to
+manage the keep file, and switches to change the output format. Note that
+switches which take an argument need to passed as one argument to
+\fBorphaner\fP. For instance to only show packages of priority \fIoptional\fP and
+less important, you need to use \fB\-\-priority=optional\fP (i.e., with the \fB=\fP
+sign, not with a space).
+
+.SH "VOIR AUSSI"
+
+\fBdeborphan\fP(1), \fBorphaner\fP(8), \fBapt\-get\fP(8), \fBeditkeep\fP(8)
+
+
+.SH "TRADUCTION"
+Cette traduction est maintenue à l'aide de l'outil
+po4a <URL:http://po4a.alioth.debian.org/> par l'équipe de
+traduction francophone du projet Debian.
+.PP
+Guilhelm Panaget <guilhelm.panaget@free.fr> (2005, 2006),
+Jean-Luc Coulon (f5ibh) <jean-luc.coulon@wanadoo.fr> (2006),
+Christian Perrier <bubulle@debian.org> (2008) et
+David Prévot <david@tilapin.org> (2010).
+.PP
+Veuillez signaler toute erreur de traduction en écrivant à
+<debian\-l10n\-french@lists.debian.org> ou par un rapport de bogue sur
+le paquet deborphan.
+.PP
+Vous pouvez toujours avoir accès à la version anglaise de ce document en
+utilisant la commande
+«\ \fBman\ \-L C\fR \fI<section>\fR\ \fI<page_de_man>\fR\ ».

@@ -1,0 +1,59 @@
+.TH orphaner 8 "" "April 2004" ""
+.\" Copyright (C) 2000 Peter Palfrader
+
+.SH NAME
+.LP
+orphaner \- frontend for deborphan
+
+.SH SYNOPSIS
+.LP
+\fBorphaner\fP [\fB\-\-help\fP|\fB\-\-purge\fP] [\,\fIdeborphan options\fP\/]
+
+.SH DESCRIPTION
+.LP
+\fBorphaner\fR is a neat frontend for \fBdeborphan\fP displaying a list
+of orphaned packages with dialog or whiptail. Packages may be
+selected for removal with \fBapt\-get\fP which is then called to do the
+work. After removal a new list of orphaned packages is gathered
+from deborphan. The program ends when either `Cancel' is pressed
+or no package is marked for removal.
+
+After you removed a package, all new orphaned packages are shown at the
+top of the list separated by +++++ from the old list.
+
+Orphaner also shows two additional buttons: `Simulate' and `Help'.
+`Simulate' does like its name suggest only a simulation of removing and
+shows the result that would appear after real removing. So you can see
+the packages, which will become orphaned and you can select them and
+remove all packages with one \fBapt\-get\fR call.
+
+`Help' shows you the status of the package given by \fBdpkg \-s\fR.
+\fBCaution:\fP your selection will be lost.
+
+.SH OPTIONS
+.IP \fB\-\-help\fR
+Print a short help and exit.
+
+.IP \fB\-\-skip-apt\fR
+Do not call \fBapt\-get\fR, but show apt-get command line instead.
+
+.IP \fB\-\-purge\fR
+Call \fBapt\-get\fR remove with the \fB\-\-purge\fR option.
+
+.LP
+\fBorphaner\fP accepts most, but not all, options that \fBdeborphan\fP accepts.
+These options are passed to \fBdeborphan\fP unchanged, and described in
+\fBdeborphan\fP's manpage. Options which are not accepted include switches
+to manage the keep file, and switches to change the output format. Note
+that switches which take an argument need to passed as one argument to
+\fBorphaner\fP. For instance to only show packages of priority \fIoptional\fP
+and less important, you need to use \fB\-\-priority=optional\fP
+(i.e., with the \fB=\fP sign, not with a space).
+
+.SH SEE ALSO
+
+\fBdeborphan\fP(1),
+\fBorphaner\fP(8),
+\fBapt\-get\fP(8),
+\fBeditkeep\fP(8)
+

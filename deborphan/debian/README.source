@@ -1,0 +1,16 @@
+Version control system:
+-----------------------
+
+Upstreams version control system can be viewed with an internet browser using
+the stated below URI. The Debian packaging is
+probably also in this repository.
+
+    https://salsa.debian.org/debian/deborphan.git
+
+To check out a copy of the current development version you can either use the
+command line client for the used version control system or an graphical
+frontend, for example:
+
+    git clone https://salsa.debian.org/debian/deborphan.git
+
+ -- Carsten Hey <c.hey@web.de>  Thu, 26 Jun 2008 14:18:52 +0200

@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	dh_auto_build -- pkgdatadir=/var/lib/deborphan
+
+override_dh_auto_install:
+	dh_auto_install
+	# bash complete file
+	install -d debian/deborphan/usr/share/bash-completion/completions/
+	install -m 644 debian/bash-complete debian/deborphan/usr/share/bash-completion/completions/deborphan

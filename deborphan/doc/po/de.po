@@ -1,0 +1,1050 @@
+# German translations for deborphan man pag
+# This file is distributed under the same license as the deborphan package.
+# Helge Kreutzmann <debian@helgefjell.de>, 2010, 2018
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: deborphan 1.7.30\n"
+"Report-Msgid-Bugs-To: deborphan@bugs.debian.org\n"
+"POT-Creation-Date: 2019-01-19 03:16+0100\n"
+"PO-Revision-Date: 2018-12-22 10:41+0100\n"
+"Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
+"Language-Team: de <debian-l10n-german@lists.debian.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: TH
+#: ../../doc/orphaner.8:1
+#, no-wrap
+msgid "orphaner"
+msgstr "orphaner"
+
+#. type: TH
+#: ../../doc/orphaner.8:1 ../../doc/editkeep.8:1
+#, no-wrap
+msgid "April 2004"
+msgstr "April 2004"
+
+#.  Copyright (C) 2000, 2001, 2002, 2003 Cris van Pelt
+#.  Copyright (C) 2003, 2004, 2005, 2006 Peter Palfrader
+#.  Copyright (C) 2005 Daniel Déchelotte
+#.  Copyright (C) 2008 Andrej Tatarenkow
+#.  Copyright (C) 2008, 2009 Carsten Hey
+#. type: SH
+#: ../../doc/orphaner.8:4 ../../doc/editkeep.8:4 ../../doc/deborphan.1:8
+#, no-wrap
+msgid "NAME"
+msgstr "NAME"
+
+#. type: Plain text
+#: ../../doc/orphaner.8:7
+msgid "orphaner - frontend for deborphan"
+msgstr "orphaner - Oberfläche für Deborphan"
+
+#. type: SH
+#: ../../doc/orphaner.8:8 ../../doc/editkeep.8:8 ../../doc/deborphan.1:10
+#, no-wrap
+msgid "SYNOPSIS"
+msgstr "ÜBERSICHT"
+
+#. type: Plain text
+#: ../../doc/orphaner.8:11
+msgid "B<orphaner> [B<--help>|B<--purge>] [\\,I<deborphan options>\\/]"
+msgstr "B<orphaner> [B<--help>|B<--purge>] [\\,I<deborphan Optionen>\\/]"
+
+#. type: SH
+#: ../../doc/orphaner.8:12 ../../doc/editkeep.8:12 ../../doc/deborphan.1:13
+#, no-wrap
+msgid "DESCRIPTION"
+msgstr "BESCHREIBUNG"
+
+#. type: Plain text
+#: ../../doc/orphaner.8:20
+msgid ""
+"B<orphaner> is a neat frontend for B<deborphan> displaying a list of "
+"orphaned packages with dialog or whiptail. Packages may be selected for "
+"removal with B<apt-get> which is then called to do the work. After removal a "
+"new list of orphaned packages is gathered from deborphan. The program ends "
+"when either `Cancel' is pressed or no package is marked for removal."
+msgstr ""
+"B<orphaner> ist eine nette Oberfläche für B<deborphan>, der eine Liste von "
+"verwaisten Pakten mittels Dialog oder Whiptail anzeigt. Pakete können zur "
+"Entfernung mit B<apt-get> ausgewählt werden, das dann entsprechend "
+"aufgerufen wird. Nach der Entfernung wird eine neue Liste von verwaisten "
+"Paketen von Deborphan erstellt. Das Programm endet, wenn entweder "
+"»Abbrechen« ausgewählt wird oder wenn kein Paket mehr zur Entfernung "
+"markiert ist."
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/orphaner.8:23
+msgid ""
+"After you removed a package, all new orphaned packages are shown at the top "
+"of the list separated by +++++ from the old list."
+msgstr ""
+"Nachdem Sie ein Paket entfernt haben, werden alle verwaisten Pakete oben in "
+"der Liste angezeigt, mittels »+++++« getrennt von der alten Liste."
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/orphaner.8:29
+msgid ""
+"Orphaner also shows two additional buttons: `Simulate' and `Help'.  "
+"`Simulate' does like its name suggest only a simulation of removing and "
+"shows the result that would appear after real removing. So you can see the "
+"packages, which will become orphaned and you can select them and remove all "
+"packages with one B<apt-get> call."
+msgstr ""
+"Orphaner zeigt Ihnen zwei zusätzliche Schaltflächen: »Simulieren« und "
+"»Hilfe«. Bei »Simulieren« wird dem Namen entsprechend nur eine Simulation "
+"der Entfernung durchgeführt und gezeigt, wie das Ergebnis nach der "
+"Entfernung aussähe. Somit können Sie Pakete erkennen, die verwaist würden "
+"und sie auswählen, und dann alle Pakete mit nur einem Aufruf von B<apt-get> "
+"entfernen."
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/orphaner.8:32
+msgid ""
+"`Help' shows you the status of the package given by B<dpkg -s>.  B<Caution:> "
+"your selection will be lost."
+msgstr ""
+"»Hilfe« zeigt Ihnen den Status der von B<dpkg -s> angegebenen Pakete. "
+"B<Vorsicht>: Ihre Auswahl geht dabei verloren."
+
+# type: SH
+#. type: SH
+#: ../../doc/orphaner.8:33 ../../doc/editkeep.8:23 ../../doc/deborphan.1:25
+#, no-wrap
+msgid "OPTIONS"
+msgstr "OPTIONEN"
+
+# type: IP
+#. type: IP
+#: ../../doc/orphaner.8:34
+#, no-wrap
+msgid "B<--help>"
+msgstr "B<--help>"
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/orphaner.8:36
+msgid "Print a short help and exit."
+msgstr "Gibt eine kurze Hilfe aus und wird beendet."
+
+#. type: IP
+#: ../../doc/orphaner.8:37
+#, no-wrap
+msgid "B<--skip-apt>"
+msgstr "B<--skip-apt>"
+
+#. type: Plain text
+#: ../../doc/orphaner.8:39
+msgid "Do not call B<apt-get>, but show apt-get command line instead."
+msgstr ""
+"Nicht B<apt-get> aufrufen, sondern die Befehlszeile von Apt-get anzeigen."
+
+#. type: IP
+#: ../../doc/orphaner.8:40
+#, no-wrap
+msgid "B<--purge>"
+msgstr "B<--purge>"
+
+#. type: Plain text
+#: ../../doc/orphaner.8:42
+msgid "Call B<apt-get> remove with the B<--purge> option."
+msgstr "B<apt-get> remove mit der Option B<--purge> aufrufen."
+
+#. type: Plain text
+#: ../../doc/orphaner.8:52
+msgid ""
+"B<orphaner> accepts most, but not all, options that B<deborphan> accepts.  "
+"These options are passed to B<deborphan> unchanged, and described in "
+"B<deborphan>'s manpage. Options which are not accepted include switches to "
+"manage the keep file, and switches to change the output format. Note that "
+"switches which take an argument need to passed as one argument to "
+"B<orphaner>. For instance to only show packages of priority I<optional> and "
+"less important, you need to use B<--priority=optional> (i.e., with the B<=> "
+"sign, not with a space)."
+msgstr ""
+"B<orphaner> akzeptiert die meisten, aber nicht alle Optionen von "
+"B<deborphan>. Diese Optionen werden unverändert an B<deborphan> "
+"weitergegeben und sind in B<deborphan>s Handbuchseite beschrieben. Optionen, "
+"die nicht akzeptiert werden, sind u.a. die zum Verwalten der Haltedatei und "
+"die Schalter zum Ändern des Ausgabeformats. Beachten Sie, dass Schalter, die "
+"ein Argument erwarten, als ein Argument an B<orphaner> übergeben werden "
+"müssen. Um beispielsweise nur Pakete der Priorität I<optional> und weniger "
+"wichtig anzuzeigen, müssen Sie B<--priority=optional> (d.h. mit einem B<=>-"
+"Zeichen, nicht mit einem Leerzeichen) verwenden."
+
+#. type: SH
+#: ../../doc/orphaner.8:53 ../../doc/editkeep.8:29 ../../doc/deborphan.1:268
+#, no-wrap
+msgid "SEE ALSO"
+msgstr "SIEHE AUCH"
+
+# FIXME Falsche Reihenfolge
+#. type: Plain text
+#: ../../doc/orphaner.8:59
+msgid "B<deborphan>(1), B<orphaner>(8), B<apt-get>(8), B<editkeep>(8)"
+msgstr "B<deborphan>(1), B<orphaner>(8), B<apt-get>(8), B<editkeep>(8)"
+
+#. type: TH
+#: ../../doc/editkeep.8:1
+#, no-wrap
+msgid "editkeep"
+msgstr "editkeep"
+
+#. type: Plain text
+#: ../../doc/editkeep.8:7
+msgid "editkeep - frontend for deborphan"
+msgstr "editkeep - Oberfläche für Deborphan"
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/editkeep.8:11
+msgid "B<editkeep> [options]"
+msgstr "B<editkeep> [Optionen]"
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/editkeep.8:17
+msgid ""
+"B<editkeep> is a frontend for B<deborphan> displaying a list of orphaned "
+"packages (-a for all-sections is implied) and packages which are tagged to "
+"never been shown using dialog or whiptail."
+msgstr ""
+"B<editkeep> ist eine Oberfläche für B<deborphan>, in der eine Liste von "
+"verwaisten Paketen (»-a« für »all-sections« ist impliziert) und Paketen, die "
+"markiert sind, niemals mit Dialog oder Whiptail angezeigt zu werden, "
+"dargestellt wird."
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/editkeep.8:22
+msgid ""
+"Packages may be selected to be added or removed from deborphans keep list, i."
+"e. the list of files it never proposes for removal."
+msgstr ""
+"Pakete können ausgewählt werden, um auf die Halteliste von Deborphan, d.h. "
+"die Liste von Dateien, die nie zur Entfernung verarbeitet werden, "
+"hinzugefügt oder von ihr entfernt zu werden."
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/editkeep.8:28
+msgid "B<-n> Turn off nice-mode.  See the deborphan manpage for description."
+msgstr ""
+"B<-n> »nice-Modus« (netter Modus) abschalten. Lesen Sie die Handbuchseite "
+"von Deborphan für eine Beschreibung."
+
+# FIXME Falsche Reihenfolge
+#. type: Plain text
+#: ../../doc/editkeep.8:34
+msgid "B<deborphan>(1), B<orphaner>(8), B<apt-get>(8)"
+msgstr "B<deborphan>(1), B<orphaner>(8), B<apt-get>(8)"
+
+#. type: TH
+#: ../../doc/deborphan.1:1
+#, no-wrap
+msgid "DEBORPHAN"
+msgstr "DEBORPHAN"
+
+#. type: TH
+#: ../../doc/deborphan.1:1
+#, no-wrap
+msgid "February 2009"
+msgstr "Februar 2009"
+
+#. type: TH
+#: ../../doc/deborphan.1:1
+#, no-wrap
+msgid "deborphan"
+msgstr "deborphan"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:10
+msgid "deborphan - Orphaned package finder"
+msgstr "deborphan - Finden verwaister Pakete"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:13
+msgid "B<deborphan> [I<OPTION>] \\&.\\|.\\|.\\& [I<PACKAGE>] \\&.\\|.\\|."
+msgstr "B<deborphan> [I<OPTION>] … [I<PAKET>] …"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:18
+msgid ""
+"I<deborphan> finds packages that have no packages depending on them. The "
+"default operation is to search within the libs, oldlibs and introspection "
+"sections to hunt down unused libraries."
+msgstr ""
+"I<deborphan> findet Pakete, von denen keine Pakete abhängen. Die "
+"Standardfunktion besteht im Suchen innerhalb der Abschnitte »libs«, "
+"»oldlibs« und »introspection«, um unbenutzte Bibliotheken zu ermitteln."
+
+#. type: Plain text
+#: ../../doc/deborphan.1:24
+msgid ""
+"If it is invoked with an optional list of packages, only the dependencies on "
+"those packages will be checked. The results are printed to stdout as if the "
+"option I<--show-deps> had been given. Searching for specific packages will "
+"show the package, regardless of its priority. It is possible to specify I<-"
+">, to read a list of packages from standard input."
+msgstr ""
+"Falls er mit einer optionalen Paketliste aufgerufen wird, werden nur die "
+"Abhängigkeiten von diesen Paketen überprüft. Das Ergebnis wird auf der "
+"Standardausgabe ausgegeben, als ob die Option I<--show-deps> angegeben "
+"worden wäre. Suche nach speziellen Paketen wird das Paket zeigen, unabhängig "
+"von einer Priorität. Es ist möglich, I<-> anzugeben, um eine Paketliste von "
+"der Standardeingabe einzulesen."
+
+#. type: TP
+#: ../../doc/deborphan.1:26
+#, no-wrap
+msgid "B<-f, --status-file=>I<FILE>"
+msgstr "B<-f, --status-file=>I<DATEI>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:29
+msgid "Use FILE as the status file."
+msgstr "DATEI als Statusdatei verwenden."
+
+#. type: TP
+#: ../../doc/deborphan.1:29
+#, no-wrap
+msgid "B<-h, --help>"
+msgstr "B<-h, --help>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:32
+msgid "Display a short help message and exit."
+msgstr "Eine kurze Hilfemeldung anzeigen und beenden"
+
+#. type: TP
+#: ../../doc/deborphan.1:32
+#, no-wrap
+msgid "B<-v, --version>"
+msgstr "B<-v, --version>"
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/deborphan.1:35
+msgid "Display version information and exit."
+msgstr "Versionsinformationen anzeigen und beenden"
+
+# type: SS
+#.  show stuff
+#. type: SS
+#: ../../doc/deborphan.1:37
+#, no-wrap
+msgid "OUTPUT MODIFIERS"
+msgstr "AUSGABEMODIFIKATOREN"
+
+# type: TP
+#. type: TP
+#: ../../doc/deborphan.1:38
+#, no-wrap
+msgid "B<-d, --show-deps>"
+msgstr "B<-d, --show-deps>"
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/deborphan.1:42
+msgid ""
+"Show a list of all installed packages and name the packages that depend on "
+"them."
+msgstr ""
+"Eine Liste aller installierter Pakete und die Namen der Pakte, die davon "
+"abhängen, anzeigen"
+
+# type: TP
+#. type: TP
+#: ../../doc/deborphan.1:42
+#, no-wrap
+msgid "B<-P, --show-priority>"
+msgstr "B<-P, --show-priority>"
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/deborphan.1:45
+msgid "Show the priority of the packages found."
+msgstr "Die Priorität der gefundenen Pakete anzeigen"
+
+# type: TP
+#. type: TP
+#: ../../doc/deborphan.1:45
+#, no-wrap
+msgid "B<-s, --show-section>"
+msgstr "B<-s, --show-section>"
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/deborphan.1:48
+msgid "Show the sections the packages are in."
+msgstr "Den Abschnitt, in dem sich die Pakete befinden, anzeigen"
+
+# type: TP
+#. type: TP
+#: ../../doc/deborphan.1:48
+#, no-wrap
+msgid "B<--no-show-section>"
+msgstr "B<--no-show-section>"
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/deborphan.1:52
+msgid ""
+"Override showing sections when the default is to show them (see B<--all-"
+"packages>)."
+msgstr ""
+"Anzeige der Bereiche ausschalten, wenn sie standardmäßig angezeigt würden "
+"(siehe B<--all-packages>)"
+
+# type: TP
+#. type: TP
+#: ../../doc/deborphan.1:52
+#, no-wrap
+msgid "B<-z, --show-size>"
+msgstr "B<-z, --show-size>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:55
+msgid "Show the installed size of the packages found."
+msgstr "Die installierte Größe der gefundenen Pakete anzeigen"
+
+#.  search stuff
+#. type: SS
+#: ../../doc/deborphan.1:57
+#, no-wrap
+msgid "SEARCH MODIFIERS"
+msgstr "SUCHMODIFIKATOREN"
+
+#. type: TP
+#: ../../doc/deborphan.1:58
+#, no-wrap
+msgid "B<-a, --all-packages>"
+msgstr "B<-a, --all-packages>"
+
+#.  , when compiled with ALL_PACKAGES_IMPLY_SECTION defined (default)
+#. type: Plain text
+#: ../../doc/deborphan.1:64
+msgid ""
+"Check all the packages, instead of only those in the libs section.  Best "
+"used (if at all used) in combination with B<--priority>.  This option "
+"implies B<--show-section>."
+msgstr ""
+"Prüft alle Pakete, nicht nur die des Abschnitts »libs«. Am besten (falls "
+"überhaupt) zusammen mit B<--priority> verwandt. Diese Option impliziert B<--"
+"show-section>."
+
+#. type: TP
+#: ../../doc/deborphan.1:64
+#, no-wrap
+msgid "B<-e, --exclude=>I<LIST>"
+msgstr "B<-e, --exclude=>I<LISTE>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:68
+msgid ""
+"Excludes the packages named in I<LIST> (a comma separated list) from the "
+"evaluation as if they didn't exist in the status file."
+msgstr ""
+"Schließt die in I<LISTE> (eine durch Kommata getrennte Liste) aufgeführten "
+"Pakete aus der Prüfung aus, als ob sie in der Statusdatei nicht existierten."
+
+#. type: TP
+#: ../../doc/deborphan.1:68
+#, no-wrap
+msgid "B<-H, --force-hold>"
+msgstr "B<-H, --force-hold>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:77
+msgid ""
+"Ignore \"hold\" dpkg-flags on packages and thus display these packages. "
+"Without this option packages with the \"hold\" flag set will not be "
+"displayed.  Please refer to B<dpkg>(1)  for more information about package "
+"flags. Due a bug in aptitude (Debian bug #137771) hold flags created by "
+"aptitude are ignored by deborphan."
+msgstr ""
+"Dpkg-Schalter »halten« bei Paketen ignorieren und daher diese Pakete "
+"anzeigen. Ohne diese Optionen werden Pakete, bei denen der »halten«-Schalter "
+"gesetzt ist, nicht angezeigt. Bitte lesen Sie B<dpkg>(1) für weitere "
+"Informationen über Paketschalter. Aufgrund eines Fehlers in Aptitude (Debian-"
+"Fehler #137771) werden »halten«-Schalter, die von Aptitude gesetzt werden, "
+"von Deborphan ignoriert."
+
+#. type: TP
+#: ../../doc/deborphan.1:77
+#, no-wrap
+msgid "B<--ignore-suggests>"
+msgstr "B<--ignore-suggests>"
+
+#. type: TP
+#: ../../doc/deborphan.1:80
+#, no-wrap
+msgid "B<--ignore-recommends>"
+msgstr "B<--ignore-recommends>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:87
+msgid ""
+"Do not check if there is a package `suggesting' (B<--ignore-suggests>)  or "
+"`recommending' (B<--ignore-recommends>) the package. When both options are "
+"used together, deborphan behaves as if the `nice-mode' mentioned below has "
+"been turned off."
+msgstr ""
+"Nicht prüfen, ob es ein Paket gibt, das das Paket »vorschlägt« (B<--ignore-"
+"suggests>) oder »empfiehlt« (B<--ignore-recommends>). Wenn beide Optionen "
+"zusammen gesetzt sind, verhält sich Deborphan, als ob der unten beschriebene "
+"»nice-mode« abgeschaltet worden wäre."
+
+#. type: TP
+#: ../../doc/deborphan.1:87
+#, no-wrap
+msgid "B<-n, --nice-mode>"
+msgstr "B<-n, --nice-mode>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:96
+msgid ""
+"Turn off nice-mode.  Nice-mode checks if there is a package `suggesting' or "
+"`recommending' the package.  If one is found, the package will be marked as "
+"in use, or, when B<--show-deps> is used, print out the package suggesting "
+"the package as if it were depending on it."
+msgstr ""
+"»nice-mode« (netter Modus) abschalten. Nice-mode prüft, ob es ein Paket "
+"gibt, das dieses Paket »vorschlägt« oder »empfiehlt«. Falls eines gefunden "
+"wird, wird es als »in Benutzung« markiert, oder wenn B<--show-deps> verwandt "
+"wird, wird das Paket, dass dieses Paket vorschlägt ausgegeben, als ob es "
+"davon abhinge."
+
+#. type: TP
+#: ../../doc/deborphan.1:96
+#, no-wrap
+msgid "B<-p, --priority=>I<PRIORITY>"
+msgstr "B<-p, --priority=>I<PRIORITÄT>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:104
+msgid ""
+"Show only those packages with a priority equal to, or greater than "
+"I<PRIORITY>.  I<PRIORITY> may be in the range of 1\\(en5, or one of "
+"I<required>, I<important>, I<standard>, I<optional>, I<extra>.  Default "
+"value for I<PRIORITY> is 2 (I<important>)."
+msgstr ""
+"Zeigt nur Pakete, deren Priorität gleich oder höher als I<PRIORITÄT> ist. "
+"I<PRIORITÄT> kommt entweder aus dem Bereich 1\\(en5 oder ist eines von "
+"I<required>, I<important>, I<standard>, I<optional> oder I<extra>. Der "
+"Standardwert für I<PRIORITÄT> ist 2 (I<important>)."
+
+#. type: TP
+#: ../../doc/deborphan.1:104
+#, no-wrap
+msgid "B<--find-config>"
+msgstr "B<--find-config>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:108
+msgid ""
+"This option searches for uninstalled packages which still have configuration "
+"files on the system. It implies the B<-a> option."
+msgstr ""
+"Diese Option sucht nach nicht installierten Paketen, die noch "
+"Konfigurationsdateien auf dem System haben. Dies impliziert die Option B<-a>."
+
+#. type: TP
+#: ../../doc/deborphan.1:108
+#, no-wrap
+msgid "B<--libdevel>"
+msgstr "B<--libdevel>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:111
+msgid "Also search in section \"libdevel\"."
+msgstr "Sucht auch im Abschnit »libdevel«."
+
+#.  keep file stuff
+#. type: SS
+#: ../../doc/deborphan.1:113
+#, no-wrap
+msgid "KEEP FILE MANAGEMENT"
+msgstr "VERWALTUNG DER HALTEDATEI"
+
+#. type: TP
+#: ../../doc/deborphan.1:114
+#, no-wrap
+msgid "B<-A, --add-keep >I<PKG1> \\&.\\|.\\|.\\& I<PKGn>"
+msgstr "B<-A, --add-keep >I<PK1> … I<PKn>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:119
+msgid ""
+"Add packages to the list of packages which are never to be reported, "
+"regardless of their state. You may specify 'B<->' to use standard input. "
+"Note that package names are case-sensitive."
+msgstr ""
+"Pakete zu der Liste von Paketen hinzufügen, die unabhängig von ihrem Zustand "
+"nie gemeldet werden. Sie können »B<->« für die Standardeingabe angeben. "
+"Beachten Sie, dass bei Paketnamen die Groß- und Kleinschreibung relevant ist."
+
+#. type: TP
+#: ../../doc/deborphan.1:119
+#, no-wrap
+msgid "B<-k, --keep-file=>I<FILE>"
+msgstr "B<-k, --keep-file=>I<DATEI>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:122
+msgid "Use I<FILE> to store the list of kept-back packages."
+msgstr "I<DATEI> zum Speichern der zurückgehaltenen Pakete verwenden."
+
+#. type: TP
+#: ../../doc/deborphan.1:122
+#, no-wrap
+msgid "B<-L, --list-keep>"
+msgstr "B<-L, --list-keep>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:125
+msgid "Show the list of packages that are being kept back."
+msgstr "Die Liste der zurückgehaltenen Pakete anzeigen."
+
+#. type: TP
+#: ../../doc/deborphan.1:125
+#, no-wrap
+msgid "B<-R, --del-keep >I<PKG1> \\&.\\|.\\|.\\& I<PKGn>"
+msgstr "B<-R, --del-keep >I<PK1> … I<PKn>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:131
+msgid ""
+"Remove packages from the list of packages which are never to be reported.  "
+"You may specify 'B<->' to use standard input. If there are no dependencies "
+"for this package next time I<deborphan> is invoked, it will be reported "
+"again."
+msgstr ""
+"Pakete aus der Paketliste entfernen, die nie berichtet werden. Sie können "
+"»B<->« zur Verwendung der Standardeingabe angeben. Falls es für dieses Paket "
+"keine Abhängigkeiten gibt, wird es beim nächsten Aufruf von I<deborphan> "
+"wieder berichtet."
+
+#. type: TP
+#: ../../doc/deborphan.1:131
+#, no-wrap
+msgid "B<-Z, --zero-keep>"
+msgstr "B<-Z, --zero-keep>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:135
+msgid ""
+"Purge the entire list of packages that are being kept back. The only option "
+"possible in combination with this option is B<-A>."
+msgstr ""
+"Bereinigt die gesamte Liste der zurückgehaltenen Pakete. Die einzige Option, "
+"die in Kombination mit dieser Option möglich ist, ist B<-A>."
+
+# type: SS
+#.  debfoster stuff - not compiled in debian
+#.  \fB\-\-df\-keep\fP
+#.  Use debfoster's keepfile, regardless of the default setting.
+#.  Can not be used if deborphan was compiled without support for debfoster.
+#.  .TP
+#.  \fB\-\-no\-df\-keep\fP
+#.  Do not use debfoster's keepfile.
+#.  .TP
+#. type: SS
+#: ../../doc/deborphan.1:145
+#, no-wrap
+msgid "GUESSING"
+msgstr "RATEN"
+
+# type: TP
+#. type: TP
+#: ../../doc/deborphan.1:148
+#, no-wrap
+msgid "B<--guess-*>"
+msgstr "B<--guess-*>"
+
+# type: TP
+#. type: TP
+#: ../../doc/deborphan.1:151
+#, no-wrap
+msgid "B<--no-guess-*>"
+msgstr "B<--no-guess-*>"
+
+#.  See \fBGUESSING\fP below.
+#.  .SH GUESSING
+#.  .PP
+#. type: Plain text
+#: ../../doc/deborphan.1:171
+msgid ""
+"deborphan can try to guess what packages may not be of much use to you by "
+"examining the package's name and/or description.  It will pretend the "
+"package is in the I<main/libs> section, and report it as if it were a "
+"library.  This method is in no way perfect or even reliable, so beware when "
+"using this! It is also possible to tell deborphan e.g., to guess all "
+"interpreters but not Perl by using B<--guess-interpreters> B<--no-guess-"
+"perl> or to guess all but not Mono by using B<--guess-all> B<--no-guess-"
+"mono>.  Please note that the B<--no-guess-> option must occur after the B<--"
+"guess-> option it modifies, this makes it possible to declare more complex "
+"things like to guess all, except interpreters but additionally try to guess "
+"perl."
+msgstr ""
+"Deborphan kann versuchen, die Pakete zu erraten, die für Sie nicht mehr "
+"nützlich sein könnten, indem es den Paketnamen und/oder die Beschreibung "
+"untersucht. Es wird vorgeben, das Paket sei im Abschnitt I<main/libs> und es "
+"so berichten, als ob es eine Bibliothek wäre. Diese Methode ist in keinster "
+"Weise perfekt oder sogar zuverlässig, daher passen Sie bei der Verwendung "
+"auf! Es ist auch möglich, Deborphan mitzuteilen, dass es z.B. alle "
+"Interpreter  aber nicht Perl erraten soll, indem B<--guess-interpreters> B<--"
+"no-guess-perl> verwandt wird oder alle außer Mono durch B<--guess-all> B<--"
+"no-guess-mono>. Bitte beachten Sie, dass die Option B<--no-guess-> nach der "
+"Option B<--guess-> kommen muss, die es verändert. Damit wird es möglich, "
+"komplexere Kombinationen zu formulieren, wie alles zu raten, außer den "
+"Interpretern aber zusätzlich auch Perl."
+
+#. type: Plain text
+#: ../../doc/deborphan.1:175
+msgid ""
+"The following options are to be prefixed by I<--guess-> or (except B<only>) "
+"by I<--no-guess->:"
+msgstr ""
+"Den folgenden Optionen kann I<--guess-> oder (abgesehen von B<only>) I<--no-"
+"guess-> vorangestellt werden:"
+
+#. type: TP
+#: ../../doc/deborphan.1:176
+#, no-wrap
+msgid "B<common>"
+msgstr "B<common>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:180
+msgid ""
+"This option tries to find common packages, i.e.\\& packages with names "
+"ending in I<-common>."
+msgstr ""
+"Diese Option versucht, Pakete zu finden, deren Namen auf I<-common> endet."
+
+#. type: TP
+#: ../../doc/deborphan.1:181
+#, no-wrap
+msgid "B<data>"
+msgstr "B<data>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:185
+msgid ""
+"This option tries to find data packages, i.e.\\& packages with names ending "
+"in I<-data>."
+msgstr ""
+"Diese Option versucht, Pakete zu finden, deren Namen auf I<-data> endet, d."
+"h. Datenpakete."
+
+#. type: TP
+#: ../../doc/deborphan.1:186
+#, no-wrap
+msgid "B<debug>"
+msgstr "B<debug>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:190
+msgid ""
+"This option tries to find debugging libraries, i.e.\\& packages with names "
+"ending in I<-dbg> or I<-dbgsym>."
+msgstr ""
+"Diese Option versucht, Pakete zu finden, deren Namen auf I<-dbg> oder I<-"
+"dbgsym> endet, d.h. Fehlersuchbibliotheken."
+
+#. type: TP
+#: ../../doc/deborphan.1:191
+#, no-wrap
+msgid "B<dev>"
+msgstr "B<dev>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:196
+msgid ""
+"This option tries to find development packages, i.e.\\& packages with names "
+"ending in I<-dev>.  Also see option B<--libdevel>."
+msgstr ""
+"Diese Option versucht, Pakete zu finden, deren Namen auf I<-dev> endet, d.h. "
+"Entwicklungsbibliotheken. Siehe auch die Option B<--libdevel>."
+
+#. type: TP
+#: ../../doc/deborphan.1:197
+#, no-wrap
+msgid "B<doc>"
+msgstr "B<doc>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:201
+msgid ""
+"This option tries to find documentation packages, i.e.\\& packages with "
+"names ending in I<-doc>."
+msgstr ""
+"Diese Option versucht, Pakete zu finden, deren Namen auf I<-doc> endet, d.h. "
+"Dokumentationspakete."
+
+#. type: TP
+#: ../../doc/deborphan.1:202
+#, no-wrap
+msgid "B<dummy>"
+msgstr "B<dummy>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:206
+msgid ""
+"This option tries to find dummy packages, i.e.\\& packages with I<dummy> or "
+"I<transitional> in their short description."
+msgstr ""
+"Diese Option versucht, Pakete zu finden, in deren Kurzbeschreibung I<dummy> "
+"oder I<transitional> vorkommt."
+
+#. type: TP
+#: ../../doc/deborphan.1:207
+#, no-wrap
+msgid "B<kernel>"
+msgstr "B<kernel>"
+
+#.  Don't hyphenate the next line
+#. type: Plain text
+#: ../../doc/deborphan.1:212
+msgid ""
+"This option tries to find kernel-modules. It tries to match \\%I<(-modules|"
+"^nvidia-kernel)-.*[0\\(en9]+\\e.[0\\(en9]+\\e.[0\\(en9]+>."
+msgstr ""
+"Diese Option versucht, Kernel-Module zu finden. Es prüft auf Übereinstimmung "
+"mit \\%I<(-modules|^nvidia-kernel)-.*[0\\(en9]+\\e.[0\\(en9]+\\e.[0\\(en9]+>."
+
+#. type: TP
+#: ../../doc/deborphan.1:213
+#, no-wrap
+msgid "B<interpreters>"
+msgstr "B<interpreters>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:217
+msgid ""
+"Try to find all interpreter modules (i.e.\\& imply B<ruby>, B<pike>, "
+"B<python>, B<perl> and B<mono>)."
+msgstr ""
+"Versucht alle Interpretermodule zu finden (d.h. impliziert B<ruby>, B<pike>, "
+"B<python>, B<perl> und B<mono>)."
+
+#. type: TP
+#: ../../doc/deborphan.1:218
+#, no-wrap
+msgid "B<mono>"
+msgstr "B<mono>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:221
+msgid ""
+"This option tries to find mono libraries. It tries to match I<^libmono>."
+msgstr ""
+"Diese Option versucht, Mono-Bibliotheken zu finden. Es prüft auf "
+"Übereinstimmung mit I<^libmono>."
+
+#. type: TP
+#: ../../doc/deborphan.1:222
+#, no-wrap
+msgid "B<perl>"
+msgstr "B<perl>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:225
+msgid ""
+"This option tries to find perl modules. It tries to match I<^lib.*-perl$>."
+msgstr ""
+"Diese Option versucht, Perl-Module zu finden. Es prüft auf Übereinstimmung "
+"mit I<^lib.*-perl$>."
+
+#. type: TP
+#: ../../doc/deborphan.1:226
+#, no-wrap
+msgid "B<pike>"
+msgstr "B<pike>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:230
+msgid ""
+"This option tries to find pike modules. It tries to match I<^pike[[:"
+"digit:]]*->."
+msgstr ""
+"Diese Option versucht, Pike-Module zu finden. Es prüft auf Übereinstimmung "
+"mit I<^pike[[:digit:]]*->."
+
+# type: TP
+#. type: TP
+#: ../../doc/deborphan.1:231
+#, no-wrap
+msgid "B<python>"
+msgstr "B<python>"
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/deborphan.1:235
+msgid ""
+"This option tries to find python modules. It tries to match I<^python[[:"
+"digit:]]*->."
+msgstr ""
+"Diese Option versucht, Python-Module zu finden. Es prüft auf Übereinstimmung "
+"mit I<^python[[:digit:]]*->."
+
+#. type: TP
+#: ../../doc/deborphan.1:236
+#, no-wrap
+msgid "B<ruby>"
+msgstr "B<ruby>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:240
+msgid ""
+"This option tries to find ruby modules. It tries to match I<^lib.*-ruby[[:"
+"digit:].]*$>."
+msgstr ""
+"Diese Option versucht, Ruby-Module zu finden. Es prüft auf Übereinstimmung "
+"mit I<^lib.*-ruby[[:digit:].]*$>."
+
+#. type: TP
+#: ../../doc/deborphan.1:241
+#, no-wrap
+msgid "B<section>"
+msgstr "B<section>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:247
+msgid ""
+"This option tries to find libraries that were accidentally placed in the "
+"wrong section. It tries to match I<^lib>, but not if it ends in one of: I<-"
+"dbg>, I<-dbgsym>, I<-doc>, I<-perl>, or I<-dev>."
+msgstr ""
+"Diese Option versucht, Bibliotheken zu finden, die versehentlich in dem "
+"falschen Abschnitt abgelegt wurden. Es versucht, auf Übereinstimmung mit "
+"I<^lib>, aber nicht falls die Endung eine der folgenden ist: I<-dbg>, I<-"
+"dbgsym>, I<-doc>, I<-perl> oder I<-dev>."
+
+#. type: TP
+#: ../../doc/deborphan.1:248
+#, no-wrap
+msgid "B<all>"
+msgstr "B<all>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:251
+msgid "Try all of the above."
+msgstr "Versucht alles oben angegebene."
+
+#. type: TP
+#: ../../doc/deborphan.1:252
+#, no-wrap
+msgid "B<only>"
+msgstr "B<only>"
+
+#. type: Plain text
+#: ../../doc/deborphan.1:257
+msgid ""
+"Ignore the package's section completely, and just go for the name and/or "
+"description. This option must be used in conjunction with one or more of the "
+"B<--guess> options listed above, or deborphan will not display anything."
+msgstr ""
+"Ignoriert den Abschnitt des Pakets komplett und prüft nur auf den Namen und/"
+"oder die Beschreibung. Diese Option muss zusammen mit einer oder mehrerer "
+"der oben aufgeführten B<--guess>-Optionen verwandt werden oder Deborphan "
+"wird nichts anzeigen."
+
+#. type: SH
+#: ../../doc/deborphan.1:258
+#, no-wrap
+msgid "FILES"
+msgstr "DATEIEN"
+
+#. type: TP
+#: ../../doc/deborphan.1:259
+#, no-wrap
+msgid "I</var/lib/dpkg/status>"
+msgstr "I</var/lib/dpkg/status>"
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/deborphan.1:264
+msgid ""
+"Statuses of available packages. See the section B<INFORMATION ABOUT "
+"PACKAGES> in I<dpkg>'s man-page for more information."
+msgstr ""
+"Status der verfügbaren Pakete. Lesen Sie den Abschnitt B<INFORMATION ÜBER "
+"PAKETE> in der Handbuchseite von I<dpkg> für weitere Informationen."
+
+# type: TP
+#. type: TP
+#: ../../doc/deborphan.1:264
+#, no-wrap
+msgid "I</var/lib/deborphan/keep>"
+msgstr "I</var/lib/deborphan/keep>"
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/deborphan.1:268
+msgid ""
+"A newline-separated list of packages to keep. Package names are in no "
+"particular order."
+msgstr ""
+"Eine durch Zeilenumbrüche getrennte Liste von zu behaltenden Paketen. Die "
+"Paketnamen tauchen in keiner bestimmten Reihenfolge auf."
+
+# FIXME Fehler im Original (Reihenfolge)
+# type: Plain text
+#. type: Plain text
+#: ../../doc/deborphan.1:275
+msgid ""
+"B<dpkg>(8), B<dselect>(8), B<orphaner>(8), B<editkeep>(8), B<cruft>(8), "
+"B<xargs>(1)"
+msgstr ""
+"B<dpkg>(8), B<dselect>(8), B<orphaner>(8), B<editkeep>(8), B<cruft>(8), "
+"B<xargs>(1)"
+
+# type: SH
+#. type: SH
+#: ../../doc/deborphan.1:275
+#, no-wrap
+msgid "BUGS"
+msgstr "FEHLER"
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/deborphan.1:278
+msgid ""
+"If you report a bug, please include your I</var/lib/dpkg/status> file.  That "
+"would help in reproducing the bugs."
+msgstr ""
+"Falls Sie einen Fehler berichten, fügen Sie bitte die Datei I</var/lib/dpkg/"
+"status> bei. Diese würde beim Reproduzieren der Fehler helfen."
+
+# type: SH
+#. type: SH
+#: ../../doc/deborphan.1:278
+#, no-wrap
+msgid "AUTHORS"
+msgstr "AUTOREN"
+
+# type: Plain text
+#. type: Plain text
+#: ../../doc/deborphan.1:283
+msgid ""
+"deborphan was written by Cris van Pelt E<lt>\"Cris van Pelt\"@tribe.eu."
+"orgE<gt>, then maintained by Peter Palfrader E<lt>weasel@debian.orgE<gt> but "
+"is nowadays maintained Carsten Hey E<lt>c.hey@web.deE<gt>"
+msgstr ""
+"Deborphan wurde von Cris van Pelt E<lt>\"Cris van Pelt\"@tribe.eu.orgE<gt> "
+"geschrieben, dann von Peter Palfrader E<lt>weasel@debian.orgE<gt> betreut, "
+"wird aber heute von Carsten Hey E<lt>c.hey@web.deE<gt> betreut."
+
+# type: Plain text
+#~ msgid "Search in section libdevel in addition to libs and oldlibs."
+#~ msgstr "Sucht im Abschnitt »libdevel«, zusätzlich zu »libs« und »oldlibs«."

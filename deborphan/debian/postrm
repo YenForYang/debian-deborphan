@@ -1,0 +1,19 @@
+#!/bin/sh
+set -e
+
+KEEP="/var/lib/deborphan/keep"
+KEEPDIR="/var/lib/deborphan"
+
+if [ "$1" = "purge" ]; then
+	if [ -f $KEEP ]; then
+		rm -f $KEEP
+		# postrm should not fail when the admin created a file in $KEEPDIR
+		rmdir $KEEPDIR || true
+	fi
+fi
+
+# Here debhelper should add it's stuff if any:
+#DEBHELPER#
+
+
+# vim: set ts=2:

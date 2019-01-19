@@ -1,0 +1,434 @@
+# Danish translation deborphan.
+# Copyright (C) 2010 Free Software Foundation, Inc.
+# This file is distributed under the same license as deborphan package.
+# Morten Brix Pedersen <morten@wtf.dk>, 2004.
+# Joe Hansen <joedalton2@yahoo.dk>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: deborphan\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-19 03:17+0100\n"
+"PO-Revision-Date: 2010-11-26 22:45+0200\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <debian-l10n-danish@lists.debian.org> \n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/exit.c:53
+#, c-format
+msgid ""
+"\n"
+"The following options are available:\n"
+msgstr ""
+"\n"
+"Følgende tilvalg er tilgængelige:\n"
+
+#: src/exit.c:56
+#, c-format
+msgid "-h        This help.\n"
+msgstr "-h        Denne hjælp.\n"
+
+#: src/exit.c:59
+#, c-format
+msgid "-f FILE   Use FILE as statusfile.\n"
+msgstr "-f FIL    Brug FIL som statusfil.\n"
+
+#: src/exit.c:62
+#, c-format
+msgid "-v        Version information.\n"
+msgstr "-v        Versionsinformation.\n"
+
+#: src/exit.c:66
+#, c-format
+msgid "-d        Show dependencies for packages that have them.\n"
+msgstr "-d        Vis afhængigheder for pakker der har dem.\n"
+
+#: src/exit.c:69
+#, c-format
+msgid "-P        Show priority of packages found.\n"
+msgstr "-P        Vis prioritet på fundne pakker.\n"
+
+#: src/exit.c:72
+#, c-format
+msgid "-s        Show the sections the packages are in.\n"
+msgstr "-s        Vis de sektioner som pakkerne er i.\n"
+
+#: src/exit.c:74
+#, c-format
+msgid "--no-show-section           Do not show sections.\n"
+msgstr "--no-show-section           Vis ikke sektioner.\n"
+
+#: src/exit.c:77
+#, c-format
+msgid "-z        Show installed size of packages found.\n"
+msgstr "-z        Vis installeret størrelse på fundne pakker.\n"
+
+#: src/exit.c:81
+#, c-format
+msgid "-a        Compare all packages, not just libs.\n"
+msgstr "-a        Sammenlign alle pakker, ikke bare biblioteker.\n"
+
+#: src/exit.c:84
+#, c-format
+msgid "-e LIST   Work as if packages in LIST were not installed.\n"
+msgstr "-e LIST   Virker som hvis pakker i LIST ikke var installeret.\n"
+
+#: src/exit.c:87
+#, c-format
+msgid "-H        Ignore hold flags.\n"
+msgstr "-H        Ignorer hold flag.\n"
+
+#: src/exit.c:90
+#, c-format
+msgid "Disable checks for `recommends'.\n"
+msgstr "Deaktiver kontrol efter »recommends«.\n"
+
+#: src/exit.c:92
+#, c-format
+msgid "Disable checks for `suggests'.\n"
+msgstr "Deaktiver kontrol efter »suggests«.\n"
+
+#: src/exit.c:95
+#, c-format
+msgid "-n        Disable checks for `recommends' and `suggests'.\n"
+msgstr "-n        Deaktiver kontrol efter »recommends« og »suggests«.\n"
+
+#: src/exit.c:98
+#, c-format
+msgid "-p PRIOR  Select only packages with priority >= PRIOR.\n"
+msgstr "-p PRIOR  Vælg kun pakker med prioritet >= PRIOR.\n"
+
+#: src/exit.c:101
+#, c-format
+msgid "--find-config               Find \"orphaned\" configuration files.\n"
+msgstr "--find-config               Find »forældreløse« opsætningsfiler.\n"
+
+#: src/exit.c:105
+#, fuzzy, c-format
+msgid "--libdevel                  Also search in section \"libdevel\".\n"
+msgstr ""
+"--libdevel                  Søg i libdevel udover de normale libs og "
+"oldlibs.\n"
+
+#: src/exit.c:109
+#, c-format
+msgid "-A PKGS.. Never report PKGS.\n"
+msgstr "-A PKGR.. Rapporter aldrig PKGR.\n"
+
+#: src/exit.c:112
+#, c-format
+msgid "-k FILE   Use FILE to get/store info about kept packages.\n"
+msgstr "-k FIL    Brug FIL til at hente/lagre info omkring pakker.\n"
+
+#: src/exit.c:115
+#, c-format
+msgid "-L        List the packages that are never reported.\n"
+msgstr "-L        Vis de pakker som aldrig er blevet rapporteret.\n"
+
+#: src/exit.c:118
+#, c-format
+msgid "-R PKGS.. Remove PKGS from the \"keep\" file.\n"
+msgstr "-R PKGS.. Fjern PKGS fra filen »keep«.\n"
+
+#: src/exit.c:121
+#, c-format
+msgid "-Z        Remove all packages from the \"keep\" file.\n"
+msgstr "-Z        Fjern alle pakker fra filen »keep«.\n"
+
+#: src/exit.c:125
+#, c-format
+msgid "--df-keep                   Read debfoster's \"keepers\" file.\n"
+msgstr "--df-keep                   Læs debfosters fil »keepers«.\n"
+
+#: src/exit.c:127
+#, c-format
+msgid "--no-df-keep                Do not read debfoster's \"keepers\" file.\n"
+msgstr "--no-df-keep                Læs ikke debfosters fil »keepers«.\n"
+
+#: src/exit.c:133
+#, c-format
+msgid "--guess-common              Try to report common packages.\n"
+msgstr "--guess-common              Prøv at rapportere fælles pakker.\n"
+
+#: src/exit.c:134
+#, c-format
+msgid "--guess-data                Try to report data packages.\n"
+msgstr "--guess-data                Prøv at rapportere datapakker.\n"
+
+#: src/exit.c:136
+#, c-format
+msgid "--guess-debug               Try to report debugging libraries.\n"
+msgstr ""
+"--guess-debug               Prøv at rapportere fejlsøgningsbiblioteker.\n"
+
+#: src/exit.c:138
+#, c-format
+msgid "--guess-dev                 Try to report development packages.\n"
+msgstr "--guess-dev                 Prøv at rapportere udviklingspakker.\n"
+
+#: src/exit.c:140
+#, c-format
+msgid "--guess-doc                 Try to report documentation packages.\n"
+msgstr "--guess-doc                 Prøv at rapportere dokumentationspakker.\n"
+
+#: src/exit.c:141
+#, c-format
+msgid "--guess-dummy               Try to report dummy packages.\n"
+msgstr "--guess-dummy               Prøv at rapportere dummypakker.\n"
+
+#: src/exit.c:142
+#, fuzzy, c-format
+msgid "--guess-java                Try to report java libraries.\n"
+msgstr "--guess-mono                Prøv at rapportere monobiblioteker.\n"
+
+#: src/exit.c:143
+#, c-format
+msgid "--guess-kernel              Try to report kernel modules.\n"
+msgstr "--guess-kernel              Prøv at rapportere kernemoduler.\n"
+
+#: src/exit.c:145
+#, c-format
+msgid "--guess-interpreters        Try to report interpreter libraries.\n"
+msgstr "--guess-interpreters        Prøv at rapportere fortolkerbiblioteker.\n"
+
+#: src/exit.c:146
+#, c-format
+msgid "--guess-mono                Try to report mono libraries.\n"
+msgstr "--guess-mono                Prøv at rapportere monobiblioteker.\n"
+
+#: src/exit.c:147
+#, c-format
+msgid "--guess-perl                Try to report perl libraries.\n"
+msgstr "--guess-perl                Prøv at rapportere perlbiblioteker.\n"
+
+#: src/exit.c:148
+#, c-format
+msgid "--guess-pike                Try to report pike libraries.\n"
+msgstr "--guess-pike                Prøv at rapportere pikebiblioteker.\n"
+
+#: src/exit.c:149
+#, c-format
+msgid "--guess-python              Try to report python libraries.\n"
+msgstr "--guess-python              Prøv at rapportere pythonbiblioteker.\n"
+
+#: src/exit.c:150
+#, c-format
+msgid "--guess-ruby                Try to report ruby libraries.\n"
+msgstr "--guess-ruby                Prøv at rapportere rubybiblioteker.\n"
+
+#: src/exit.c:152
+#, c-format
+msgid ""
+"--guess-section             Try to report libraries in wrong sections.\n"
+msgstr ""
+"--guess-section             Prøv at rapporter biblioteker i forkerte "
+"sektioner.\n"
+
+#: src/exit.c:155
+#, c-format
+msgid "--guess-all                 Try all of the above.\n"
+msgstr "--guess-all                 Prøv alle af de ovenstående.\n"
+
+#: src/exit.c:156
+#, c-format
+msgid "--guess-only                Use --guess options only.\n"
+msgstr "--guess-only                Brug kun --guess tilvalg.\n"
+
+#: src/exit.c:158
+#, c-format
+msgid ""
+"\n"
+"See also: deborphan(1), orphaner(8)"
+msgstr ""
+"\n"
+"Se også: deborphan(1), orphaner(8)"
+
+#: src/exit.c:163
+#, c-format
+msgid "%s %s - Find packages without other packages depending on them\n"
+msgstr ""
+
+#: src/exit.c:169
+#, c-format
+msgid ""
+"Distributed under the terms of the MIT License, see the file COPYING\n"
+"provided in this package, or /usr/share/doc/deborphan/copyright on a\n"
+"Debian system for details.\n"
+msgstr ""
+
+#: src/exit.c:176
+#, c-format
+msgid ""
+"THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS "
+"OR\n"
+"IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n"
+"FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n"
+"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n"
+"LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING "
+"FROM,\n"
+"OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN "
+"THE\n"
+"SOFTWARE.\n"
+msgstr ""
+
+#: src/exit.c:198
+#, c-format
+msgid "Usage: %s [OPTIONS] [PACKAGE]...\n"
+msgstr "Brug: %s [TILVALG] [PAKKE]...\n"
+
+#: src/exit.c:202
+#, fuzzy
+msgid ""
+"The status file is in an improper state.\n"
+"One or more packages are marked as half-installed, half-configured,\n"
+"unpacked, triggers-awaited or triggers-pending. Exiting.\n"
+"\n"
+"Note: dpkg --audit may be used to find such packages.\n"
+msgstr ""
+"Statusfilen er i en uheldig tilstand.\n"
+"En eller flere pakker er markeret som værende delvis installeret,\n"
+"delvis konfigureret, uudpakket, udløserventet eller udløserafventende.\n"
+"Afslutter.\n"
+
+#: src/exit.c:210
+msgid "Status file is probably invalid. Exiting.\n"
+msgstr "Statusfil er sandsynligvis ugyldig. Afslutter.\n"
+
+#: util/orphaner.sh:50
+#, sh-format
+msgid "Usage: %s [--help|--purge|--skip-apt] [deborphan options]"
+msgstr "Brug: %s [--help|--purge|--skip-apt] [tilvalg for deborphan]"
+
+#: util/orphaner.sh:52
+#, no-sh-format
+msgid "See orphaner(8) and deborphan(1) for a list of valid options."
+msgstr "Se orphaner(8) og deborphan(1) for en liste over tilgængelige tilvalg."
+
+#: util/orphaner.sh:54
+#, sh-format
+msgid "Invalid basename: %s."
+msgstr "Ugyldigt basisnavn: %s."
+
+#: util/orphaner.sh:56
+#, sh-format
+msgid "%s: Invalid option: %s."
+msgstr "%s: Ugyldigt tilvalg: %s."
+
+#: util/orphaner.sh:58
+#, sh-format
+msgid "%s: You need \"dialog\" in $PATH to run this frontend."
+msgstr "%s: Du skal bruge »dialog« i $PATH for at køre denne grænseflade."
+
+#: util/orphaner.sh:60
+#, no-sh-format
+msgid "Screen too small or set $LINES and $COLUMNS."
+msgstr "Skærm for lille, eller indstil $LINES og $COLUMNS."
+
+#: util/orphaner.sh:63
+#, no-sh-format
+msgid ""
+"Select packages that should never be recommended for removal in deborphan:"
+msgstr "Vælg pakker der aldrig skal blive anbefalet til fjernelse i deborphan:"
+
+#: util/orphaner.sh:65
+#, no-sh-format
+msgid "Select packages for removal or cancel to quit:"
+msgstr "Vælg pakker der skal fjernes, eller annuller for at afslutte:"
+
+#: util/orphaner.sh:68
+#, no-sh-format
+msgid "No orphaned packages found."
+msgstr "Ingen »forældreløse« pakker fundet."
+
+#: util/orphaner.sh:70
+#, no-sh-format
+msgid "\"deborphan\" got removed.  Exiting."
+msgstr "»deborphan« blev fjernet. Afslutter."
+
+#: util/orphaner.sh:72
+#, no-sh-format
+msgid "\"apt\" got removed.  Exiting."
+msgstr "»apt« blev fjernet. Afslutter."
+
+#: util/orphaner.sh:74
+#, no-sh-format
+msgid ""
+"\"apt\" is not installed, broken dependencies found or could not open lock "
+"file, are you root?  Printing \"apt-get\" commandline and exiting:"
+msgstr ""
+"»apt« er ikke installeret, ødelagte afhængigheder fundet eller kunne ikke "
+"åbne låsefil, er du administrator? Viser kommandolinjen »apt-get« og "
+"afslutter:"
+
+#: util/orphaner.sh:75
+msgid ""
+"Explicitly specified status file or requested calling \"apt-get\" to be "
+"skipped.  Printing \"apt-get\" commandline and exiting:"
+msgstr ""
+"Eksplicit specificeret statusfil eller anmodt kald »apt-get« springes over. "
+"Viser kommandolinjen »apt-get« og afslutter:"
+
+#: util/orphaner.sh:77
+#, no-sh-format
+msgid "Removing %s"
+msgstr "Fjerner %s"
+
+#: util/orphaner.sh:80
+#, no-sh-format
+msgid "\"deborphan\" returned with error."
+msgstr "»deborphan« returnede med fejl."
+
+#: util/orphaner.sh:82
+#, sh-format
+msgid "\"apt-get\" returned with exitcode %s."
+msgstr "»apt-get« returnede med afslutningskode %s."
+
+#: util/orphaner.sh:84
+#, sh-format
+msgid "\"dialog\" returned with exitcode %s."
+msgstr "»dialog« returnerede med afslutningskode %s."
+
+#: util/orphaner.sh:86
+#, no-sh-format
+msgid ""
+"\"apt-get\" tries to remove more packages than requested by \"orphaner\".  "
+"Exiting."
+msgstr ""
+"»apt-get« forsøger at fjerne flere pakker end anmodt om af »orphaner«. "
+"Afslutter."
+
+#: util/orphaner.sh:89
+#, no-sh-format
+msgid "Simulate"
+msgstr "Simuler"
+
+#: util/orphaner.sh:92
+#, no-sh-format
+msgid "Press enter to continue."
+msgstr "Tryk retur for at fortsætte."
+
+#: util/orphaner.sh:95
+#, no-sh-format
+msgid "\"find-circular\" is currently not supported by \"orphaner\".  Exiting."
+msgstr "»find-circular« er aktuelt ikke understøttet af »orphaner«. Afslutter"
+
+#~ msgid "-n        Enable checks for `recommends' and `suggests'.\n"
+#~ msgstr "-n        Aktiver kontrol efter »recommends« og »suggests«.\n"
+
+#~ msgid ""
+#~ "%s %s - Find packages without other packages depending on them\n"
+#~ "Distributed under the terms of the Artistic License.\n"
+#~ "\n"
+#~ "THIS PACKAGE IS PROVIDED \"AS IS\" AND WITHOUT ANY EXPRESS OR\n"
+#~ "IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED\n"
+#~ "WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.\n"
+#~ msgstr ""
+#~ "%s %s - Find pakker der ingen pakker har, som afhænger af dem\n"
+#~ "Distributeret under betingelserne i den artistiske licens.\n"
+#~ "\n"
+#~ "DENNE PAKKE TILBYDES »SOM DEN ER« OG UDEN NOGEN DIREKTE ELLER\n"
+#~ "INDIREKTE GARANTIER, INKLUSIVE, UDEN BEGRÆNSNING, DE UNDERFORSTÅENDE\n"
+#~ "GARANTIER FOR SALGSBARHED OG EGNETHED TIL ET SPECIFIK FORMÅL.\n"

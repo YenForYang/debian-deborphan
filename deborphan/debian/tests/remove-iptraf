@@ -1,0 +1,4 @@
+#!/bin/bash
+if ! deborphan | grep iptraf; then
+    echo "iptraf missing in deborphan output"
+fi

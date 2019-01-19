@@ -1,0 +1,442 @@
+# Vietnamese translation of deborphan.
+# Copyright (C) 2011 Debian Vietnamese l10n team <debian-l10n-vietnamese@lists.debian.org>
+# This file is distributed under the same license as the deborphan package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: deborphan 1.7.28.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-25 17:33+0000\n"
+"PO-Revision-Date: 2011-01-25 21:28+0700\n"
+"Last-Translator: Lê Hoàng Phương <herophuong93@gmail.com>\n"
+"Language-Team: Vietnamese <debian-l10n-vietnamese@lists.debian.org>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/exit.c:52
+#, c-format
+msgid ""
+"\n"
+"The following options are available:\n"
+msgstr ""
+"\n"
+"Những tùy chọn sau có thể sử dụng:\n"
+
+#: src/exit.c:55
+#, c-format
+msgid "-h        This help.\n"
+msgstr "-h            Giúp đỡ này.\n"
+
+#: src/exit.c:58
+#, c-format
+msgid "-f FILE   Use FILE as statusfile.\n"
+msgstr "-f TẬP_TIN    Sử dụng  TẬP_TIN như tập tin trạng thái.\n"
+
+#: src/exit.c:61
+#, c-format
+msgid "-v        Version information.\n"
+msgstr "-v            Thông tin phiên bản.\n"
+
+#: src/exit.c:65
+#, c-format
+msgid "-d        Show dependencies for packages that have them.\n"
+msgstr "-d            Hiển thị các phụ thuộc của gói bị phụ thuộc.\n"
+
+#: src/exit.c:68
+#, c-format
+msgid "-P        Show priority of packages found.\n"
+msgstr "-P            Hiện độ ưu tiên của các gói được tìm thấy.\n"
+
+#: src/exit.c:71
+#, c-format
+msgid "-s        Show the sections the packages are in.\n"
+msgstr "-s            Hiện các mục có các gói nằm trong.\n"
+
+#: src/exit.c:73
+#, c-format
+msgid "--no-show-section           Do not show sections.\n"
+msgstr "--no-show-section               Không hiển thị mục.\n"
+
+#: src/exit.c:76
+#, c-format
+msgid "-z        Show installed size of packages found.\n"
+msgstr ""
+"-z            Hiện kích thước đã cài đặt của các gói được tìm\n"
+"                                thấy.\n"
+
+#: src/exit.c:80
+#, c-format
+msgid "-a        Compare all packages, not just libs.\n"
+msgstr "-a            So sánh tất cả các gói, không chỉ libs.\n"
+
+#: src/exit.c:83
+#, c-format
+msgid "-e LIST   Work as if packages in LIST were not installed.\n"
+msgstr ""
+"-e DANH_SÁCH  Hoạt động nếu như các gói trong DANH_SÁCH\n"
+"                                chưa được cài đặt.\n"
+
+#: src/exit.c:86
+#, c-format
+msgid "-H        Ignore hold flags.\n"
+msgstr "-H            Bỏ qua những cờ đã được giữ.\n"
+
+#: src/exit.c:89
+#, c-format
+msgid "Disable checks for `recommends'.\n"
+msgstr "    Tắt kiểm tra với \"khuyến cáo\".\n"
+
+#: src/exit.c:91
+#, c-format
+msgid "Disable checks for `suggests'.\n"
+msgstr "    Tắt kiểm tra với 'đề nghị'.\n"
+
+#: src/exit.c:94
+#, c-format
+msgid "-n        Disable checks for `recommends' and `suggests'.\n"
+msgstr "-n            Tắt kiểm tra với `khuyến cáo' và `đề nghị'.\n"
+
+#: src/exit.c:97
+#, c-format
+msgid "-p PRIOR  Select only packages with priority >= PRIOR.\n"
+msgstr "-p ĐỘ_ƯU_TIÊN Chỉ chọn các gói có độ ưu tiên >= ĐỘ_ƯU_TIÊN.\n"
+
+#: src/exit.c:100
+#, c-format
+msgid "--find-config               Find \"orphaned\" configuration files.\n"
+msgstr "--find-config                   Tìm các tập tin cấu hình \"mồ côi\".\n"
+
+#: src/exit.c:104
+#, fuzzy, c-format
+msgid "--libdevel                  Also search in section \"libdevel\".\n"
+msgstr ""
+"--libdevel                      Tìm trong libdevel để thêm vào cho libs và\n"
+"                                oldlibs.\n"
+
+#: src/exit.c:108
+#, c-format
+msgid "-A PKGS.. Never report PKGS.\n"
+msgstr "-A PKGS..     Không bao giờ báo cáo PKGS.\n"
+
+#: src/exit.c:111
+#, c-format
+msgid "-k FILE   Use FILE to get/store info about kept packages.\n"
+msgstr ""
+"-k TẬP_TIN    Sử dụng TẬP_TIN để lấy/lưu trữ thông tin về\n"
+"                                các gói được giữ lại.\n"
+
+#: src/exit.c:114
+#, c-format
+msgid "-L        List the packages that are never reported.\n"
+msgstr "-L            Liệt kê các gói chưa bao giờ được báo cáo.\n"
+
+#: src/exit.c:117
+#, c-format
+msgid "-R PKGS.. Remove PKGS from the \"keep\" file.\n"
+msgstr "-R PKGS..     Xóa bỏ PKGS khỏi tập tin \"keep\".\n"
+
+#: src/exit.c:120
+#, c-format
+msgid "-Z        Remove all packages from the \"keep\" file.\n"
+msgstr "-Z            Xóa bỏ tất cả các gói từ tập tin \"keep\".\n"
+
+#: src/exit.c:124
+#, c-format
+msgid "--df-keep                   Read debfoster's \"keepers\" file.\n"
+msgstr ""
+"--df-keep                       Đọc tập tin \"keepers\" của debfoster.\n"
+
+#: src/exit.c:126
+#, c-format
+msgid "--no-df-keep                Do not read debfoster's \"keepers\" file.\n"
+msgstr ""
+"--no-df-keep                    Không đọc tập tin \"keepers\" của "
+"debfoster.\n"
+
+#: src/exit.c:132
+#, c-format
+msgid "--guess-common              Try to report common packages.\n"
+msgstr ""
+"--guess-common                  Cố gắng báo cáo các gói thông thường.\n"
+
+#: src/exit.c:133
+#, c-format
+msgid "--guess-data                Try to report data packages.\n"
+msgstr "--guess-data                    Cố gắng báo cáo các gói dữ liệu.\n"
+
+#: src/exit.c:135
+#, c-format
+msgid "--guess-debug               Try to report debugging libraries.\n"
+msgstr "--guess-debug                   Cố gắng báo cáo các thư viện gỡ lỗi.\n"
+
+#: src/exit.c:137
+#, c-format
+msgid "--guess-dev                 Try to report development packages.\n"
+msgstr "--guess-dev                     Cố gắng báo cáo các gói phát triển.\n"
+
+#: src/exit.c:139
+#, c-format
+msgid "--guess-doc                 Try to report documentation packages.\n"
+msgstr "--guess-doc                     Cố gắng báo cáo các gói tài liệu.\n"
+
+#: src/exit.c:140
+#, c-format
+msgid "--guess-dummy               Try to report dummy packages.\n"
+msgstr "--guess-dummy                   Cố gắng báo cáo các gói giả dạng.\n"
+
+#: src/exit.c:141
+#, fuzzy, c-format
+msgid "--guess-java                Try to report java libraries.\n"
+msgstr "--guess-mono                    Cố gắng báo cáo các thư viện mono.\n"
+
+#: src/exit.c:142
+#, c-format
+msgid "--guess-kernel              Try to report kernel modules.\n"
+msgstr "--guess-kernel                  Cố gắng báo cáo các mô-đun lõi.\n"
+
+#: src/exit.c:144
+#, c-format
+msgid "--guess-interpreters        Try to report interpreter libraries.\n"
+msgstr ""
+"--guess-interpreters            Cố gắng báo cáo các thư viện phiên dịch.\n"
+
+#: src/exit.c:145
+#, c-format
+msgid "--guess-mono                Try to report mono libraries.\n"
+msgstr "--guess-mono                    Cố gắng báo cáo các thư viện mono.\n"
+
+#: src/exit.c:146
+#, c-format
+msgid "--guess-perl                Try to report perl libraries.\n"
+msgstr "--guess-perl                    Cố gắng báo cáo các thư viện perl.\n"
+
+#: src/exit.c:147
+#, c-format
+msgid "--guess-pike                Try to report pike libraries.\n"
+msgstr "--guess-pike                    Cố gắng báo cáo các thư viện pike.\n"
+
+#: src/exit.c:148
+#, c-format
+msgid "--guess-python              Try to report python libraries.\n"
+msgstr "--guess-python                  Cố gắng báo cáo các thư viện python.\n"
+
+#: src/exit.c:149
+#, c-format
+msgid "--guess-ruby                Try to report ruby libraries.\n"
+msgstr "--guess-ruby                    Cố gắng báo cáo các thư viện ruby.\n"
+
+#: src/exit.c:151
+#, c-format
+msgid ""
+"--guess-section             Try to report libraries in wrong sections.\n"
+msgstr ""
+"--guess-section                 Cố gắng báo cáo các thư viện ở sai mục.\n"
+
+#: src/exit.c:154
+#, c-format
+msgid "--guess-all                 Try all of the above.\n"
+msgstr "--guess-all                     Cố gắng tất cả những điều trên.\n"
+
+#: src/exit.c:155
+#, c-format
+msgid "--guess-only                Use --guess options only.\n"
+msgstr "--guess-only                    Chỉ sử dụng các tùy chọn --guess.\n"
+
+#: src/exit.c:157
+#, c-format
+msgid ""
+"\n"
+"See also: deborphan(1), orphaner(8)"
+msgstr ""
+"\n"
+"Xem cả: deborphan(1), orphaner(8)"
+
+#: src/exit.c:162
+#, c-format
+msgid "%s %s - Find packages without other packages depending on them\n"
+msgstr ""
+
+#: src/exit.c:168
+#, c-format
+msgid ""
+"Distributed under the terms of the MIT License, see the file COPYING\n"
+"provided in this package, or /usr/share/doc/deborphan/copyright on a\n"
+"Debian system for details.\n"
+msgstr ""
+
+#: src/exit.c:175
+#, c-format
+msgid ""
+"THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS "
+"OR\n"
+"IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n"
+"FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n"
+"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n"
+"LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING "
+"FROM,\n"
+"OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN "
+"THE\n"
+"SOFTWARE.\n"
+msgstr ""
+
+#: src/exit.c:197
+#, c-format
+msgid "Usage: %s [OPTIONS] [PACKAGE]...\n"
+msgstr "Cách sử dụng: %s [TÙY_CHỌN] [GÓI]...\n"
+
+#: src/exit.c:201
+#, fuzzy
+msgid ""
+"The status file is in an improper state.\n"
+"One or more packages are marked as half-installed, half-configured,\n"
+"unpacked, triggers-awaited or triggers-pending. Exiting.\n"
+"\n"
+"Note: dpkg --audit may be used to find such packages.\n"
+msgstr ""
+"Tập tin trạng thái đang ở tình trạng không chính xác.\n"
+"Một hoặc nhiều gói được đánh dấu là đã-cài-đặt-nửa, đã-cấu-hình-nửa,\n"
+"đã mở, triggers-awaited hoặc triggers-pending. Đang thoát.\n"
+
+#: src/exit.c:209
+msgid "Status file is probably invalid. Exiting.\n"
+msgstr "Tập tin trạng thái có thể vô giá trị. Đang thoát\n"
+
+#: util/orphaner.sh:50
+#, sh-format
+msgid "Usage: %s [--help|--purge|--skip-apt] [deborphan options]"
+msgstr "Cách sử dụng: %s [--help|--purge|--skip-apt] [deborphan options]"
+
+#: util/orphaner.sh:52
+#, no-sh-format
+msgid "See orphaner(8) and deborphan(1) for a list of valid options."
+msgstr ""
+"Xem orphaner(8) và deborphan(1) để lấy danh sách các tùy chọn có giá trị."
+
+#: util/orphaner.sh:54
+#, sh-format
+msgid "Invalid basename: %s."
+msgstr "Tên cơ sở vô giá trị: %s."
+
+#: util/orphaner.sh:56
+#, sh-format
+msgid "%s: Invalid option: %s."
+msgstr "%s: Tùy chọn vô giá trị: %s."
+
+#: util/orphaner.sh:58
+#, sh-format
+msgid "%s: You need \"dialog\" in $PATH to run this frontend."
+msgstr "%s: Bạn cần \"dialog\" trong $PATH để chạy trình đầu này."
+
+#: util/orphaner.sh:60
+#, no-sh-format
+msgid "Screen too small or set $LINES and $COLUMNS."
+msgstr "Màn hình quá nhỏ để đặt $LINES và $COLUMNS."
+
+#: util/orphaner.sh:63
+#, no-sh-format
+msgid ""
+"Select packages that should never be recommended for removal in deborphan:"
+msgstr "Chọn các gói không nên bị khuyến cáo loại bỏ trong deborphan:"
+
+#: util/orphaner.sh:65
+#, no-sh-format
+msgid "Select packages for removal or cancel to quit:"
+msgstr "Chọn các gói để loại bỏ hoặc hủy bỏ để thoát:"
+
+#: util/orphaner.sh:68
+#, no-sh-format
+msgid "No orphaned packages found."
+msgstr "Không có gói mồ côi nào được tìm thấy."
+
+#: util/orphaner.sh:70
+#, no-sh-format
+msgid "\"deborphan\" got removed.  Exiting."
+msgstr "\"deborphan\" đã bị xóa bỏ.  Đang thoát."
+
+#: util/orphaner.sh:72
+#, no-sh-format
+msgid "\"apt\" got removed.  Exiting."
+msgstr "\"apt\" đã bị xóa bỏ. Đang thoát."
+
+#: util/orphaner.sh:74
+#, no-sh-format
+msgid ""
+"\"apt\" is not installed, broken dependencies found or could not open lock "
+"file, are you root?  Printing \"apt-get\" commandline and exiting:"
+msgstr ""
+"\"apt\" chưa được cài đặt, các phụ thuộc bị hỏng được tìm ra hoặc không thể "
+"mở tập tin khóa, bạn có phải là root không? Đang hiển thị dòng lệnh \"apt-get"
+"\" và thoát:"
+
+#: util/orphaner.sh:75
+msgid ""
+"Explicitly specified status file or requested calling \"apt-get\" to be "
+"skipped.  Printing \"apt-get\" commandline and exiting:"
+msgstr ""
+"Rõ ràng tập tin trạng thái được chỉ định hoặc yêu cầu gọi \"apt-get\" bị bỏ "
+"qua. Đang hiển thị dòng lệnh \"apt-get\" và thoát:"
+
+#: util/orphaner.sh:77
+#, no-sh-format
+msgid "Removing %s"
+msgstr "Đang xóa bỏ %s"
+
+#: util/orphaner.sh:80
+#, no-sh-format
+msgid "\"deborphan\" returned with error."
+msgstr "\"deborphan\" trả lại lỗi."
+
+#: util/orphaner.sh:82
+#, sh-format
+msgid "\"apt-get\" returned with exitcode %s."
+msgstr "\"apt-get\" trả lại mã thoát %s."
+
+#: util/orphaner.sh:84
+#, sh-format
+msgid "\"dialog\" returned with exitcode %s."
+msgstr "\"dialog\" trả lại mã thoát %s."
+
+#: util/orphaner.sh:86
+#, no-sh-format
+msgid ""
+"\"apt-get\" tries to remove more packages than requested by \"orphaner\".  "
+"Exiting."
+msgstr ""
+"\"apt-get\" cố gắng loại bỏ nhiều gói hơn yêu cầu từ \"orphaner\".  Đang "
+"thoát."
+
+#: util/orphaner.sh:89
+#, no-sh-format
+msgid "Simulate"
+msgstr "Mô phỏng"
+
+#: util/orphaner.sh:92
+#, no-sh-format
+msgid "Press enter to continue."
+msgstr "Nhấn enter để tiếp tục."
+
+#: util/orphaner.sh:95
+#, no-sh-format
+msgid "\"find-circular\" is currently not supported by \"orphaner\".  Exiting."
+msgstr ""
+"\"find-circular\" hiện không được hỗ trợ bởi \"orphaner\".  Đang thoát."
+
+#~ msgid "-n        Enable checks for `recommends' and `suggests'.\n"
+#~ msgstr "-n            Bật kiểm tra với `khuyến cáo' và `đề nghị'.\n"
+
+#~ msgid ""
+#~ "%s %s - Find packages without other packages depending on them\n"
+#~ "Distributed under the terms of the Artistic License.\n"
+#~ "\n"
+#~ "THIS PACKAGE IS PROVIDED \"AS IS\" AND WITHOUT ANY EXPRESS OR\n"
+#~ "IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED\n"
+#~ "WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.\n"
+#~ msgstr ""
+#~ "%s %s - Tìm các gói mà không có gói khác phụ thuộc vào\n"
+#~ "Phân phối dưới những điều khoản của Giấy phép Artistic.\n"
+#~ "\n"
+#~ "THIS PACKAGE IS PROVIDED \"AS IS\" AND WITHOUT ANY EXPRESS OR\n"
+#~ "IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED\n"
+#~ "WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.\n"

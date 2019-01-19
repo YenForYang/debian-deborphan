@@ -1,0 +1,460 @@
+# Catalan translation of Deborphan.
+# Copyright © 2004, 2005, 2010 Software in the Public Interest, Inc.
+# This file is distributed under the same license as the deborphan package.
+# Jordi Mallach <jordi@debian.org>, 2004, 2005, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: deborphan 1.7.28.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-19 03:17+0100\n"
+"PO-Revision-Date: 2010-12-12 19:43+0100\n"
+"Last-Translator: Jordi Mallach <jordi@debian.org>\n"
+"Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/exit.c:53
+#, c-format
+msgid ""
+"\n"
+"The following options are available:\n"
+msgstr ""
+"\n"
+"Les següents opcions són disponibles:\n"
+
+#: src/exit.c:56
+#, c-format
+msgid "-h        This help.\n"
+msgstr "-h        Aquesta ajuda.\n"
+
+#: src/exit.c:59
+#, c-format
+msgid "-f FILE   Use FILE as statusfile.\n"
+msgstr "-f FITXER Utilitza FITXER com fitxer d'estat.\n"
+
+#: src/exit.c:62
+#, c-format
+msgid "-v        Version information.\n"
+msgstr "-v        Informació de la versió.\n"
+
+#: src/exit.c:66
+#, c-format
+msgid "-d        Show dependencies for packages that have them.\n"
+msgstr "-d        Mostra les dependències dels paquets que en tinguen.\n"
+
+#: src/exit.c:69
+#, c-format
+msgid "-P        Show priority of packages found.\n"
+msgstr "-P        Mostra les prioritats dels paquets trobats.\n"
+
+#: src/exit.c:72
+#, c-format
+msgid "-s        Show the sections the packages are in.\n"
+msgstr "-s        Mostra les seccions on es troben els paquets.\n"
+
+#: src/exit.c:74
+#, c-format
+msgid "--no-show-section           Do not show sections.\n"
+msgstr "--no-show-section           No mostres les seccions.\n"
+
+#: src/exit.c:77
+#, c-format
+msgid "-z        Show installed size of packages found.\n"
+msgstr "-z        Mostra la mida instaŀlada dels paquets trobats.\n"
+
+#: src/exit.c:81
+#, c-format
+msgid "-a        Compare all packages, not just libs.\n"
+msgstr "-a        Compara tots els paquets, no només les biblioteques.\n"
+
+#: src/exit.c:84
+#, c-format
+msgid "-e LIST   Work as if packages in LIST were not installed.\n"
+msgstr ""
+"-e LLISTA Treballa com si els paquets de la LLISTA no\n"
+"                            estigueren instaŀlats.\n"
+
+#: src/exit.c:87
+#, c-format
+msgid "-H        Ignore hold flags.\n"
+msgstr "-H        Descarta els senyaladors de congelació.\n"
+
+#: src/exit.c:90
+#, c-format
+msgid "Disable checks for `recommends'.\n"
+msgstr "Inhabilita les comprovacions per a «recomana».\n"
+
+#: src/exit.c:92
+#, c-format
+msgid "Disable checks for `suggests'.\n"
+msgstr "Inhabilita les comprovacions per a «suggereix».\n"
+
+#: src/exit.c:95
+#, c-format
+msgid "-n        Disable checks for `recommends' and `suggests'.\n"
+msgstr ""
+"-n        Inhabilita les comprovacions per a «recomana» i\n"
+"                            «suggereix».\n"
+
+#: src/exit.c:98
+#, c-format
+msgid "-p PRIOR  Select only packages with priority >= PRIOR.\n"
+msgstr "-p PRIOR  Selecciona només els paquets amb prioritat >= PRIOR.\n"
+
+#: src/exit.c:101
+#, c-format
+msgid "--find-config               Find \"orphaned\" configuration files.\n"
+msgstr "--find-config               Troba fitxers de configuració «orfes».\n"
+
+#: src/exit.c:105
+#, fuzzy, c-format
+msgid "--libdevel                  Also search in section \"libdevel\".\n"
+msgstr ""
+"--libdevel                  Cerca en libdevel a més de libs i oldlibs.\n"
+
+#: src/exit.c:109
+#, c-format
+msgid "-A PKGS.. Never report PKGS.\n"
+msgstr "-A PQTS.. No informes mai de PQTS.\n"
+
+#: src/exit.c:112
+#, c-format
+msgid "-k FILE   Use FILE to get/store info about kept packages.\n"
+msgstr ""
+"-k FITXER Utilitza FITXER per a obtenir/emmagatzemar la\n"
+"                            informació sobre els paquets conservats.\n"
+
+#: src/exit.c:115
+#, c-format
+msgid "-L        List the packages that are never reported.\n"
+msgstr "-L        Llista els paquets dels quals no s'informa mai.\n"
+
+#: src/exit.c:118
+#, c-format
+msgid "-R PKGS.. Remove PKGS from the \"keep\" file.\n"
+msgstr "-R PQTS.. Suprimeix PQTS del fitxer «keep».\n"
+
+#: src/exit.c:121
+#, c-format
+msgid "-Z        Remove all packages from the \"keep\" file.\n"
+msgstr "-Z        Elimina tots els paquets del fitxer «keep».\n"
+
+#: src/exit.c:125
+#, c-format
+msgid "--df-keep                   Read debfoster's \"keepers\" file.\n"
+msgstr ""
+"-df-keep                    Llegeix el fitxer «keepers» de debfoster.\n"
+
+#: src/exit.c:127
+#, c-format
+msgid "--no-df-keep                Do not read debfoster's \"keepers\" file.\n"
+msgstr ""
+"--no-df-keep                No llegeixes el fitxer «keepers» de debfoster.\n"
+
+#: src/exit.c:133
+#, c-format
+msgid "--guess-common              Try to report common packages.\n"
+msgstr "--guess-common              Intenta informar dels paquets comuns.\n"
+
+#: src/exit.c:134
+#, c-format
+msgid "--guess-data                Try to report data packages.\n"
+msgstr "--guess-data                Intenta informar dels paquets de dades.\n"
+
+#: src/exit.c:136
+#, c-format
+msgid "--guess-debug               Try to report debugging libraries.\n"
+msgstr ""
+"--guess-debug               Intenta informar de les biblioteques de "
+"depuració.\n"
+
+#: src/exit.c:138
+#, c-format
+msgid "--guess-dev                 Try to report development packages.\n"
+msgstr ""
+"--guess-dev                 Intenta informar dels paquets de "
+"desenvolupament.\n"
+
+#: src/exit.c:140
+#, c-format
+msgid "--guess-doc                 Try to report documentation packages.\n"
+msgstr ""
+"--guess-doc                 Intenta informar dels paquets de documentació.\n"
+
+# Buits no és una bona traducció… jm
+#: src/exit.c:141
+#, c-format
+msgid "--guess-dummy               Try to report dummy packages.\n"
+msgstr "--guess-dummy               Intenta informar dels paquets buits.\n"
+
+#: src/exit.c:142
+#, fuzzy, c-format
+msgid "--guess-java                Try to report java libraries.\n"
+msgstr ""
+"--guess-mono                Intenta informar de les biblioteques de mono.\n"
+
+#: src/exit.c:143
+#, c-format
+msgid "--guess-kernel              Try to report kernel modules.\n"
+msgstr "--guess-kernel              Intenta informar de mòduls de nucli.\n"
+
+#: src/exit.c:145
+#, c-format
+msgid "--guess-interpreters        Try to report interpreter libraries.\n"
+msgstr ""
+"--gues-interpreters         Intenta informar de les biblioteques "
+"d'intèrprets.\n"
+
+#: src/exit.c:146
+#, c-format
+msgid "--guess-mono                Try to report mono libraries.\n"
+msgstr ""
+"--guess-mono                Intenta informar de les biblioteques de mono.\n"
+
+#: src/exit.c:147
+#, c-format
+msgid "--guess-perl                Try to report perl libraries.\n"
+msgstr ""
+"--guess-perl                Intenta informar de les biblioteques de perl.\n"
+
+#: src/exit.c:148
+#, c-format
+msgid "--guess-pike                Try to report pike libraries.\n"
+msgstr ""
+"--guess-pike                Intenta informar de les biblioteques de pike.\n"
+
+#: src/exit.c:149
+#, c-format
+msgid "--guess-python              Try to report python libraries.\n"
+msgstr ""
+"--guess-python              Intenta informar de les biblioteques de python.\n"
+
+#: src/exit.c:150
+#, c-format
+msgid "--guess-ruby                Try to report ruby libraries.\n"
+msgstr ""
+"--guess-ruby                Intenta informar de les biblioteques de ruby.\n"
+
+#: src/exit.c:152
+#, c-format
+msgid ""
+"--guess-section             Try to report libraries in wrong sections.\n"
+msgstr ""
+"--guess-section             Intenta informar de les biblioteques en "
+"seccions\n"
+"                            incorrectes.\n"
+
+#: src/exit.c:155
+#, c-format
+msgid "--guess-all                 Try all of the above.\n"
+msgstr "--guess-all                 Intenta fer totes les anteriors.\n"
+
+#: src/exit.c:156
+#, c-format
+msgid "--guess-only                Use --guess options only.\n"
+msgstr "--guess-only                Utilitza només les opcions --guess.\n"
+
+#: src/exit.c:158
+#, c-format
+msgid ""
+"\n"
+"See also: deborphan(1), orphaner(8)"
+msgstr ""
+"\n"
+"Vegeu també: debophan(1), orphaner(8)"
+
+#: src/exit.c:163
+#, c-format
+msgid "%s %s - Find packages without other packages depending on them\n"
+msgstr ""
+
+#: src/exit.c:169
+#, c-format
+msgid ""
+"Distributed under the terms of the MIT License, see the file COPYING\n"
+"provided in this package, or /usr/share/doc/deborphan/copyright on a\n"
+"Debian system for details.\n"
+msgstr ""
+
+#: src/exit.c:176
+#, c-format
+msgid ""
+"THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS "
+"OR\n"
+"IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n"
+"FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n"
+"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n"
+"LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING "
+"FROM,\n"
+"OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN "
+"THE\n"
+"SOFTWARE.\n"
+msgstr ""
+
+#: src/exit.c:198
+#, c-format
+msgid "Usage: %s [OPTIONS] [PACKAGE]...\n"
+msgstr "Forma d'ús: %s [OPCIONS] [PAQUET]…\n"
+
+#: src/exit.c:202
+#, fuzzy
+msgid ""
+"The status file is in an improper state.\n"
+"One or more packages are marked as half-installed, half-configured,\n"
+"unpacked, triggers-awaited or triggers-pending. Exiting.\n"
+"\n"
+"Note: dpkg --audit may be used to find such packages.\n"
+msgstr ""
+"El fitxer «status» és en un estat incorrecte.\n"
+"Un o més paquets estan marcats com a mig-instaŀlat, mig-configurat, "
+"desempaquetat, espera-d'activadors o pendent-d'activadors. S'està eixint.\n"
+
+#: src/exit.c:210
+msgid "Status file is probably invalid. Exiting.\n"
+msgstr "El fitxer «status» sembla ser invàlid. S'està eixint.\n"
+
+#: util/orphaner.sh:50
+#, sh-format
+msgid "Usage: %s [--help|--purge|--skip-apt] [deborphan options]"
+msgstr "Forma d'ús: %s [--help|--purge|--skip-apt] [opcions de deborphan]"
+
+#: util/orphaner.sh:52
+#, no-sh-format
+msgid "See orphaner(8) and deborphan(1) for a list of valid options."
+msgstr "Vegeu orphaner(8) i deborphan(1) per a una llista d'opcions vàlides."
+
+#: util/orphaner.sh:54
+#, sh-format
+msgid "Invalid basename: %s."
+msgstr "El nom base és invàlid: %s."
+
+#: util/orphaner.sh:56
+#, sh-format
+msgid "%s: Invalid option: %s."
+msgstr "%s: L'opció és invàlida: %s."
+
+#: util/orphaner.sh:58
+#, sh-format
+msgid "%s: You need \"dialog\" in $PATH to run this frontend."
+msgstr "%s: Necessiteu «dialog» en el $PATH per a executar aquesta interfície."
+
+#: util/orphaner.sh:60
+#, no-sh-format
+msgid "Screen too small or set $LINES and $COLUMNS."
+msgstr "La pantalla és massa petita o establiu $LINES i $COLUMNS."
+
+#: util/orphaner.sh:63
+#, no-sh-format
+msgid ""
+"Select packages that should never be recommended for removal in deborphan:"
+msgstr ""
+"Seleccioneu els paquets els quals deborphan mai hauria de recomanar eliminar:"
+
+#: util/orphaner.sh:65
+#, no-sh-format
+msgid "Select packages for removal or cancel to quit:"
+msgstr "Seleccioneu els paquets a suprimir o canceŀleu per a eixir:"
+
+#: util/orphaner.sh:68
+#, no-sh-format
+msgid "No orphaned packages found."
+msgstr "No s'ha trobat cap paquet orfe."
+
+#: util/orphaner.sh:70
+#, no-sh-format
+msgid "\"deborphan\" got removed.  Exiting."
+msgstr "S'ha suprimit «deborphan». S'està eixint."
+
+#: util/orphaner.sh:72
+#, no-sh-format
+msgid "\"apt\" got removed.  Exiting."
+msgstr "S'ha suprimit «apt». S'està eixint."
+
+#: util/orphaner.sh:74
+#, no-sh-format
+msgid ""
+"\"apt\" is not installed, broken dependencies found or could not open lock "
+"file, are you root?  Printing \"apt-get\" commandline and exiting:"
+msgstr ""
+"L'«apt» no és instaŀlat, s'ha trobat dependències trencades o no s'ha pogut "
+"el fitxer de blocatge. Sou l'usuari «root»? Es mostrarà la línia d'ordres "
+"d'«apt-get» i s'eixirà:"
+
+#: util/orphaner.sh:75
+msgid ""
+"Explicitly specified status file or requested calling \"apt-get\" to be "
+"skipped.  Printing \"apt-get\" commandline and exiting:"
+msgstr ""
+"S'ha especificat explícitament un fitxer «status», o s'ha demanat l'omisió "
+"de l'execució de l'«apt-get». Es mostrarà la línia d'ordres de l'«apt-get» i "
+"s'eixirà:"
+
+#: util/orphaner.sh:77
+#, no-sh-format
+msgid "Removing %s"
+msgstr "S'està suprimint %s"
+
+#: util/orphaner.sh:80
+#, no-sh-format
+msgid "\"deborphan\" returned with error."
+msgstr "«deborphan» ha tornat un error."
+
+#: util/orphaner.sh:82
+#, sh-format
+msgid "\"apt-get\" returned with exitcode %s."
+msgstr "«apt-get» ha tornat amb el codi d'error %s."
+
+#: util/orphaner.sh:84
+#, sh-format
+msgid "\"dialog\" returned with exitcode %s."
+msgstr "«dialog» ha tornat amb el codi d'error %s."
+
+#: util/orphaner.sh:86
+#, no-sh-format
+msgid ""
+"\"apt-get\" tries to remove more packages than requested by \"orphaner\".  "
+"Exiting."
+msgstr ""
+"«apt-get» vol suprimir més paquets que els demanats per l'«orphaner». S'està "
+"eixint."
+
+#: util/orphaner.sh:89
+#, no-sh-format
+msgid "Simulate"
+msgstr "Simula"
+
+#: util/orphaner.sh:92
+#, no-sh-format
+msgid "Press enter to continue."
+msgstr "Premeu Intro per a continuar."
+
+#: util/orphaner.sh:95
+#, no-sh-format
+msgid "\"find-circular\" is currently not supported by \"orphaner\".  Exiting."
+msgstr ""
+"«find-circular» no és implementat actualment per l'«orphaner». S'està eixint."
+
+#~ msgid "-n        Enable checks for `recommends' and `suggests'.\n"
+#~ msgstr ""
+#~ "-n        Habilita les comprovacions per a «recomana» i «suggereix».\n"
+
+#~ msgid ""
+#~ "%s %s - Find packages without other packages depending on them\n"
+#~ "Distributed under the terms of the Artistic License.\n"
+#~ "\n"
+#~ "THIS PACKAGE IS PROVIDED \"AS IS\" AND WITHOUT ANY EXPRESS OR\n"
+#~ "IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED\n"
+#~ "WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.\n"
+#~ msgstr ""
+#~ "%s %s - Troba paquets dels quals no depenen altres paquets\n"
+#~ "Distribuït sota els termes de la Llicència Artística.\n"
+#~ "\n"
+#~ "AQUEST PAQUET ES PROVEEIX «COM ESTÀ» I SENSE CAP GARANTIA EXPRESSA\n"
+#~ "O IMPLÍCITA, INCLOENT, SENSE CAP LIMITACIÓ, LES GARANTIES IMPLÍCITES\n"
+#~ "DE COMERCIABILITAT I ADEQUACIÓ PER A UN PROPÒSIT PARTICULAR.\n"
+
+#~ msgid "-R PKGS.. Report PKGS if there are no dependencies.\n"
+#~ msgstr "-R PQTS.. Informa de PQTS si no hi ha dependències.\n"

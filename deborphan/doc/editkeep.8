@@ -1,0 +1,34 @@
+.TH editkeep 8 "" "April 2004" ""
+.\" Copyright (C) 2000 Peter Palfrader
+
+.SH NAME
+.LP
+editkeep \- frontend for deborphan
+
+.SH SYNOPSIS
+.LP
+\fBeditkeep\fP [options]
+
+.SH DESCRIPTION
+.LP
+\fBeditkeep\fR is a frontend for \fBdeborphan\fP displaying a list
+of orphaned packages (\-a for all\-sections is implied) and packages
+which are tagged to never been shown using dialog or whiptail.
+
+.LP
+
+Packages may be selected to be added or removed from deborphans keep
+list, i.e. the list of files it never proposes for removal.
+
+.SH OPTIONS
+.LP
+\fB\-n\fP
+Turn off nice-mode.
+See the deborphan manpage for description.
+
+.SH SEE ALSO
+
+\fBdeborphan\fP(1),
+\fBorphaner\fP(8),
+\fBapt\-get\fP(8)
+

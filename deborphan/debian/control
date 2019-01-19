@@ -1,0 +1,29 @@
+Source: deborphan
+Section: admin
+Priority: optional
+Maintainer: deborphan Maintainers <deborphan@packages.debian.org>
+Uploaders: Chris Hofstaedtler <zeha@debian.org>,
+           Carsten Hey <carsten@debian.org>
+Standards-Version: 4.1.5
+Build-Depends: debhelper (>= 11),
+               po4a
+Rules-Requires-Root: no
+Vcs-Browser: https://salsa.debian.org/debian/deborphan
+Vcs-Git: https://salsa.debian.org/debian/deborphan.git
+
+Package: deborphan
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: apt,
+            dialog,
+            gettext-base
+Description: program that can find unused packages, e.g. libraries
+ deborphan finds "orphaned" packages on your system. It determines which
+ packages have no other packages depending on their installation and shows
+ you a list of these packages. It is most useful when finding libraries,
+ but it can be used on packages in all sections.
+ .
+ This package also includes orphaner, a text menu frontend to deborphan.
+ Please install the recommended packages dialog, gettext-base and apt when
+ you want a working and fully featured orphaner.

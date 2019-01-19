@@ -1,0 +1,3 @@
+deborphan-dbgsym_1.7.31_amd64.deb debug optional automatic=yes
+deborphan_1.7.31_amd64.buildinfo admin optional
+deborphan_1.7.31_amd64.deb admin optional

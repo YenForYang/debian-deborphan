@@ -1,0 +1,119 @@
+This package was debianized by Peter Palfrader <weasel@debian.org> on
+Sat,  3 Jun 2000 21:15:08 +0200.
+
+Previously Cris van Pelt was upstream for deborphan and hosted it at
+http://tribe.eu.org/deborphan/.  Since 2004 it is a native Debian package
+(since Cris apparently lost interest).  It was maintained by Peter Palfrader
+since 2000.  In 2008 Carsten Hey took over maintenance of deborphan.
+
+
+Deborphan is:
+Copyright (C) 2000, 2001, 2002, 2003 Cris van Pelt <tribbel@tribe.eu.org>
+Copyright (C) 2003, 2004, 2005, 2006 Peter Palfrader <weasel@debian.org>
+Copyright (C) 2005 Daniel Déchelotte <boite_a_spam@club-internet.fr>
+Copyright (C) 2008 Andrej Tatarenkow <tatarenkow@comdasys.com>,
+Copyright (C) 2008, 2009 Carsten Hey <carsten@debian.org>
+
+Orphaner is:
+Copyright (C) 2000 Goswin Brederlow <goswin-v-b@web.de>
+Copyright (C) 2001, 2003 Cris van Pelt <tribbel@tribe.eu.org>
+Copyright (C) 2000, 2003, 2004, 2005, 2006 Peter Palfrader <weasel@debian.org>
+Copyright (C) 2003, 2004, 2007, 2008 Jörg Sommer <joerg@alea.gnuu.de>
+Copyright (C) 2008, 2009 Carsten Hey <carsten@debian.org>
+
+The Debian packaging is:
+Copyright (C) 2000, 2001, 2002, 2003, 2004, 2005, 2006 Peter Palfrader <weasel@debian.org>
+Copyright (C) 2008, 2009 Carsten Hey <carsten@debian.org>
+
+The Basque program translation is:
+Copyright (C) 2006, 2007 Piarres Beobide <pi@beobide.net>
+Copyright (C) 2010 Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>
+
+The Catalan program translation is:
+Copyright (C) 2004, 2005, 2010 Jordi Mallach <jordi@debian.org>
+
+The Czech program translation is:
+Copyright (C) 2004, 2008, 2010 Miroslav Kure <kurem@debian.cz>
+
+The Danish program translation is:
+Copyright (C) 2004 Morten Brix Pedersen <morten@wtf.dk>
+Copyright (C) 2010 Joe Hansen <joedalton2@yahoo.dk>
+
+The Dutch program translation is:
+Copyright (C) 2000, 2005 Cris van Pelt <tribbel@tribe.eu.org>
+Copyright (C) 2005 Jouke Witteveen
+Copyright (C) 2006, 2008 Thijs Kinkhorst <thijs@debian.org>
+Copyright (C) 2015, 2018 Frans Spiesschaert <Frans.Spiesschaert@yucom.be>
+
+The French program translation is:
+Copyright (C) 2004, 2008, 2010, 2018 Jean-Luc Coulon <jean-luc.coulon@wanadoo.fr>
+
+The German program translation is:
+Copyright (C) 2008, 2010, 2018 Helge Kreutzmann <debian@helgefjell.de>
+Copyright (C) 2004 Florian Ernst <florian_ernst@gmx.net>
+
+The Italian program translation is:
+Copyright (C) 2008, 2010, 2018 Alessandro De Zorzi <lota@nonlontano.it>
+
+The Japanese program translation is:
+Copyright (C) 2008 Yasuo Eto <yasuo@etou.org>
+
+The Polish program translation is:
+Copyright (C) 2004, 2005, 2010 Robert Luberda <robert@debian.org>
+
+The Portuguese program translation is:
+Copyright (C) 2010, 2018 Pedro Ribeiro <p.m42.ribeiro@gmail.com>
+
+The Russian program translation is:
+Copyright (C) 2008 Yuri Kozlov <kozlov.y@gmail.com>
+Copyright (C) 2009, 2018 Yuri Kozlov <yuray@komyakino.ru>
+
+The Spanish program translation is:
+Copyright (C) 2004, 2010 Javier Fernandez-Sanguino Peña <jfs@debian.org>
+Copyright (C) 2018 Jonatan Porras <jonatanpc8@gmail.com>
+
+The Vietnamese program translation is:
+Copyright (C) 2011 Lê Hoàng Ph◈◈ng <herophuong93@gmail.com>
+
+The Dutch man page translation is:
+Copyright (C) 2018 Frans Spiesschaert <Frans.Spiesschaert@yucom.be>
+
+The French man page translation is:
+Copyright (C) 2006 Jean-Luc Coulon (f5ibh) <jean-luc.coulon@wanadoo.fr>
+Copyright (C) 2006 Guilhelm Panaget <guilhelm.panaget@free.fr>
+Copyright (C) 2008 Christian Perrier <bubulle@debian.org>
+Copyright (C) 2010 David Prévot <david@tilapin.org>
+
+The German man page translation is:
+Copyright (C) 2010, 2018 Helge Kreutzmann <debian@helgefjell.de>
+
+The Polish man page translation is:
+Copyright (C) 2005, 2010 Robert Luberda <robert@debian.org>
+
+The Portuguese man page translation is:
+Copyright (C) 2010 Américo Monteiro <a_monteiro@netcabo.pt>
+
+The Spanish man page translation is:
+Copyright (C) 2010 Omar Campagne <ocampagne@gmail.com>
+Copyright (C) 2018 Jonatan Porras <jonatanpc8@gmail.com>
+
+Deborphan and orphaner are distributed under the terms of the stated below
+"MIT License", as is the Debian packaging.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

@@ -1,0 +1,1186 @@
+deborphan (1.7.31) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Helge Kreutzmann ]
+  * Fix bash completion syntax. (Closes: #912640)
+  * Fix formatting of man pages. (Closes: #905042, #905154)
+  * Updated German man page translation. (Closes: #906442)
+  * Add additional reference to editkeep. (Closes: #640509)
+  * Fix README.source. (Closes: #915983)
+  * Update German program translation. (Closes: #915984)
+  * Update Spanish program translation.
+  * Update Spanish man page translation.
+  * Update Portuguese program translation. (Closes: 918233)
+  * Update Italian program translation. (Closes: 916100)
+  * Update Russian program translation. (Closes: 916141)
+  * Update French program translation. (Closes: 916698)
+  * Add Dutch man page translation. (Closes: 918237)
+  * Add missing translation copyright statements in debian/copyright.
+
+ -- Helge Kreutzmann <debian@helgefjell.de>  Sun, 09 Dec 2018 14:31:35 +0100
+
+deborphan (1.7.30) unstable; urgency=medium
+
+  This release includes many of the improvements from 1.7.29 but
+  skips the no longer mergeable bits.
+
+  [ David Prévot ]
+  * Remove self from uploaders
+
+  [ Carsten Hey ]
+  * Relicense under MIT License with permission from all copyright holders
+  * Treat -dbgsym packages as -dbg.
+    Thanks to Laurent Bigonville. (LP: #533881)
+  * Add code to update debian/bash-complete.
+  * Arrange output of deborphan --help alphabetically again.
+
+  [ Chris Hofstaedtler ]
+  * Remove support for disabling DEFAULT_NICE
+  * update-bash-complete: fix for current coreutils, perl, sourcecode
+  * Fix memory leak in listkeep
+  * debian: Enable hardening build flags
+  * debian: Set Rules-Require-Root: no
+  * Add a simple autopkgtest
+  * Assume malloc et al never fail
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Thu, 26 Jul 2018 11:14:06 +0000
+
+deborphan (1.7.28.11) unstable; urgency=medium
+
+  [ Carsten Hey ]
+  * Remove obsolete functions. (cherry-picked from 1.7.29 branch)
+
+  [ Chris Hofstaedtler ]
+  * Remove never-used LOW_MEM code
+  * Rework keepfile reader.
+    Avoids some pointer magic, fixing a NULL-ptr deref. (Closes: #741282)
+  * Treat section "introspection" like libs/oldlibs (Closes: #665624)
+  * Hint at dpkg --audit for problems (Closes: #840796)
+  * Honor ./configure --prefix for various paths
+  * Always build with all warnings
+  * Add --guess-java option (Closes: #562521)
+  * Included updated Dutch translation.
+    Thanks to Frans Spiesschaert <Frans.Spiesschaert@yucom.be> (Closes: #801386)
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Wed, 25 Jul 2018 04:53:23 +0000
+
+deborphan (1.7.28.10) unstable; urgency=medium
+
+  * Remove SVN Id/Rev tags, including version in orphaner dialog boxes
+  * Drop autogen.sh which hardcoded autotools 1.9
+  * Assume that Carsten does not want bugs in his mailbox anymore
+  * Assume all systems have getopt_long, errno, std-c headers
+  * Assume all C compilers have "inline"
+  * autoconf: Turn off maintainer mode
+  * Makefile.am: use AM_CPPFLAGS instead of INCLUDES
+  * build: Support out-of-tree builds
+  * build: Assume we always have config.h
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Tue, 24 Jul 2018 15:54:07 +0000
+
+deborphan (1.7.28.9) unstable; urgency=medium
+
+  * Stamp a new release, with all NUMs included.
+  * Build with current dh (11), autotools, gettext.
+    * changelog-old is no longer installed.
+  * Use Source Format 3.0 (native)
+  * Update bash completion install directory
+  * Update Maintainer email (from alioth)
+  * Update Uploaders, include myself
+  * Bump Standards-Version to 4.1.5
+  * Update Vcs-* headers for salsa.d.o
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Mon, 23 Jul 2018 14:01:32 +0000
+
+deborphan (1.7.28.8-0.3) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix FTBFS with GCC-5 harder.  It makes no sense to declare functions
+    "inline" and then not provide a definition for them.  Closes: #808482.
+  * Remove duplicate strsep definition from deborphan.h.
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 21 Feb 2016 14:28:56 +0000
+
+deborphan (1.7.28.8-0.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix "ftbfs with GCC-5": apply patch from Jakub Wilk:
+    changed semantics of inline keyword.
+    (Closes: #777831)
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 18 Jul 2015 18:18:27 +0200
+
+deborphan (1.7.28.8-0.1) unstable; urgency=low
+
+  * Non-maintainer upload with permission.
+  * Fix build on ppc64el. Closes: #735010
+
+ -- Andreas Barth <aba@ayous.org>  Mon, 08 Sep 2014 11:41:07 +0000
+
+deborphan (1.7.28.8) unstable; urgency=low
+
+  * Team upload.
+  * Use _xfunc in debian/bash-completion and update it. Thanks to Julian
+    Gilbey and Mike Miller for tracking this down. Closes: #658773
+  * Don't ignore self-dependencies anymore since we can not safely assume
+    yet that they are always a bug on multiarch enabled systems.
+  * Don't exclude diff and mktemp in orphaner anymore.
+
+ -- Carsten Hey <carsten@debian.org>  Sat, 30 Jun 2012 20:31:30 +0200
+
+deborphan (1.7.28.7) unstable; urgency=low
+
+  * Team upload.
+
+  This point release includes the remaining part of deborphan's multiarch
+  support.  Versions up to 1.7.28.5 did only include checks to avoid printing
+  false positives.  1.7.28.6 already handles architecture qualified input and
+  contains the disabled code for architecture qualified output.  This release
+  enables the architecture qualified output and strips architecture suffixes
+  in dependencies (see below).
+
+  * Enable remaining part of multiarch support:
+    + Append architecture suffixes to package names if packages from more than
+      one architecture besides 'all' are installed.  Package names printed by
+      --list-keep do not contain architecture suffixes.  If adding package
+      names with architecture suffixes to the keep file will ever be
+      supported, --list-keep's output might contain architecture suffixes too.
+      Closes: #658972, LP: #940379, LP: #951430
+    + Strip architecture suffixes in dependencies.  This is due to the way
+      deborphan currently works safe, even though the details of architecture
+      qualified dependencies have not been completely specified yet.
+    + Add options --show-arch and --no-show-arch to deborphan.  These options
+      are documented in README.frontends and intended to be used by
+      deborphan's frontends if they prefer the architecture suffixes to be
+      printed either always or never.
+    + Use deborphan's option --no-show-arch in editkeep and remove repeated
+      package names from the output.
+
+ -- Carsten Hey <carsten@debian.org>  Sun, 13 May 2012 23:42:56 +0200
+
+deborphan (1.7.28.6) unstable; urgency=low
+
+  * Team upload.
+
+  [ David Prévot ]
+  * Update Uploaders address.
+  * Fix typo in French --guess-doc option help. Closes: #635771
+
+  [ Martin Kourim ]
+  * Accept the options --ignore-suggests and --ignore-recommends in
+    orphaner. Closes: #638906
+
+  [ Carsten Hey ]
+  * Bump standards version to 3.9.3.1.
+  * Prepare printing architecture suffixes, but don't do so yet because
+    synaptic expects deborphan to never print architecture suffixes.
+  * Understand, or, if appropriate, strip, architecture suffixes all around.
+  * Do not simulate running apt-get in orphaner before really running it.
+    This test would be a mess to adapt to multiarch, and, due to other checks,
+    it wasn't needed anyway.
+  * Imply --force-hold in show-deps mode. Closes: #670652
+  * Minor bug fixes and cleanups in src/keep.c.  Due to usage of getline(),
+    this release won't compile on a decade old system anymore.
+  * Add file /usr/share/doc/deborphan/README.frontends.  This file contains
+    information that is only considered to be useful for deborphan's
+    frontends.
+  * Adapt old debian/changelog entry introducing --check-options to be more
+    vague.  Doing this before it makes any sense to use this option in
+    a deborphan frontend eases introducing more advanced ways of checking the
+    availability of options in future.  The new file README.frontends contains
+    the complete specification of this option.
+  * Add ${misc:Depends} to deborphan's Depends: line in debian/control.
+  * Add set -e to maintainer scripts and remove -e from their shebang line.
+
+ -- Carsten Hey <carsten@debian.org>  Fri, 27 Apr 2012 21:44:07 +0200
+
+deborphan (1.7.28.5) unstable; urgency=low
+
+  * Fix typo in Polish translation of deborphan(1) (Robert Luberda) Closes:
+    #610804
+  * Fix typo in French --show-size short option help.
+  * Change maintainer address.
+
+  [ New documentation translation ]
+  * Portuguese (Américo Monteiro). Closes: #607315
+
+  [ New program translation ]
+  * Vietnamese (Lê Hoàng Phương). Closes: #611094
+
+ -- David Prévot <david@tilapin.org>  Thu, 24 Mar 2011 22:22:39 -0400
+
+deborphan (1.7.28.4) unstable; urgency=high
+
+  * Urgency set to high as it solves an RC bug.
+  * Make trapping WINCH in orphaner POSIX compatible. Closes: #618895
+  * Exclude libreoffice* from being displayed if --guess-section is used.
+    Closes: #609337
+  * Change maintainer address.
+
+ -- Carsten Hey <carsten@debian.org>  Sat, 19 Mar 2011 16:31:37 +0100
+
+deborphan (1.7.28.3) unstable; urgency=low
+
+  [ Updated program translations ]
+  * Catalan (Jordi Mallach). Closes: #606890
+
+ -- Carsten Hey <c.hey@web.de>  Sun, 12 Dec 2010 21:22:17 +0100
+
+deborphan (1.7.28.2) unstable; urgency=low
+
+  * Exclude diff and mktemp from being displayed in orphaner.  Apt and dpkg
+    sometimes disagree about essentialness of packages, which leads to
+    failures for dpkg frontends that use apt to remove packages, e.g.,
+    deborphan.  Currently, the relevant packages are diff and mktemp.  The
+    package install-info has deliberately not been added to the list of to be
+    excluded packages.
+  * Don't let --guess-section display the following packages as possible
+    orphans:
+    - Packages ending with -bin, -tools or -utils  Closes: #579139
+    - PAM libraries  Closes: #516487
+    - Ubuntu dbgsym packages  LP: #533881
+    - Mono and Ruby libraries
+  * Adapt regular expression for detecting transitional packages to prevent
+    some packages with unfortunate short descriptions to be wrongly matched as
+    possible orphans.
+  * Add additional options to be used by deborphan frontends:
+    --all-packages-pristine: same as -a, except that its output format will
+      not change in future
+    --print-guess-list: print available guess options
+    --check-options: check if an other given option is supported by this
+      deborphan version and exit with 0 if it is.
+
+ -- Carsten Hey <c.hey@web.de>  Sun, 05 Dec 2010 23:01:01 +0100
+
+deborphan (1.7.28.1) unstable; urgency=low
+
+  David Prévot handled most of the translations for this release,
+  thanks a lot for your great work!
+
+  [ Updated program translations ]
+  * French (Jean-Luc Coulon). Closes: #519482
+  * Russian (Yuri Kozlov). Closes: #536812
+  * Italian (Alessandro De Zorzi). Closes: #578768
+  * Basque (Iñaki Larrañaga Murgoitio). Closes: #604143
+  * Spanish (Javier Fernandez-Sanguino Peña). Closes: #604414
+  * German (Helge Kreutzmann). Closes: #604545
+  * Danish (Joe Hansen). Closes: #605067
+  * Polish (Robert Luberda). Closes: #605085
+  * Czech (Miroslav Kure). Closes: #605100
+  * Portuguese (Pedro Ribeiro). Closes: #605317
+  * Dutch (Joost van Baal via IRC).
+
+  [ New documentation translations ]
+  * Spanish (Omar Campagne). Closes: #574437
+  * German (Helge Kreutzmann). Closes: #604848
+
+  [ Updated documentation translations ]
+  * French (David Prévot). Closes: #598047
+  * Polish (Robert Luberda). Closes: #605085
+
+  [ David Prévot ]
+  * Add Spanish addenda (Omar Campagne). Closes: #598205
+  * Update French addenda.
+  * Recode note regarding bug reporting from the French l10n team to UTF-8.
+    LP: #352744, Closes: #603907
+
+  [ Carsten Hey ]
+  * Add basic multiarch support. Closes: #592068
+  * Fix typo in --help output, --guess-interpreters was specified twice.
+    Closes: #536813
+  * Replace a regular expression in deborphan's man page with an equivalent
+    shorter one to avoid overlong lines in man pages.
+  * Remove some fuzziness in Catalan translation.
+
+ -- Carsten Hey <c.hey@web.de>  Wed, 01 Dec 2010 20:02:19 +0100
+
+deborphan (1.7.28) unstable; urgency=low
+
+  [ Andrej Tatarenkow ]
+  * Fix parsing of /var/lib/deborphan/keep so that it does not need a final
+    newline.  (Closes: #446533)
+
+  [ Carsten Hey ]
+  * Fix parsing of --no-show-section.  (Closes: #507574)
+  * Handle Mono libraries like other special libraries, e.g. Perl or Python
+    ones and add --guess-mono as option.  (Closes: #402992)
+  * Add option --guess-kernel.
+  * Refactor guessing algorithm. Also improve guessing ruby libraries and
+    guessing packages which are placed in the wrong section.
+  * Add option --no-guess-*.  (Closes: #387594)
+  * Add options --ignore-suggests and --ignore-recommends. When both options
+    are used together, deborphan behaves as if the nice-mode has been turned
+    off.  (Closes: #488329)
+  * Add option --show-deps-pristine. This option should be used by other
+    programs that use deborphan instead of --show-deps since the output of the
+    latter will change in the future.
+  * Fix some splint warnings, including a typo which was probably introduced
+    during refactoring many years ago and broke debfoster support.
+  * Fix some typos in debian/changelog, thanks to Paul Menzel.
+    (Closes: #495413)
+  * Don't run apt-get in orphaner when the to be used status file was
+    explicitly specified.
+  * Remove the separator line from the package list whilst simulating removing
+    packages in orphaner.
+  * Add option --skip-apt to orphaner.
+  * Abort orphaner when -c oder --find-circular is passed as option.  These
+    options will be added to deborphan 1.7.29 but initially not be supported
+    by orphaner.
+  * Clarify the meaning of -R in the output of deborphan --help.
+    (Closes: #497651)
+  * Don't ignore errors in the maintainer scripts.
+  * Update copyright.
+  * Update po files.
+
+ -- Carsten Hey <c.hey@web.de>  Thu, 19 Feb 2009 09:29:11 +0100
+
+deborphan (1.7.27) unstable; urgency=low
+
+  * Update French man page translation.  Thanks to Jean-Luc Coulon and
+    Christian Perrier.  (Closes: #497517)
+  * Export LC_COLLATE=C in orphaner.  Thanks to Michal Pokrywka for the
+    detailed bug report.  (Closes: #495818)
+  * Add new Italian translation.  Thanks to Alessandro De Zorzi.
+    (Closes: #498064)
+  * Some po files included an UTF-8 header but were ISO or vice versa, thus
+    recode all po files to UTF-8 and include a correct header.
+
+ -- Carsten Hey <c.hey@web.de>  Mon, 29 Sep 2008 14:26:25 +0200
+
+deborphan (1.7.26) unstable; urgency=high
+
+  * Urgency set to high as it solves an RC bug.
+  * Check whether get_pkg_info() correctly detected a line as status line
+    before abortion.  (Closes: #493896)
+  * Translation updates. Many thanks to:
+    - Miroslav Kure for the updated Czech translation.  (Closes: #492487)
+    - Javier Fernandez-Sanguino Peña for the updated Spanish translation.
+      (Closes: #492803)
+    - Thijs Kinkhorst for the updated Dutch translation.  (Closes: #493091)
+    - Helge Kreutzmann for the updated German translation.  (Closes: #493906)
+    - Yuri Kozlov for the new Russian translation.  (Closes: #493564)
+    - Pedro Ribeiro for the new Portuguese  translation.  (Closes: #493785)
+  * Mention correct licenses of orphaner in the file COPYRIGHT.
+
+ -- Carsten Hey <c.hey@web.de>  Fri, 15 Aug 2008 19:37:18 +0200
+
+deborphan (1.7.25) unstable; urgency=low
+
+  * Abort when status file is in an improper state.  (Closes: #391317)
+  * Update French translation.  Thanks to Jean-Luc Coulon.  (Closes: #486190)
+  * Fix some minor errors in po/*.po.
+  * Update doc/po/*.
+  * Remove old cruft from postrm.
+  * Bump standards version to 3.8.0, add debian/README.source, update
+    debian/copyright and update description.
+
+ -- Carsten Hey <c.hey@web.de>  Fri, 25 Jul 2008 19:13:17 +0200
+
+deborphan (1.7.24) unstable; urgency=low
+
+  [ Jörg Sommer ]
+  * Removed/wrapped some bashisms in orphaner and set /bin/sh as
+    interpreter. With dash as /bin/sh it runs much faster.
+
+  [ Carsten Hey ]
+  * New maintainer.  Thanks Peter!
+  * Update Basque deborphan translation.  Thanks to Piarres Beobide.
+    (Closes: #440866)
+  * Update Dutch deborphan translation.  Thanks to Thijs Kinkhorst.
+    (Closes: #411343)
+  * Fixed some typos in French man pages.  Thanks to Guilhelm Panaget.
+    (Closes: #425890)
+  * Clarify documentation of --force-hold.  (Closes: #429584)
+  * Document listing all uninstalled packages in README.  (Closes: #389684)
+  * Arrange items in deborphan(1) and src/exit.c alphabetically for faster
+    lookup.  (Closes: #365276)
+  * Check if apt-get tries to remove more packages than requested by orphaner.
+    (Closes: #478154)
+  * Remove versioned dependency on bash.
+  * Move dialog to Recommends.  (Closes: #459823)
+  * Move gettext-base to Recommends.  Orphaner now prints the English message
+    if gettext-base is not installed.  (Closes: #287971)
+  * Better error handling in orphaner.  Print apt-get commandline if apt is
+    not installed, broken dependencies are found or lock file could not be
+    opened.  (Closes: #267629)
+  * Remove the separator line from the to be removed packages in orphaner.
+  * Fix copy and paste error in gettext message APT_GET_REMOVED.
+  * Disable printing of to be removed packages in orphaner, after it has been
+    fixed.  I didn't work in past versions, so nobody will miss this feature.
+  * Remove lintian override for menu-command-not-in-package.  Current lintian
+    does not need this anymore.
+  * Don't fail in postrm if the admin created a file in $KEEPDIR.
+  * Bump Standards-Version to 3.7.3.
+  * Use debian/compat instead of DH_COMPAT and switch to level 5.
+  * Don't ignore errors in make clean.
+  * Move menu item from section Apps/System/Admin to
+    Applications/System/Administration.
+  * Add Vcs-Svn and Vcs-Browser fields.
+
+ -- Carsten Hey <c.hey@web.de>  Tue, 27 May 2008 17:43:46 +0200
+
+deborphan (1.7.23) unstable; urgency=low
+
+  * Whitespace cleanup in orphaner (closes: #398330).
+  * Change a 'function sigwinch_handle' into 'sigwinch_handle()' in orphaner.
+  * Remove some noise in the basename check or orphaner that was probably
+    introduced by vi editing.  Orphaner didn't work when called as
+    orphaner.sh.
+  * Fix an (unfiled) important bug when using editkeep.  Regardless of
+    the previous state of the keepfile, we completely clear it when the
+    user selects cancel, or dialog terminates for some other reason, like
+    the window getting too small.
+
+ -- Peter Palfrader <weasel@debian.org>  Wed, 22 Nov 2006 01:19:44 +0100
+
+deborphan (1.7.22) unstable; urgency=low
+
+  * Also add 'eu' (Basque) to ALL_LINGUAS in configure.in
+    (closes: #374969).
+
+ -- Peter Palfrader <weasel@debian.org>  Sun, 19 Nov 2006 22:13:45 +0100
+
+deborphan (1.7.21) unstable; urgency=low
+
+  * Move the po/fr.po that was updated in 1.7.20 to doc/po/fr.po, where it
+    belongs, and update po/fr.po from #394093 (closes: #394093).
+
+ -- Peter Palfrader <weasel@debian.org>  Thu, 19 Oct 2006 16:28:10 +0200
+
+deborphan (1.7.20) unstable; urgency=low
+
+  * Update French translation (closes: #392533).
+  * Remove emacism from bottom of debian/changelog.
+
+ -- Peter Palfrader <weasel@debian.org>  Tue, 17 Oct 2006 12:26:49 +0200
+
+deborphan (1.7.19) unstable; urgency=low
+
+  * Allow dots in package names after python and pike if their
+    respective --guess option is used.  Now we match python2.3-*
+    too (closes: #349719).
+  * Change a typo in the orphaner license:  "at your opinion" is
+    supposed to be "at your option".
+  * Prompt the user to press return after running apt-get so they
+    can investigate any warnings that apt might have printed
+    (closes: #351492).
+  * Return from sstrsep() if we do not find the token we were looking
+    for.  This closes a bug where we would screw up our keep file
+    in some circumstances (closes: #334720).
+  * Change autogen.sh to use aclocal-1.9 and automake-1.9 instead of
+    their 1.7 versions.
+  * New autotools left us with a new config.h.in.
+  * Add mkinstalldirs to svn and Makefile.am's EXTRA_DIST.  New auto*
+    no longer gives it to us but our gettext needs it.
+  * Also ship autogen.sh in tarball for good measure.
+  * Ignore cases where a package depends on itself (closes: #366028).
+  * Fix documentation of -d.  It does list all packages, orphaned or
+    not (closes: #334894).
+  * Use backticks instead of xargs in the README: deborphan | xargs apt-get
+    --remove becomes apt-get --remove `deborphan`.  This is so that stdin
+    is still available to the user to say yes to apt-get asking stuff
+    (closes: #355148).
+  * Document -n in editkeep.8 manpage.  Also change the title of the
+    manpage from orphaner to editkeep.  Part of the kitchen-sink patch
+    in #343241.
+  * Interpunction fixes in deborphan.1 manpage.  From patch in #343241.
+  * Add Polish translation of manpages from #343241.
+  * Update french translation of manpages from #343241.
+  * Updates to the build system of manpages from #343241.
+  * Add Polish translation of programs (closes: #343241).
+  * Add Basque translation of programs (closes: #374969).
+  * Change Standards-Version from 3.6.2 to 3.7.2.  No additional changes
+    required.
+  * Change menu file to call su-to-root without path.  Previously it
+    called it as /usr/sbin/so-to-root, but su-to-root has since moved
+    to /usr/bin.
+  * Update copyright statement all around.  It's 2006 now.
+
+ -- Peter Palfrader <weasel@debian.org>  Thu,  5 Oct 2006 18:39:34 +0200
+
+deborphan (1.7.18) unstable; urgency=low
+
+  * Update french translation of manpage (closes: #330724).
+
+ -- Peter Palfrader <weasel@debian.org>  Mon, 10 Oct 2005 03:17:31 +0200
+
+deborphan (1.7.17) unstable; urgency=low
+
+  * Make sure that even with section names that are very long (i.e.
+    broken) we always separate the section and the package name with
+    at least one space (closes: #328886).
+  * Increase standards version from 3.6.1 to 3.6.2 - no changes needed.
+  * Minor whitespace change in menu file.
+  * Add a lintian override for menu-command-not-in-package.  We
+    call orphaner with an argument (-a) which confuses lintian.
+  * Add the file provided by Jens Nachtigall <nachtigall@web.de> to
+    /etc/bash_completion.d/ (closes: #321934).
+  * Slightly change spacing in deborphan.1 manpage - this was also
+    part of Julien Louis' patch.
+  * Add French translation of manpages by Julien Louis <ptitlouis@sysif.net>,
+    using po4a (closes: #320243).
+  * Build depend on po4a.
+
+ -- Peter Palfrader <weasel@debian.org>  Sun, 18 Sep 2005 16:28:14 +0200
+
+deborphan (1.7.16) unstable; urgency=low
+
+  * Translation update for Catalan by Jordi Mallach.
+  * Fix a typo in Spanish translation (closes: #306698).
+  * Fix typos in deborphan.1 manpage (closes: #307023).
+  * Move to dh_installman from dh_installmanpages.
+  * Switch from dh compat layer 1 to 4 (update build depends).
+
+ -- Peter Palfrader <weasel@debian.org>  Sun, 10 Jul 2005 11:02:45 +0200
+
+deborphan (1.7.15) unstable; urgency=low
+
+  * Refactor handling of exclude list. Previously there was a fixed limit
+    of 64 excludes, which can easily be reached when using orphaner's
+    simulate feature.  Now we use a dynamically allocated list.
+
+ -- Peter Palfrader <weasel@debian.org>  Wed, 16 Mar 2005 15:50:52 +0100
+
+deborphan (1.7.14) unstable; urgency=medium
+
+  * Make the dependency on gettext-base versioned (>= 0.14.1-6).
+    We need gettext.sh, which wasn't there forever.
+    (closes: #284390)
+  * Urgency medium to get it to sarge faster.
+
+ -- Peter Palfrader <weasel@debian.org>  Mon,  6 Dec 2004 19:15:59 +0100
+
+deborphan (1.7.13) unstable; urgency=medium
+
+  * Update Czech translation (closes: #274931).
+  * Urgency medium to get it to sarge faster.
+
+ -- Peter Palfrader <weasel@debian.org>  Tue,  5 Oct 2004 23:31:32 +0200
+
+deborphan (1.7.12) unstable; urgency=low
+
+  * in pkginfo.c, get_pkg_info() check that line has a colon
+    somewhere.  If it hasn't then the status line is probably
+    invalid and we say so and exit (closes: #268454).
+  * orphaner.8: mention that we do not accept all switches, and how to
+    handle switche that take an argument, like --priority (closes: #273727).
+
+ -- Peter Palfrader <weasel@debian.org>  Sat,  2 Oct 2004 00:06:51 +0200
+
+deborphan (1.7.11) unstable; urgency=medium
+
+  * Update da translation (closes: #262584).
+
+ -- Peter Palfrader <weasel@debian.org>  Thu,  5 Aug 2004 20:07:00 +0200
+
+deborphan (1.7.10) unstable; urgency=low
+
+  * Update de, es, and fr translations
+    (closes: #259953, #260888, #261211).
+
+ -- Peter Palfrader <weasel@debian.org>  Sat, 24 Jul 2004 14:07:11 +0200
+
+deborphan (1.7.9) unstable; urgency=low
+
+  * Add missing dependency on gettext-base (closes: #259880).
+
+ -- Peter Palfrader <weasel@debian.org>  Sat, 17 Jul 2004 10:19:25 +0200
+
+deborphan (1.7.8) unstable; urgency=low
+
+  * Remove dh_installmanpages call for dpkghold.8 dpkgunhold.8 which
+    haven't existed for a long, long time.
+  * German translation updates.
+  * The label of the "Simulate" button in orhpaner should be translateable
+    too.
+
+ -- Peter Palfrader <weasel@debian.org>  Tue, 13 Jul 2004 23:51:41 +0200
+
+deborphan (1.7.7) unstable; urgency=low
+
+  * Properly escape all hyphens in deborhan.1, orphaner.8 and
+    editkeep.8.   Thanks to Clint Adams (closes: #259232).
+  * Update THANKS file.
+  * Do not accept --[no-]df-keep when compiled without debfoster
+    keepfile support.
+  * Try to add some structure into the manpage (order of options,
+    subheadings, etc).
+  * List the options in --help in the same order as in the manpage.
+    Add missing options.
+  * Remove #ifdef HAVE_GETOPT_LONG conditionals from source.  We
+    do not build without getopt_long anyway.  Make configure
+    fail if we don't find it.
+
+ -- Peter Palfrader <weasel@debian.org>  Tue, 13 Jul 2004 18:22:02 +0200
+
+deborphan (1.7.6) unstable; urgency=low
+
+  * Add es translation (closes: #259029).
+  * orphaner: Move '\n' outside of gettextized strings as it confuses
+    translators (closes: #258327).
+
+ -- Peter Palfrader <weasel@debian.org>  Tue, 13 Jul 2004 14:35:11 +0200
+
+deborphan (1.7.5) unstable; urgency=low
+
+  * Create editkeep -> orphaner symlink properly in util/Makefile
+    and do not create/overwrite it using dh_link.
+  * gettextize orphaner.
+  * Added ca, pl and cs translations (closes: #258275, #258432).
+
+ -- Peter Palfrader <weasel@debian.org>  Mon, 12 Jul 2004 03:44:10 +0200
+
+deborphan (1.7.4) unstable; urgency=low
+
+  * Add japanese translation (closes: #257768).
+    Very special thanks to all translators.
+
+ -- Peter Palfrader <weasel@debian.org>  Wed,  7 Jul 2004 20:11:30 +0200
+
+deborphan (1.7.3) unstable; urgency=low
+
+  * Add French translation (closes: #254592).
+
+ -- Peter Palfrader <weasel@debian.org>  Tue, 15 Jun 2004 20:34:14 +0200
+
+deborphan (1.7.2) unstable; urgency=low
+
+  * fixes to manpage deborphan (closes: #251922):
+    We always define DEFAULT_NICE, so the manpage can be more specific about
+    what -n does.
+    Fix typo in the same paragraph:  The option to show dependencies is -d,
+    not -s.
+  * Florian Ernst:
+    - Updating German l10n (closes: #248849).
+  * Joerg Sommer:
+    - orphaner: Replaced VERSION evaluation by shell internal tools; pipes and
+      subshells are bad ;)
+
+ -- Peter Palfrader <weasel@debian.org>  Thu, 10 Jun 2004 13:47:52 +0200
+
+deborphan (1.7.1) unstable; urgency=low
+
+  * Depend on bash >= 2.05b-14.  Thanks to Ernesto Domato for tracking
+    this down.
+    closes: #245030 orphaner: orphaner doesn't work
+
+ -- Peter Palfrader <weasel@debian.org>  Sun, 25 Apr 2004 22:54:30 +0200
+
+deborphan (1.7) unstable; urgency=low
+
+  * Do not create keep file in configure, remove long commented-out install
+    hook which installs keep file.
+  * A non existing keep file when running --zero-keep is just fine.
+  * If the keep file does not exist, just print an empty list in --list-keep.
+  * Use svn revision as version number in orphaner.
+  * properly handler when there's nothing to orphan in orphaner
+    closes: #245315 Fails when there is no orphans
+  * closes: #245463 Updated Danish translation (Morten Brix Pedersen)
+
+ -- Peter Palfrader <weasel@debian.org>  Fri, 23 Apr 2004 18:45:29 +0200
+
+deborphan (1.6) unstable; urgency=low
+
+  * Take over upstream maintainership of deborphan, give it a new version, and
+    make it a debian native package.
+    closes: #238300: no reliable way to detect exact version
+  * Install NEWS file as changelog-old now, current changelog is
+    kept in debian/changelog.
+    closes: #238157: help doesn't save selection
+  * set LANG to C for sort in orphaner, so it sorts correctly.
+    closes: #238370: Mixed sort order if LANG is set
+  * Remove all files created from autoconf from the repository.
+    But use a make dist'd tarball for uploads.
+  * Remove magic in debian/rules to copy in current config.{sub,guess}.
+    We are now our own upstream and autogen/make dist copies in new
+    files every time.
+  * Depend on dialog now.  Orphaner has developed into a very important
+    piece of the package.  And dialog does not depend on an unreasonable
+    amount of packages.
+    closes: #228871 Please conflict with dialog versions which are too old
+  * Joerg Sommer:
+    - Extend copyright for 2004 on orphaner
+    - (orphaner) remember selection in some simulate/help combination.
+    - (orphaner) Replaced variable DEBORPHAN with "deborphan"
+    - (orphaner) Moved evaluation of --df-keep option for deborphan to
+      editkeep, because it's only needed there.
+    - (orphaner) changed minimum terminal size to 50x12
+    - (orphaner) installed handler for signal SIGWINCH, which recalculate
+      the size of dialog when the terminal size has changed.
+      closes: #243899 Does not honour window resizing
+      Note that it is not possible to resize the current dialog, but as soon
+      as one of the buttons is pressed - i.e. when we start a new dialog -
+      the user will get new sizes.
+    - (orphaner) rewrote main part to make the code more understandable and
+      cleaner
+    - (orphaner) some little code cleanups: () -> {}, indentions
+  * Added german translation made by Florian Ernst <florian@uni-hd.de>.
+    closes: #243978 deborphan: German l10n
+  * Move standards-version to 3.6.1.  No changes needed.
+  * Update copyright notices in deborphan and debian/copyright.
+  * Update dates in manpages.
+  * Minor update of the nl translation.
+
+ -- Peter Palfrader <weasel@debian.org>  Wed, 21 Apr 2004 01:17:56 +0200
+
+deborphan (1.5-17) unstable; urgency=low
+
+  * Orphaner improvements by Joerg Sommer:
+    o fix strange behaviour with simulation where user selections got lost
+      (closes: #224750).
+    o Take advantage of the new --defaultno and --help-status
+      options of dialog and removes the eval call (closes: #224748).
+      Therefore make the Recommends on dialog versioned: >= 0.9b-20031207-1
+    o Minor cleanup:
+      - let replaced by $(()) or test (latter are common practice).
+      - check for deborphan with which; so deborphan can be anywhere in the
+        $PATH -- the variable DEBORPHAN can be replaced by "deborphan".
+      - if you mark all packages for simulation, orphaner tells in the next run
+        "there are no orphaned packages" -- this is fixed.
+    Thanks Joerg.
+
+ -- Peter Palfrader <weasel@debian.org>  Wed, 21 Jan 2004 05:50:21 +0100
+
+deborphan (1.5-16) unstable; urgency=low
+
+  * Fix typo in deborphan.1 (closes: #223984).
+
+ -- Peter Palfrader <weasel@debian.org>  Sun, 14 Dec 2003 20:18:55 +0100
+
+deborphan (1.5-15) unstable; urgency=low
+
+  * Reference cruft(8) in deborphan(1) manpage (closes: #220203).
+  * Add --guess-doc option, which searches for .*-doc package names
+    (closes: #204667).
+
+ -- Peter Palfrader <weasel@debian.org>  Tue, 11 Nov 2003 14:49:47 +0100
+
+deborphan (1.5-14) unstable; urgency=low
+
+  * Refactor handling of dependencies and provides in the pkg_info
+    datastructure.  Previously there were fixed limits of 128 and 20
+    respectively.  Now we use a dynamically allocated list which starts out at
+    32 and 4, if needed at all, and which are doubled in size should the need
+    arise (closes: #219457).
+  * Replace all bar = malloc(strlen(foo)+1); bar = strcpy(bar,foo) with uses
+    of strdup: bar = strdup(foo);  Similarily to the previously defined
+    xmalloc, which wraps around alloc and error()s out if malloc returns with
+    an error, we now have an xstrdup with the same semantics.
+  * Since sizeof(char) is 1 by definition there is no need to multply string
+    sizes and similar with sizeof(char).  Removed all of them or replaced them
+    by 1.
+  * Initialize the first package information ("this") in deborphan.c.  The
+    value appears to have used uninitialized.  Valgrind turned this up.
+  * There was an off-by-one error in file.c debopen(), when null terminating
+    the read status file.  We nullified buf[len+1] rather than buf[len], thus
+    overflowing the buffer.  This also was found with valgrind.
+
+ -- Peter Palfrader <weasel@debian.org>  Fri,  7 Nov 2003 17:20:03 +0100
+
+deborphan (1.5-13) unstable; urgency=low
+
+  * Make searching in libdevel optional with new --libdevel switch
+    (closes: #218125).
+
+ -- Peter Palfrader <weasel@debian.org>  Wed, 29 Oct 2003 15:45:55 +0100
+
+deborphan (1.5-12) unstable; urgency=low
+
+  * Use single quotes rather than double quotes in commands in the menu
+    file, as XML based menus break on escaped double quotes.
+    (closes: #216010).
+  * Orphaner now handles removal of deborphan, by checking whether
+    deborphan still exists after apt-get.  If it does not, we
+    say so and exit successfully.  (closes: #215912).
+  * Change NUM_OPTIONS from a manual define to the last element of
+    the enum in include/deborphan.h.  This will hopefully avoid
+    bugs like #217790 and #181311 in the future.
+
+ -- Peter Palfrader <weasel@debian.org>  Mon, 27 Oct 2003 15:26:23 +0100
+
+deborphan (1.5-11) unstable; urgency=low
+
+  * Make the options buffer the correct size (i.e. increase +1)
+    by defining NUM_OPTIONS 17 rather than 16.
+    This bug made deborphan when prelinked not work correctly.
+    (that's 1.4-2 (#181311) all over again).
+    closes: #217790: fails with prelinking on
+
+ -- Peter Palfrader <weasel@debian.org>  Mon, 27 Oct 2003 15:00:57 +0100
+
+deborphan (1.5-10) unstable; urgency=low
+
+  * Remove configure generated files include/config.h and
+    include/stamp-h from source distribution.
+  * Build depend on autotools-dev and copy in
+    /usr/share/misc/config.{guess,sub} for building the package
+    (closes: #216687).
+
+ -- Peter Palfrader <weasel@debian.org>  Tue, 21 Oct 2003 15:55:52 +0200
+
+deborphan (1.5-9) unstable; urgency=low
+
+  * Fix minor syntax problem in orhpaner (closes: #216482).
+
+ -- Peter Palfrader <weasel@debian.org>  Sun, 19 Oct 2003 09:38:16 +0200
+
+deborphan (1.5-8) unstable; urgency=low
+
+  * Minor translation update in po/da.po by Morten Brix Pedersen
+    (closes: #216423).
+
+ -- Peter Palfrader <weasel@debian.org>  Sat, 18 Oct 2003 19:40:08 +0200
+
+deborphan (1.5-7) unstable; urgency=low
+
+  * Update copyright notice in orphaner.
+  * Joerg Sommer: orphaner improvements.
+    - Use long command line options instead of short ones
+    - Print error messages to stderr
+    - Change help output of $0 is not a recognized basename
+    - Minor syntax changes
+  * Change description of --show-deps in the manpage slightly.
+  * Change touching all the files during the build process
+    to reference an existing file (po/Makefile) so that all
+    the files have the very same fine-grained timestamp.
+    (closes: 216369: FTBFS with 2.6 kernels)
+
+ -- Peter Palfrader <weasel@debian.org>  Sat, 18 Oct 2003 13:47:41 +0200
+
+deborphan (1.5-6) unstable; urgency=low
+
+  * Changed dependency on dialog to a recommends.  deborphan doesn't need it,
+    only orphaner.
+  * Add Recommends: apt.
+
+ -- Peter Palfrader <weasel@debian.org>  Wed, 15 Oct 2003 15:05:52 +0200
+
+deborphan (1.5-5) unstable; urgency=low
+
+  * Fix syntax bug in orphaner that matters when no
+    orphaned packages are found (closes: #215539).
+
+ -- Peter Palfrader <weasel@debian.org>  Mon, 13 Oct 2003 12:21:39 +0200
+
+deborphan (1.5-4) unstable; urgency=low
+
+  * Actually show sizes with deborphan -z (closes: #215498).
+
+ -- Peter Palfrader <weasel@debian.org>  Mon, 13 Oct 2003 06:30:55 +0200
+
+deborphan (1.5-3) unstable; urgency=low
+
+  * Fix bugs with orphaner simulation:  Old packages appeared as new
+    after two rounds (Joerg Sommer).
+
+ -- Peter Palfrader <weasel@debian.org>  Sun, 12 Oct 2003 22:11:20 +0200
+
+deborphan (1.5-2) unstable; urgency=low
+
+  * Thanks to Joerg Sommer who contributed greatly to this
+    release.  Most of the orphaner fixes are done by him.
+  * orphaner now requires dialog, whiptail isn't good enough
+    (closes: #185095).
+  * deborphan also looks in libdevel now (closes: #201538).
+    Thanks Matt Kraai.
+  * guess-dummy also looks for "transition" packages, not only
+    for "transitional" (closes: #210551).
+  * add size information to deborphan output with -z.
+    Patch by Richard Braakman. (closes: #189827).
+  * Adapt orphaner windows to terminal size. (closes: #183816).
+    Based on patch by Jan Hudec.
+  * Guess-data also seaches for -music packages. (closes: #183646).
+  * Fix deborphan -R acting like deborphan -Z.  Turns out there was
+    some screwup with operator precedence.  (closes: #184949).
+  * Now deborphan supports exclusion of packages by evaluation.
+    (closes: #206478)
+  * Updated orphaner to support the exclusion option of deborphan and
+    simulate with this the removing of packages. (closes: #206410,#202986)
+  * Orphaner greatly improved (much work done by Joerg Sommer):
+    - Uses "Help" button to show package description (closes: #158757).
+    - Better error handling; prints a message if deborphan, apt-get or
+      $DIALOG exits with non-zero exit code
+    - Separator only shown if there is something to separate
+      (closes: #187476).
+  * Read packages to keep from stdin rather than using xargs in
+    orphaner/editkeep (closes: #182734: deborphan: editkeep can't handle long
+    list of packages).
+
+ -- Peter Palfrader <weasel@debian.org>  Sun, 12 Oct 2003 11:26:08 +0200
+
+deborphan (1.5-1) unstable; urgency=low
+
+  * New upstream version.
+    - Incorporates fixes from 1.4-2
+    - Added --find-config option as suggested by Martin Quinson
+      closes: #180010
+  * Add --find-.+ (for --find-config) to allowed options for orphaner.
+
+ -- Peter Palfrader <weasel@debian.org>  Wed, 26 Feb 2003 10:44:34 +0100
+
+deborphan (1.4-2) unstable; urgency=low
+
+  * Make the options buffer the correct size (i.e. increase +1)
+    by defining NUM_OPTIONS 15 rather than 14.
+    This bug made deborphan - when prelinked with certain libcs - always run
+    deborphan -Z.
+    closes: #181311: prelink breaks deborphan
+  * Improved orphaner version by Joerg Sommer.
+    It shows new packages at the top and is 99.99% posix. It's faster too.
+    I've changed the shebang to be /bin/bash.
+    closes: #176424, thanks Joerg!
+  * Clear screen after orphaner run. closes: #163220
+
+ -- Peter Palfrader <weasel@debian.org>  Mon, 24 Feb 2003 15:59:29 +0100
+
+deborphan (1.4-1) unstable; urgency=low
+
+  * New upstream version.
+    - closes: #170381: --guess-all should report the *-data packages
+    - incorporates patch from 1.3-2.
+
+ -- Peter Palfrader <weasel@debian.org>  Wed, 18 Dec 2002 15:00:35 +0100
+
+deborphan (1.3-2) unstable; urgency=low
+
+  * Orphaner now recognises all --guess-* options (closes: #164749).
+  * Removed full stop from short description.
+  * Upped standards version to 3.5.8:
+    - new DEB_BUILD_OPTION
+
+ -- Peter Palfrader <weasel@debian.org>  Fri,  6 Dec 2002 05:55:07 +0100
+
+deborphan (1.3-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Peter Palfrader <weasel@debian.org>  Wed, 31 Jul 2002 20:11:57 +0200
+
+deborphan (1.2-4) unstable; urgency=low
+
+  * Move menu entries to Apps/System/Admin (closes: #109690).
+  * Remove some unneeded dh_ calls (like suidregister) from debian/rules.
+
+ -- Peter Palfrader <weasel@debian.org>  Wed, 31 Jul 2002 18:11:34 +0200
+
+deborphan (1.2-3) unstable; urgency=low
+
+  * Have a -Z switch for deborphan which zeroes the keep file.
+    (closes: #153397: deborphan -L | xargs deborphan -R does not work)
+    - Also fixes the problem, that editkeep did not pass all options
+      to all deborphan calls.
+  * Fix allowed parameters for orphaner (--guess-*).
+    (closes: #153519: orphaner doesn't accept deborphan flags like -guess-all)
+  * strstripchr() in src/string.c was broken when the character to remove
+    was not in the string. Fixed. This bug was not related with fixing #153319
+    in 1.2-2 as the submitter guessed.
+    (closes: #154289: deborphan does not use its 'keep' file properly).
+  * Have all applied patches in debian/applied-patches for reference.
+  * Orphaner can take --edit-keep option.
+
+ -- Peter Palfrader <weasel@debian.org>  Wed, 31 Jul 2002 17:53:55 +0200
+
+deborphan (1.2-2) unstable; urgency=low
+
+  * Free the correct variable in keep.c, patch forwarded to upstream
+    (closes: #153319: deborphan segfaults when keep file present).
+
+ -- Peter Palfrader <weasel@debian.org>  Thu, 18 Jul 2002 01:19:00 +0200
+
+deborphan (1.2-1) unstable; urgency=low
+
+  * New upstream version.
+    - Closes: #96794: deborphan lists Essential: yes packages
+    - Closes: #132338: deborphan: Confusing description of --guess-only option
+    - Closes: #141810: deborphan: check short description for removal hints
+
+ -- Peter Palfrader <weasel@debian.org>  Sun, 14 Jul 2002 23:09:07 +0200
+
+deborphan (1.1-2) unstable; urgency=low
+
+  * Comment out creation of /var/lib/deborphan during build
+    (closes: #152903).
+
+ -- Peter Palfrader <weasel@debian.org>  Sun, 14 Jul 2002 14:20:46 +0200
+
+deborphan (1.1-1) unstable; urgency=low
+
+  * New upstream version.
+    - Includes patch from Sean Perry (see changelog entry for 1.0-3).
+    - orphaner now has a --purge option (closes: #112583).
+
+ -- Peter Palfrader <weasel@debian.org>  Sun, 14 Jul 2002 03:41:31 +0200
+
+deborphan (1.0-3) unstable; urgency=low
+
+  * Applied guess-interpreters patch by Sean Perry <shaleh@via.net>:
+    | Seeing as you check for perl right now, I added support for ruby,
+    | pike and python.  The option is renamed from --guess-perl to
+    | --guess-interpreters.  Both pike and python have optional version
+    | numbers in the file name so the regex has ([[:digit:]])? to
+    The patch has been forwarded to upstream quite some while ago but
+    since I haven't heard from Cris I decided to put it at least into
+    the debian tree (closes: #86463).
+
+ -- Peter Palfrader <weasel@debian.org>  Sun, 28 Oct 2001 01:28:24 +0200
+
+deborphan (1.0-2) unstable; urgency=low
+
+  * Using xargs for long parameter list (closes: #102334).
+  * Changed email addresses in copyright file. Added 2001 copyright
+    holders of editkeep and orphaner.
+
+ -- Peter Palfrader <weasel@debian.org>  Sat, 14 Jul 2001 14:31:44 +0200
+
+deborphan (1.0-1) unstable; urgency=low
+
+  * New upstream version.
+  * Standards-Version: 3.5.4.0 - nothing changed.
+  * editkeep.8 moved to upstream version.
+
+ -- Peter Palfrader <weasel@debian.org>  Fri, 11 May 2001 14:26:37 +0200
+
+deborphan (0.1.25-1) unstable; urgency=low
+
+  * New upstream version.
+  * Added postinst: touches keep.
+
+ -- Peter Palfrader <weasel@debian.org>  Tue,  3 Apr 2001 04:27:50 +0200
+
+deborphan (0.1.24-2) unstable; urgency=low
+
+  * Build: Dont create keepfile dir and install keepfile.
+    Especially not in the real /var/ (closes: #86525).
+  * Fixed a segfault that was cause by a non existent
+    keep file in keep.c.
+
+ -- Peter Palfrader <weasel@debian.org>  Sun, 18 Feb 2001 19:21:52 +0100
+
+deborphan (0.1.24-1) unstable; urgency=low
+
+  * New upstream.
+  * Support for DEB_BUILD_OPTIONS.
+  * Standards-Version: 3.5.1.0.
+  * Added editkeep to menu file.
+  * Don't ask the sysadmin whether to remove keep file on purge.
+
+ -- Peter Palfrader <weasel@debian.org>  Sat, 17 Feb 2001 01:16:13 +0100
+
+deborphan (0.1.23-1) unstable; urgency=low
+
+  * New upstream.
+
+ -- Peter Palfrader <weasel@debian.org>  Fri,  9 Feb 2001 16:55:26 +0100
+
+deborphan (0.1.21-1) unstable; urgency=low
+
+  * New upstream version.
+  * Added 'editkeep' functionality to orphaner.
+  * Wrote editkeep.8.
+  * Changed orphaner.8 and deborphan.1 a little.
+  * Made editkeep -> orphaner symlink.
+  * Added postrm to handle keep file.
+
+ -- Peter Palfrader <weasel@debian.org>  Sun,  4 Feb 2001 02:53:50 +0100
+
+deborphan (0.1.20-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Peter Palfrader <weasel@debian.org>  Fri,  2 Feb 2001 13:14:42 +0100
+
+deborphan (0.1.18-1) unstable; urgency=low
+
+  * New upstream version.
+    - Added --fake-dev (-D) option (closes: #80391).
+  * Added menu hints. (Thanks Arthur, closes: #82318).
+
+ -- Peter Palfrader <weasel@debian.org>  Wed, 17 Jan 2001 14:53:22 +0100
+
+deborphan (0.1.17-2) unstable; urgency=low
+
+  * Now really removed dpkghold.8 and dkpgunhold.8. Binaries never
+    where in the deb (closes: #80517).
+
+ -- Peter Palfrader <weasel@debian.org>  Tue, 26 Dec 2000 16:55:24 +0100
+
+deborphan (0.1.17-1) unstable; urgency=low
+
+  * New upstream version.
+  * Orphaner is now included upstream.
+  * Orphaner: catch --help and -h (closes: #79849). (whitelisting
+    arguments to deborphan from orphaner was promised by upstream
+    to appear in 0.1.18)
+
+ -- Peter Palfrader <weasel@debian.org>  Mon, 25 Dec 2000 02:44:48 +0100
+
+deborphan (0.1.12-3) unstable; urgency=low
+
+  * Fixed a typo in README.Debian.
+  * Added orphaner frontend by Goswin von Brederlow (closes: #75337).
+  * Added Depends: whiptail | dialog.
+  * New maintainer address.
+
+ -- Peter Palfrader <weasel@debian.org>  Sat, 16 Dec 2000 02:18:56 +0100
+
+deborphan (0.1.12-2) unstable; urgency=low
+
+  * Patched pkginfo.c so that Provides: lines with more than one entry
+    are handled correctly (closes: #71685).
+
+ -- Peter Palfrader <ppalfrad@cosy.sbg.ac.at>  Mon,  2 Oct 2000 16:29:01 +0200
+
+deborphan (0.1.12-1) unstable; urgency=low
+
+  * New upstream release
+  * Applied 2nd speed up patch by Paul Martin <pm@nowster.zetnet.co.uk>
+
+ -- Peter Palfrader <ppalfrad@cosy.sbg.ac.at>  Wed,  9 Aug 2000 23:02:03 +0200
+
+deborphan (0.1.11-4) unstable; urgency=low
+
+  * Applied speed up patch by Paul Martin <pm@nowster.zetnet.co.uk>
+
+ -- Peter Palfrader <ppalfrad@cosy.sbg.ac.at>  Sat, 29 Jul 2000 16:54:01 +0200
+
+deborphan (0.1.11-3) unstable; urgency=low
+
+  * applied memory leak patch by Paul Martin <pm@nowster.zetnet.co.uk>
+
+ -- Peter Palfrader <ppalfrad@cosy.sbg.ac.at>  Sat, 29 Jul 2000 03:07:17 +0200
+
+deborphan (0.1.11-2) unstable; urgency=low
+
+  * Changed the regular expression for determining wheter a package is
+    installed (closes: #67422)
+
+ -- Peter Palfrader <ppalfrad@cosy.sbg.ac.at>  Sun, 23 Jul 2000 16:25:09 +0200
+
+deborphan (0.1.11-1) unstable; urgency=low
+
+  * New upstream release (closes: #66501)
+  * Added build-dependencies
+  * Added a workaround for an upstream packaging bug to debian/rules
+
+ -- Peter Palfrader <ppalfrad@cosy.sbg.ac.at>  Wed,  5 Jul 2000 23:42:11 +0200
+
+deborphan (0.1.7-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Peter Palfrader <ppalfrad@cosy.sbg.ac.at>  Sat, 17 Jun 2000 17:31:04 +0200
+
+deborphan (0.1.6-1) unstable; urgency=low
+
+  * New upstream release (closes #65793)
+  * Added menu file (closes #65801)
+  * removed redundant ./configure call from debian/rules
+
+ -- Peter Palfrader <ppalfrad@cosy.sbg.ac.at>  Sat, 17 Jun 2000 17:16:27 +0200
+
+deborphan (0.1.5-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Peter Palfrader <ppalfrad@cosy.sbg.ac.at>  Sat,  3 Jun 2000 21:15:08 +0200

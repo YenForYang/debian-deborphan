@@ -1,0 +1,73 @@
+#!/usr/bin/perl
+
+# Copyright (C) 2009 Carsten Hey <carsten@debian.org>
+# Published under the terms of the MIT license
+# and provided without warranty of any kind.
+
+use warnings;
+use strict;
+
+my ( @opt_short, @opt_short_arg, @opt_long, @opt_long_arg );
+
+my $filename = shift;
+-f $filename or die "$filename not found.\n";
+open my $FILE, '<', $filename or die "Can not open $filename\n";
+
+while (<$FILE>) {
+
+    # extract short options
+    if ( m/_get_opt\((?:[^,]*,){2}[ "']*([^,"'\s]+)/ ) {
+        my $_ = my $tmp = $1;
+
+        s/[^:][:]+//g;
+        push @opt_short, split //;
+
+        $_ = $tmp;
+        s/[^:]+$//g;
+        s/[^:]*([^:]):/$1/g;
+        push @opt_short_arg, split //;
+    }
+
+    # extract long options
+    # example: {"no-guess-dummy", 0, NULL, 43},
+    elsif (
+        my ( $opt, $requires_argument ) =
+                m/^\s\{\s*["']*([^"']+)["']*\s*,.*(\d+).*,.*NULL.*,.+\}/
+    ) {
+        if   ($requires_argument) { push @opt_long_arg, $opt }
+        else                      { push @opt_long,     $opt }
+    }
+}
+close $FILE or die $!;
+
+@opt_long = grep { !/^NULL$|^show-deps-pristine$|^check-options$/ } @opt_long;
+
+sub blockformat {
+    my ( $init_str, $left_str, $right_str, $std_sep, $col_wid, @a ) = @_;
+    my $std_wid = $col_wid - ( length $left_str . $right_str ) + 1;
+    my $sep     = '';
+    my $t       = $std_wid;
+    print $init_str;
+    for (@a) {
+        if ( $t < length ) {
+            $t = $std_wid;
+            print $right_str, $left_str;
+            $sep = '';
+        }
+        print $sep, $_;
+        $sep = $std_sep;
+        $t -= ( length $_ ) + length $sep;
+    }
+    print $right_str;
+}
+
+my $command = shift;
+if ( $command eq 'bash' ) { # format and print options for debian/bash-complete
+    blockformat(
+        ' ' x 4, ' ' x 4, "\n", ' ', 72,
+        (
+            ( map { "--$_" } @opt_long,  @opt_long_arg  ),
+            ( map {  "-$_" } @opt_short, @opt_short_arg )
+        )
+    );
+}

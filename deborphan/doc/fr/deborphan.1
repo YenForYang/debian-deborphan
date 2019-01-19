@@ -1,0 +1,291 @@
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH DEBORPHAN 1 Février\ 2009 deborphan 
+
+.\" Copyright (C) 2000, 2001, 2002, 2003 Cris van Pelt
+.\" Copyright (C) 2003, 2004, 2005, 2006 Peter Palfrader
+.\" Copyright (C) 2005 Daniel Déchelotte
+.\" Copyright (C) 2008 Andrej Tatarenkow
+.\" Copyright (C) 2008, 2009 Carsten Hey
+.SH NOM
+deborphan \- recherche les paquets orphelins
+.SH SYNOPSIS
+\fBdeborphan\fP [\fIOPTION\fP] \&.\|.\|.\& [\fIPACKAGE\fP] \&.\|.\|.
+.SH DESCRIPTION
+\fIdeborphan\fP finds packages that have no packages depending on them. The
+default operation is to search within the libs, oldlibs and introspection
+sections to hunt down unused libraries.
+.PP
+Si une liste de paquets lui est passée en paramètre, seules les dépendances
+sur ces paquets seront recherchées. Le résultat de la recherche est envoyé
+sur la sortie standard comme si l'option \fI\-\-show\-deps\fP lui avait été
+passée. La recherche à partir de paquets passés en paramètre listera tous
+les paquets trouvés, sans tenir compte de leur priorité. La valeur \fI\-\fP
+permet de transmettre les paquets sur l'entrée standard.
+
+.SH OPTIONS
+.TP 
+\fB\-f, \-\-status\-file=\fP\fIFICHIER\fP
+Utilise FICHIER comme fichier des états.
+.TP 
+\fB\-h, \-\-help\fP
+Affiche une aide sommaire et rend la main.
+.TP 
+\fB\-v, \-\-version\fP
+Affiche la version et rend la main.
+
+.\" show stuff
+.SS "OPTIONS D'AFFICHAGE"
+.TP 
+\fB\-d, \-\-show\-deps\fP
+Affiche la liste de tous les paquets installés en indiquant les paquets qui
+en dépendent.
+.TP 
+\fB\-P, \-\-show\-priority\fP
+Affiche la priorité des paquets trouvés.
+.TP 
+\fB\-s, \-\-show\-section\fP
+Affiche les sections auxquelles appartiennent les paquets trouvés.
+.TP 
+\fB\-\-no\-show\-section\fP
+N'affiche pas la section lorsque celle\-ci serait affichée par défaut (voir
+\fB\-\-all\-packages\fP).
+.TP 
+\fB\-z, \-\-show\-size\fP
+Affiche l'espace disque occupé par les paquets trouvés.
+
+.\" search stuff
+.SS "OPTIONS DE RECHERCHE"
+.TP 
+\fB\-a, \-\-all\-packages\fP
+.\" , when compiled with ALL_PACKAGES_IMPLY_SECTION defined (default)
+Check all the packages, instead of only those in the libs section.  Best
+used (if at all used) in combination with \fB\-\-priority\fP.  This option
+implies \fB\-\-show\-section\fP.
+.TP 
+\fB\-e, \-\-exclude=\fP\fILISTE\fP
+Exclut les paquets indiqués dans \fILISTE\fP (valeurs séparées par une virgule)
+comme s'ils n'existaient pas dans le fichier des états.
+.TP 
+\fB\-H, \-\-force\-hold\fP
+Ignore "hold" dpkg\-flags on packages and thus display these
+packages. Without this option packages with the "hold" flag set will not be
+displayed.  Please refer to \fBdpkg\fP(1)  for more information about package
+flags. Due a bug in aptitude (Debian bug #137771) hold flags created by
+aptitude are ignored by deborphan.
+.TP 
+\fB\-\-ignore\-suggests\fP
+.PD 0
+.TP 
+\fB\-\-ignore\-recommends\fP
+.PD
+Ne vérifie pas si un paquet «\ suggère\ » (\fB\-\-ignore\-suggests\fP) ou
+«\ recommande\ » (\fB\-\-ignore\-recommends\fP) le paquet. Quand les deux options
+sont utilisées ensemble, deborphan se comporte comme si le «\ nice\-mode\ »
+défini plus bas avait été désactivé.
+.TP 
+\fB\-n, \-\-nice\-mode\fP
+Désactive le «\ nice\-mode\ ». Lorsque ce mode est activé, deborphan tient
+compte des dépendances de type «\ suggérée\ » (Suggests) ou «\ recommandée\ » (Recommends) sur les paquets. S'il en existe, le paquet correspondant sera
+considéré comme utilisé ou bien, si l'option \fB\-\-show\-deps\fP est aussi
+utilisée, ces dépendances seront affichées.
+.TP 
+\fB\-p, \-\-priority=\fP\fIPRIORITÉ\fP
+Show only those packages with a priority equal to, or greater than
+\fIPRIORITY\fP.  \fIPRIORITY\fP may be in the range of 1\(en5, or one of
+\fIrequired\fP, \fIimportant\fP, \fIstandard\fP, \fIoptional\fP, \fIextra\fP.  Default
+value for \fIPRIORITY\fP is 2 (\fIimportant\fP).
+.TP 
+\fB\-\-find\-config\fP
+This option searches for uninstalled packages which still have configuration
+files on the system. It implies the \fB\-a\fP option.
+.TP 
+\fB\-\-libdevel\fP
+Also search in section "libdevel".
+
+.\" keep file stuff
+.SS "GESTION DES PAQUETS À CONSERVER"
+.TP 
+\fB\-A, \-\-add\-keep \fP\fIPKG1\fP \&.\|.\|.\& \fIPKGn\fP
+Ajoute des paquets à la liste des paquets à conserver (qui ne seront jamais
+considérés comme orphelins quel que soit leur état). En utilisant \fB\-\fP,
+l'entrée standard sera utilisée pour indiquer les paquets. Attention, leur
+nom est sensible à la casse.
+.TP 
+\fB\-k, \-\-keep\-file=\fP\fIFICHIER\fP
+Utilise \fIFICHIER\fP pour stocker la liste des paquets à conserver.
+.TP 
+\fB\-L, \-\-list\-keep\fP
+Affiche la liste des paquets à conserver.
+.TP 
+\fB\-R, \-\-del\-keep \fP\fIPKG1\fP \&.\|.\|.\& \fIPKGn\fP
+Remove packages from the list of packages which are never to be reported.
+You may specify '\fB\-\fP' to use standard input. If there are no dependencies
+for this package next time \fIdeborphan\fP is invoked, it will be reported
+again.
+.TP 
+\fB\-Z, \-\-zero\-keep\fP
+Vide le fichier contenant la liste des paquets à conserver. Seule l'option
+\fB\-A\fP peut être utilisée simultanément.
+
+
+.\" debfoster stuff - not compiled in debian
+.\" \fB\-\-df\-keep\fP
+.\" Use debfoster's keepfile, regardless of the default setting.
+.\" Can not be used if deborphan was compiled without support for debfoster.
+.\" .TP
+.\" \fB\-\-no\-df\-keep\fP
+.\" Do not use debfoster's keepfile.
+.\" .TP
+.SS "AIDE À LA RECHERCHE"
+
+.\" guessing
+.TP 
+\fB\-\-guess\-*\fP
+.PD 0
+.TP 
+\fB\-\-no\-guess\-*\fP
+.PD
+.\" See \fBGUESSING\fP below.
+.\" .SH GUESSING
+.\" .PP
+deborphan can try to guess what packages may not be of much use to you by
+examining the package's name and/or description.  It will pretend the
+package is in the \fImain/libs\fP section, and report it as if it were a
+library.  This method is in no way perfect or even reliable, so beware when
+using this! It is also possible to tell deborphan e.g., to guess all
+interpreters but not Perl by using \fB\-\-guess\-interpreters\fP
+\fB\-\-no\-guess\-perl\fP or to guess all but not Mono by using \fB\-\-guess\-all\fP
+\fB\-\-no\-guess\-mono\fP.  Please note that the \fB\-\-no\-guess\-\fP option must occur
+after the \fB\-\-guess\-\fP option it modifies, this makes it possible to declare
+more complex things like to guess all, except interpreters but additionally
+try to guess perl.
+
+.PP
+Les options suivantes doivent être préfixées par \fI\-\-guess\-\fP ou (sauf pour
+\fBonly\fP) par \fI\-\-no\-guess\-\fP\ :
+
+.TP 
+\fBcommon\fP
+This option tries to find common packages, i.e.\& packages with names ending
+in \fI\-common\fP.
+
+.TP 
+\fBdata\fP
+This option tries to find data packages, i.e.\& packages with names ending
+in \fI\-data\fP.
+
+.TP 
+\fBdebug\fP
+This option tries to find debugging libraries, i.e.\& packages with names
+ending in \fI\-dbg\fP or \fI\-dbgsym\fP.
+
+.TP 
+\fBdev\fP
+This option tries to find development packages, i.e.\& packages with names
+ending in \fI\-dev\fP.  Also see option \fB\-\-libdevel\fP.
+
+.TP 
+\fBdoc\fP
+This option tries to find documentation packages, i.e.\& packages with names
+ending in \fI\-doc\fP.
+
+.TP 
+\fBdummy\fP
+This option tries to find dummy packages, i.e.\& packages with \fIdummy\fP or
+\fItransitional\fP in their short description.
+
+.TP 
+\fBkernel\fP
+.\" Don't hyphenate the next line
+This option tries to find kernel\-modules. It tries to match
+\%\fI(\-modules|^nvidia\-kernel)\-.*[0\(en9]+\e.[0\(en9]+\e.[0\(en9]+\fP.
+
+.TP 
+\fBinterpreters\fP
+Try to find all interpreter modules (i.e.\& imply \fBruby\fP, \fBpike\fP,
+\fBpython\fP, \fBperl\fP and \fBmono\fP).
+
+.TP 
+\fBmono\fP
+Cherche les bibliothèques Mono, correspondant au motif \fI^libmono\fP.
+
+.TP 
+\fBperl\fP
+Cherche les modules Perl, correspondant au motif \fI^lib.*\-perl$\fP.
+
+.TP 
+\fBpike\fP
+Cherche les modules Pike, correspondant au motif \fI^pike[[:digit:]]*\-\fP.
+
+.TP 
+\fBpython\fP
+Cherche les modules Python, correspondant au motif \fI^python[[:digit:]]*\-\fP.
+
+.TP 
+\fBruby\fP
+Cherche les modules Ruby, correspondant au motif
+\fI^lib.*\-ruby[[:digit:].]*$\fP.
+
+.TP 
+\fBsection\fP
+This option tries to find libraries that were accidentally placed in the
+wrong section. It tries to match \fI^lib\fP, but not if it ends in one of:
+\fI\-dbg\fP, \fI\-dbgsym\fP, \fI\-doc\fP, \fI\-perl\fP, or \fI\-dev\fP.
+
+.TP 
+\fBall\fP
+Cherche tous les paquets décrits ci\-dessus.
+
+.TP 
+\fBonly\fP
+Ignore totalement la section du paquet et se contente d'examiner le nom ou
+la description courte. À utiliser simultanément avec une ou plusieurs
+options \fB\-\-guess\fP décrites ci\-dessus\ ; dans le cas contraire, deborphan
+n'affichera rien.
+
+.SH FICHIERS
+.TP 
+\fI/var/lib/dpkg/status\fP
+État des paquets disponibles. Voir la section \fBRENSEIGNEMENTS SUR LES
+PAQUETS\fP dans la page de manuel de \fIdpkg\fP pour avoir plus de
+renseignements.
+.TP 
+\fI/var/lib/deborphan/keep\fP
+Liste des paquets à ignorer par deborphan, séparés par des retours à la
+ligne. Les noms de paquet ne sont pas triés.
+.SH "VOIR AUSSI"
+\fBdpkg\fP(8), \fBdselect\fP(8), \fBorphaner\fP(8), \fBeditkeep\fP(8), \fBcruft\fP(8),
+\fBxargs\fP(1)
+
+.SH "TRADUCTION"
+Cette traduction est maintenue à l'aide de l'outil
+po4a <URL:http://po4a.alioth.debian.org/> par l'équipe de
+traduction francophone du projet Debian.
+.PP
+Guilhelm Panaget <guilhelm.panaget@free.fr> (2005, 2006),
+Jean-Luc Coulon (f5ibh) <jean-luc.coulon@wanadoo.fr> (2006),
+Christian Perrier <bubulle@debian.org> (2008) et
+David Prévot <david@tilapin.org> (2010).
+.PP
+Veuillez signaler toute erreur de traduction en écrivant à
+<debian\-l10n\-french@lists.debian.org> ou par un rapport de bogue sur
+le paquet deborphan.
+.PP
+Vous pouvez toujours avoir accès à la version anglaise de ce document en
+utilisant la commande
+«\ \fBman\ \-L C\fR \fI<section>\fR\ \fI<page_de_man>\fR\ ».
+.SH BOGUES
+Si vous signalez un bogue, merci de joindre le fichier
+\fI/var/lib/dpkg/status\fP. Cela permettra de reproduire plus facilement le
+bogue.
+.SH AUTEURS
+
+deborphan a été écrit par Cris van Pelt <"Cris van
+Pelt"@tribe.eu.org>, il a été ensuite maintenu par Peter Palfrader
+<weasel@debian.org> et il est désormais maintenu par Carsten Hey
+<c.hey@web.de>.
+

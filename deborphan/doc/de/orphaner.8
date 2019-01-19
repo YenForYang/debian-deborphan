@@ -1,0 +1,69 @@
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH orphaner 8 "" "April 2004" ""
+
+.\" Copyright (C) 2000 Peter Palfrader
+.SH NAME
+.LP
+orphaner \- Oberfläche für Deborphan
+
+.SH ÜBERSICHT
+.LP
+\fBorphaner\fP [\fB\-\-help\fP|\fB\-\-purge\fP] [\,\fIdeborphan Optionen\fP\/]
+
+.SH BESCHREIBUNG
+.LP
+\fBorphaner\fP ist eine nette Oberfläche für \fBdeborphan\fP, der eine Liste von
+verwaisten Pakten mittels Dialog oder Whiptail anzeigt. Pakete können zur
+Entfernung mit \fBapt\-get\fP ausgewählt werden, das dann entsprechend
+aufgerufen wird. Nach der Entfernung wird eine neue Liste von verwaisten
+Paketen von Deborphan erstellt. Das Programm endet, wenn entweder
+»Abbrechen« ausgewählt wird oder wenn kein Paket mehr zur Entfernung
+markiert ist.
+
+Nachdem Sie ein Paket entfernt haben, werden alle verwaisten Pakete oben in
+der Liste angezeigt, mittels »+++++« getrennt von der alten Liste.
+
+Orphaner zeigt Ihnen zwei zusätzliche Schaltflächen: »Simulieren« und
+»Hilfe«. Bei »Simulieren« wird dem Namen entsprechend nur eine Simulation
+der Entfernung durchgeführt und gezeigt, wie das Ergebnis nach der
+Entfernung aussähe. Somit können Sie Pakete erkennen, die verwaist würden
+und sie auswählen, und dann alle Pakete mit nur einem Aufruf von \fBapt\-get\fP
+entfernen.
+
+»Hilfe« zeigt Ihnen den Status der von \fBdpkg \-s\fP angegebenen
+Pakete. \fBVorsicht\fP: Ihre Auswahl geht dabei verloren.
+
+.SH OPTIONEN
+.IP \fB\-\-help\fP
+Gibt eine kurze Hilfe aus und wird beendet.
+
+.IP \fB\-\-skip\-apt\fP
+Nicht \fBapt\-get\fP aufrufen, sondern die Befehlszeile von Apt\-get anzeigen.
+
+.IP \fB\-\-purge\fP
+\fBapt\-get\fP remove mit der Option \fB\-\-purge\fP aufrufen.
+
+.LP
+\fBorphaner\fP akzeptiert die meisten, aber nicht alle Optionen von
+\fBdeborphan\fP. Diese Optionen werden unverändert an \fBdeborphan\fP
+weitergegeben und sind in \fBdeborphan\fPs Handbuchseite beschrieben. Optionen,
+die nicht akzeptiert werden, sind u.a. die zum Verwalten der Haltedatei und
+die Schalter zum Ändern des Ausgabeformats. Beachten Sie, dass Schalter, die
+ein Argument erwarten, als ein Argument an \fBorphaner\fP übergeben werden
+müssen. Um beispielsweise nur Pakete der Priorität \fIoptional\fP und weniger
+wichtig anzuzeigen, müssen Sie \fB\-\-priority=optional\fP (d.h. mit einem
+\fB=\fP\-Zeichen, nicht mit einem Leerzeichen) verwenden.
+
+.SH ÜBERSETZUNG
+Die deutsche Übersetzung wurde 2010, 2018 von Helge Kreutzmann <debian@helgefjell.de>
+angefertigt. Diese Übersetzung ist Freie Dokumentation; lesen Sie die
+MIT License für die Kopierbedingungen.
+Es gibt KEINE HAFTUNG.
+.SH "SIEHE AUCH"
+
+\fBdeborphan\fP(1), \fBorphaner\fP(8), \fBapt\-get\fP(8), \fBeditkeep\fP(8)
+

@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+KEEP="/var/lib/deborphan/keep"
+touch $KEEP
+
+# Here debhelper should add it's stuff if any:
+#DEBHELPER#
+
+
+# vim: set ts=2:

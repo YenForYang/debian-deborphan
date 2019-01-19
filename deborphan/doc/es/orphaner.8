@@ -1,0 +1,66 @@
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH orphaner 8 "" "Abril de 2004" ""
+
+.\" Copyright (C) 2000 Peter Palfrader
+
+.SH "TRADUCCIÓN"
+Omar Campagne, 2010. Envíe cualquier informe de fallo a <debian\-l10n\-spanish@lists.debian.org>.
+.SH NOMBRE
+.LP
+orphaner \- Interfaz de deborphan
+
+.SH SINOPSIS
+.LP
+\fBorphaner\fP [\fB\-\-help\fP|\fB\-\-purge\fP] [\,\fIopciones\-de\-deborphan\fP\/]
+
+.SH DESCRIPCIÓN
+.LP
+\fBorphaner\fP es una sencilla interfaz de \fBdeborphan\fP que muestra una lista
+de paquetes huérfanos mediante una ventana de dialog o whiptail. Permite
+seleccionar paquetes para su eliminación invocando \fBapt\-get\fP. Después de la
+eliminación, muestra una nueva lista de paquetes huérfanos obtenida a través
+de deborphan. El programa finaliza al pulsar «Cancelar» o si no existe
+ningún paquete marcado para su eliminación.
+
+Tras eliminar un paquetes, todos los paquetes huérfanos nuevos aparecerán al
+inicio de la lista separados mediante «++++++» de la lista antigua.
+
+orphaner muestra también dos botones adicionales: «Simular» y
+«Ayuda». «Simular» hace lo que sugiere su nombre, simula la eliminación y
+muestra el resultado que aparecería después de una eliminación real. Así
+puede ver los paquetes que quedarán huérfanos de seleccionar tal acción,
+para así seleccionar y eliminar todos ellos con una sola invocación a
+\fBapt\-get\fP.
+
+«Ayuda» muestra el estado del paquete mediante \fBdpkg \-s\fP. \fBCuidado:\fP puede
+perder su selección.
+
+.SH OPCIONES
+.IP \fB\-\-help\fP
+Muestra una ayuda breve y termina.
+
+.IP \fB\-\-skip\-apt\fP
+No invoca \fBapt\-get\fP, sino que muestra la línea de órdenes de apt\-get.
+
+.IP \fB\-\-purge\fP
+Invoca \fBapt\-get remove\fP con la opción \fB\-\-purge\fP.
+
+.LP
+\fBorphaner\fP acepta la mayoría de las opciones que deborphan acepta, pero no
+todas. Estas opciones se introducen sin modificar a \fBdeborphan\fP, descritas
+en la página de manual de \fBdeborphan\fP. Las opciones no aceptadas incluyen
+parámetros para manipular el fichero de paquetes a mantener, y cambia para
+mostrar el formato de la salida. Tenga en cuenta que los parámetros que
+toman un argumento se deben introducir como un argumento de \fBorphaner\fP. Por
+ejemplo, para mostrar sólo los paquetes con prioridad \fIoptional\fP y menor
+necesita usar \fB\-\-priority=optional\fP (es decir, con el signo \fB=\fP, sin
+espacio).
+
+.SH "VÉASE TAMBIÉN"
+
+\fBdeborphan\fP(1), \fBorphaner\fP(8), \fBapt\-get\fP(8), \fBeditkeep\fP(8)
+
